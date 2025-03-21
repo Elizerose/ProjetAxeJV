@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Ivy
   layers:
   - Default
   - TransparentFX
@@ -38,14 +39,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: other
+    uniqueID: 1321173113
+    locked: 0
   - name: water
     uniqueID: 3862187171
     locked: 0
-  - name: Rock
-    uniqueID: 4017162087
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Rock
+    uniqueID: 4017162087
     locked: 0
   m_RenderingLayers:
   - Default
