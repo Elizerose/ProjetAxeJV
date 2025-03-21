@@ -5,7 +5,6 @@ public class Water : MonoBehaviour
     private Rigidbody2D rb;
     public bool CanSwim = true;
     public bool InWater = false;
-    private float MoveSpeed;
     public float SwimSpeed = 2f;
     public float WaterGrav = 1f;
     private float NormalGrav;
@@ -13,7 +12,6 @@ public class Water : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        MoveSpeed = GetComponent<Movements>().MoveSpeed;
         NormalGrav = rb.gravityScale; 
     }
 
