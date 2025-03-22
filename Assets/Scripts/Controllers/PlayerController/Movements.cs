@@ -11,11 +11,14 @@ public class Movements : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Move();
-        Jump();
-        Debug.DrawRay(transform.position + Vector3.down * 0.5f, Vector2.down * 0.6f, Color.red); 
+        if (gameObject.GetComponent<Water>().InWater == false)
+        {
+            Move();
+            Jump();
+            Debug.DrawRay(transform.position + Vector3.down * 0.5f, Vector2.down * 0.6f, Color.red); 
+        }
     }
 
     void Move()

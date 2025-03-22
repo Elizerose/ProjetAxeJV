@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Water : MonoBehaviour
@@ -5,30 +6,42 @@ public class Water : MonoBehaviour
     private Rigidbody2D rb;
     public bool CanSwim = true;
     public bool InWater = false;
-    public float SwimSpeed = 2f;
-    public float WaterGrav = 1f;
+    public float ImpulseSpeed = 3f;
+    public float WaterGrav = 0.1f;
     private float NormalGrav;
+    private bool CanImpulse = true;
+    public float ImpulseCDTime = 0.35f;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
         NormalGrav = rb.gravityScale; 
     }
 
     void Update()
     {
-        if (InWater)
+        if (InWater && Input.GetKeyDown(KeyCode.Space))
         {
-            Swim();
+            StartCoroutine(Swim());
         }
     }
 
-    private void Swim()
+    private IEnumerator Swim()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        if (CanImpulse)
+        {
+            CanImpulse = false;
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
 
-        rb.linearVelocity = new Vector2(horizontal * SwimSpeed, vertical * SwimSpeed);
+            if (horizontal != 0 || vertical != 0)
+            {
+                rb.linearVelocity = new Vector2(horizontal * ImpulseSpeed, vertical * ImpulseSpeed);
+            }
+            yield return new WaitForSeconds(ImpulseCDTime);
+            CanImpulse = true;
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,6 +51,7 @@ public class Water : MonoBehaviour
             InWater = true;
             rb.gravityScale = WaterGrav;
             rb.linearVelocity = Vector2.zero;
+
         }
     }
 
