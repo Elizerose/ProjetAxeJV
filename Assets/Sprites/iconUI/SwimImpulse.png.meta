@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: d4a276d11a33b4a45becd8c4fdd936c8
+guid: a8a87eaca3aa9314abb5e982b8b27bc2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6342501018560476229
-    second: Chocobo_0
+      213: -4446568300008142731
+    second: SwimImpulse_0
+  - first:
+      213: -6030343523241835131
+    second: SwimImpulse_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +129,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chocobo_0
+      name: SwimImpulse_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 765
-        height: 864
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 544b9d68217150850800000000000000
-      internalID: 6342501018560476229
+      spriteID: 5788088a0bd9a42c0800000000000000
+      internalID: -4446568300008142731
       vertices: []
       indices: 
       edges: []
@@ -151,7 +154,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c9d50ccfe6b1e0849a2c8c85c09a2657
     internalID: 0
     vertices: []
     indices: 
@@ -160,7 +163,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SwimImpulse_0: -4446568300008142731
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
