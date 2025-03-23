@@ -156,29 +156,14 @@ public class PlayerControllerElise : MonoBehaviour
 
     private void SwimByImpulses()
     {
-        // Debug pour vérifier que les touches sont détectées dans Update
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetButtonDown("Horizontal"))
         {
-            lastDirectionInput = Vector2.up * swimForce;
-            //_rb2D.linearVelocity = lastDirectionInput;
+            lastDirectionInput = Input.GetAxisRaw("Horizontal") * Vector2.right;
             lastDirectionTimer = Time.time;
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetButtonDown("Vertical"))
         {
-            lastDirectionInput = Vector2.right * swimForce;
-            //_rb2D.linearVelocity = lastDirectionInput;
-            lastDirectionTimer = Time.time;
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            lastDirectionInput = Vector2.left * swimForce;
-            //_rb2D.linearVelocity = lastDirectionInput;
-            lastDirectionTimer = Time.time;
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            lastDirectionInput = Vector2.down * swimForce;
-            //_rb2D.linearVelocity = lastDirectionInput;
+            lastDirectionInput = Input.GetAxisRaw("Vertical") * Vector2.up;
             lastDirectionTimer = Time.time;
         }
 
@@ -191,7 +176,7 @@ public class PlayerControllerElise : MonoBehaviour
         if (lastDirectionInput != Vector2.zero && Input.GetKeyDown(KeyCode.Space) && (Time.time - lastDirectionTimer < 3f))
         {
             Debug.Log("Impulsion appliquée : " + lastDirectionInput);
-            _rb2D.linearVelocity = lastDirectionInput;
+            _rb2D.linearVelocity = lastDirectionInput * swimForce;
 
             lastDirectionInput = Vector2.zero; // Réinitialiser la direction après application
             lastDirectionTimer = 0f; // Réinitialiser le timer
