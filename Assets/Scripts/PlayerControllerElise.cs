@@ -31,6 +31,7 @@ public class PlayerControllerElise : MonoBehaviour
     private bool isOnIvy = false;
     [HideInInspector] public bool isOnVine = false;
     private GameObject currentIvy;
+    private GameObject lastIvy;
 
     [Header("SWIM")]
     private bool isInWater = false;
@@ -61,7 +62,7 @@ public class PlayerControllerElise : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Horizontal") && !(isInWater && swimMode==1))
+        if (Input.GetButton("Horizontal") && !(isInWater && swimMode==1) )
         {
             MoveX();
         }
@@ -78,6 +79,9 @@ public class PlayerControllerElise : MonoBehaviour
         {
             SwimByImpulses();
         }
+
+        
+        Flip();
     }
 
     void MoveX()
@@ -86,13 +90,26 @@ public class PlayerControllerElise : MonoBehaviour
         Vector3 direction = Input.GetAxisRaw("Horizontal") * Vector2.right;
 
         // Detection du mur (on s'arrete)
-        var hit = Physics2D.BoxCast(transform.position, Vector2.one, 0 , direction, _distanceDW, _DetectWall);
+
+
+
+        // Prb avec cette methode : on s'arrete devant les pentes ..
+        var hit = Physics2D.BoxCast(transform.position, Vector2.one, 0, direction, _distanceDW, _DetectWall);
 
         if (hit.collider != null)
         {
-            return;
+            if (!hit.collider.CompareTag("Slope"))
+                return;
         }
 
+        //_spriteRenderer.flipX = Input.GetAxis("Horizontal") < 0;
+
+        // Deplacements
+        _playerTransform.position += direction * moveSpeed * Time.deltaTime;
+    }
+
+    void Flip()
+    {
         // Flip
         if ((_isFacingRight && Input.GetAxis("Horizontal") < 0f || !_isFacingRight && Input.GetAxis("Horizontal") > 0f))
         {
@@ -101,11 +118,6 @@ public class PlayerControllerElise : MonoBehaviour
             localscale.x *= -1f;
             transform.localScale = localscale;
         }
-
-        //_spriteRenderer.flipX = Input.GetAxis("Horizontal") < 0;
-
-        // Deplacements
-        _playerTransform.position += direction * moveSpeed * Time.deltaTime;
     }
 
     void Jump()
@@ -136,6 +148,7 @@ public class PlayerControllerElise : MonoBehaviour
             if (currentIvy != null)
             {
                 currentIvy.GetComponent<Collider2D>().enabled = false;
+                StartCoroutine(WaitForSecond());
             }
         }
         // Si on ne se deplace pas
@@ -166,10 +179,11 @@ public class PlayerControllerElise : MonoBehaviour
             lastDirectionInput = Input.GetAxisRaw("Vertical") * Vector2.up;
             lastDirectionTimer = Time.time;
         }
-
+        // On coule
         else
         {
             _rb2D.linearVelocity = Vector2.Lerp(_rb2D.linearVelocity, Vector2.down * fallSpeed, Time.deltaTime * 2f);
+           
         }
 
         // Si une direction a été choisie et que l'espace est pressé
@@ -178,28 +192,25 @@ public class PlayerControllerElise : MonoBehaviour
             Debug.Log("Impulsion appliquée : " + lastDirectionInput);
             _rb2D.linearVelocity = lastDirectionInput * swimForce;
 
-            lastDirectionInput = Vector2.zero; // Réinitialiser la direction après application
-            lastDirectionTimer = 0f; // Réinitialiser le timer
+            lastDirectionInput = Vector2.zero; // Réinitialisation la direction 
+            lastDirectionTimer = 0f; // Réinitialisation du timer
         }
+        // si le temps est ecoulé, il a pas appuyé sur espace assez vite, on reset
         else if (Time.time - lastDirectionTimer >= 3f)
         {
-            lastDirectionTimer = 0f; // Réinitialiser le timer
-            lastDirectionInput = Vector2.zero; // Réinitialiser la direction après application
+            lastDirectionTimer = 0f; 
+            lastDirectionInput = Vector2.zero;
         }
     }
-
-    private IEnumerator WaitForSwim()
-    {
-        yield return new WaitForSeconds(0.5f);
-        _rb2D.linearVelocity = new Vector2(0, -1) * fallSpeed;
-    }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Si on detecte un sol
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
             _currentJump = 0;
+        }
+            
     }
 
 
@@ -209,6 +220,7 @@ public class PlayerControllerElise : MonoBehaviour
         if (collision.gameObject.CompareTag("Ivy"))
         {
             currentIvy = collision.gameObject;
+            lastIvy = collision.gameObject;
             _currentJump = 0;
             isOnIvy = true;
             _rb2D.gravityScale = 0; // on met la gravité à 0 pour pas tomber
@@ -220,11 +232,6 @@ public class PlayerControllerElise : MonoBehaviour
             isInWater = true;
             _rb2D.gravityScale = 0;
         }
-
-        //if (isInWater)
-        //{
-        //    _rb2D.gravityScale = 0.1f;
-        //}
     }
 
     // Si on sort de nos zones lierre et eau on reset nos variables
@@ -232,8 +239,6 @@ public class PlayerControllerElise : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ivy") || collision.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
-            if (currentIvy != null && currentIvy != collision.gameObject)
-                currentIvy.GetComponent<Collider2D>().enabled = true;
             currentIvy = null;
             isOnIvy = false;
             isInWater = false;
@@ -241,5 +246,13 @@ public class PlayerControllerElise : MonoBehaviour
             _rb2D.linearVelocity = new Vector2(0, 0);
             PanelControllerElise.Instance.DeactiveFilter();
         }
+    }
+
+    private IEnumerator WaitForSecond()
+    {
+        yield return new WaitForSeconds(2f);
+
+        Debug.Log(lastIvy);
+        lastIvy.GetComponent<Collider2D>().enabled = true;
     }
 }
