@@ -4,13 +4,14 @@ using UnityEngine;
 [Serializable]
 public class EnemyData
 {
-    public string name;
+    public string type;
 
     [Header ("STATS")]
     public int pv;
     public float speed;
-    public int damage;
 
     [Header ("SETUP")]
     public Sprite sprite;
+    public float waitTimePatroll;
+    public float scale;
 }

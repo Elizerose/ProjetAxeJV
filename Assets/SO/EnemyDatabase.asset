@@ -13,13 +13,21 @@ MonoBehaviour:
   m_Name: EnemyDatabase
   m_EditorClassIdentifier: 
   datas:
-  - name: Garde
-    pv: 10
+  - type: Garde
+    pv: 5
     speed: 5
-    damage: 2
-    sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  - name: 
-    pv: 0
+    sprite: {fileID: 21300000, guid: a5892a0f47978cd4db03a71abbd7a8fc, type: 3}
+    waitTimePatroll: 1
+    scale: 0.5
+  - type: Poisson
+    pv: 3
+    speed: 7
+    sprite: {fileID: 8966945178157639174, guid: 1ee558d33cef0a6478cf5c4764577ca0, type: 3}
+    waitTimePatroll: 1
+    scale: 0
+  - type: Arbre
+    pv: 10
     speed: 0
-    damage: 0
-    sprite: {fileID: 0}
+    sprite: {fileID: 4787803259941035902, guid: 59779e7bd383f0f4dbc962a7d4fdcc24, type: 3}
+    waitTimePatroll: 0
+    scale: 0

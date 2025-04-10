@@ -18,7 +18,7 @@ public class DatabaseManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public EnemyData GetData(int id)  => enemyDatabase.GetData(id);
+    public EnemyData GetData(string type)  => enemyDatabase.GetData(type);
 
 
 }
