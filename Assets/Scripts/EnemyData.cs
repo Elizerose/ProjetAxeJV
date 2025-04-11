@@ -14,4 +14,8 @@ public class EnemyData
     public Sprite sprite;
     public float waitTimePatroll;
     public float scale;
+
+    [Header ("CHECKS")]
+    public float AttackDistance;
+    public float DistanceInSight;
 }
