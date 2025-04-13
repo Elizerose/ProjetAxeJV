@@ -5,15 +5,16 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 
-public class PlayerControllerElise : MonoBehaviour
+public class PlayerController : MonoBehaviour
     
 {
-    public static PlayerControllerElise Instance { get; private set; }
+    public static PlayerController Instance { get; private set; }
 
 
     private Rigidbody2D _rb2D;
     private Transform _playerTransform;
     private SpriteRenderer _spriteRenderer;
+    private Animator _animator;
 
     [Header("MOVE")]
     [SerializeField]private float moveSpeed;
@@ -55,6 +56,7 @@ public class PlayerControllerElise : MonoBehaviour
         }
 
         TryGetComponent(out _rb2D);
+        TryGetComponent(out _animator);
         TryGetComponent(out _playerTransform);
         TryGetComponent(out _spriteRenderer);
 
@@ -66,6 +68,12 @@ public class PlayerControllerElise : MonoBehaviour
         {
             MoveX();
         }
+        
+        if (!Input.GetButton("Horizontal") && !(isInWater && swimMode == 1))
+        {
+            _rb2D.linearVelocity = new Vector2(0, _rb2D.linearVelocity.y);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && _currentJump < 1 && !isOnIvy && !isInWater)
         {
             Jump();
@@ -80,6 +88,7 @@ public class PlayerControllerElise : MonoBehaviour
             SwimByImpulses();
         }
 
+        _animator.SetFloat("Speed", Mathf.Abs(_rb2D.linearVelocity.x));
         
         Flip();
     }
@@ -87,14 +96,17 @@ public class PlayerControllerElise : MonoBehaviour
     void MoveX()
     {
 
-        Vector3 direction = Input.GetAxisRaw("Horizontal") * Vector2.right;
+        float direction = Input.GetAxisRaw("Horizontal");// * Vector2.right;
 
         // Detection du mur (on s'arrete)
 
+        // Deplacements
+        //_playerTransform.position += direction * moveSpeed * Time.deltaTime;
+        _rb2D.linearVelocity = new Vector2(direction * moveSpeed, _rb2D.linearVelocity.y);
 
 
         // Prb avec cette methode : on s'arrete devant les pentes ..
-        var hit = Physics2D.BoxCast(transform.position, Vector2.one, 0, direction, _distanceDW, _DetectWall);
+        var hit = Physics2D.BoxCast(transform.position, Vector2.one, 0, direction * Vector2.right, _distanceDW, _DetectWall);
 
         if (hit.collider != null)
         {
@@ -102,10 +114,7 @@ public class PlayerControllerElise : MonoBehaviour
                 return;
         }
 
-        //_spriteRenderer.flipX = Input.GetAxis("Horizontal") < 0;
-
-        // Deplacements
-        _playerTransform.position += direction * moveSpeed * Time.deltaTime;
+        
     }
 
     void Flip()
@@ -122,6 +131,7 @@ public class PlayerControllerElise : MonoBehaviour
 
     void Jump()
     {
+        _animator.SetTrigger("Jump");
         _rb2D.linearVelocity = Vector2.up * jumpForce;
         _currentJump++;
     }
@@ -135,12 +145,12 @@ public class PlayerControllerElise : MonoBehaviour
         {
             Vector3 direction = Input.GetAxisRaw("Vertical") * Vector2.up;
 
-            velocity = new Vector2(0, direction.y * moveSpeed);
+            velocity = new Vector2(_rb2D.linearVelocity.x, direction.y * moveSpeed);
         }
         // Espace aussi pour monter dans l'eau
         else if (Input.GetButton("Jump") && isInWater)
         {
-            velocity = new Vector2(0, 1 * moveSpeed);
+            velocity = new Vector2(_rb2D.linearVelocity.x, 1 * moveSpeed);
         }
         // On appuie sur A pour relacher
         else if (Input.GetKeyDown(KeyCode.A) && isOnIvy)
@@ -163,20 +173,21 @@ public class PlayerControllerElise : MonoBehaviour
                 velocity = new Vector2(0, 0);
         }
 
-        _rb2D.linearVelocity = velocity;
+        _rb2D.linearVelocity = new Vector2(_rb2D.linearVelocity.x, velocity.y);
 
     }
 
     private void SwimByImpulses()
     {
-        if (Input.GetButtonDown("Horizontal"))
-        {
-            lastDirectionInput = Input.GetAxisRaw("Horizontal") * Vector2.right;
-            lastDirectionTimer = Time.time;
-        }
-        else if (Input.GetButtonDown("Vertical"))
+        
+        if (Input.GetButtonDown("Vertical"))
         {
             lastDirectionInput = Input.GetAxisRaw("Vertical") * Vector2.up;
+            lastDirectionTimer = Time.time;
+        }
+        else if (Input.GetButtonDown("Horizontal"))
+        {
+            lastDirectionInput = Input.GetAxisRaw("Horizontal") * Vector2.right;
             lastDirectionTimer = Time.time;
         }
         // On coule
@@ -189,7 +200,6 @@ public class PlayerControllerElise : MonoBehaviour
         // Si une direction a été choisie et que l'espace est pressé
         if (lastDirectionInput != Vector2.zero && Input.GetKeyDown(KeyCode.Space) && (Time.time - lastDirectionTimer < 3f))
         {
-            Debug.Log("Impulsion appliquée : " + lastDirectionInput);
             _rb2D.linearVelocity = lastDirectionInput * swimForce;
 
             lastDirectionInput = Vector2.zero; // Réinitialisation la direction 
@@ -228,7 +238,7 @@ public class PlayerControllerElise : MonoBehaviour
         // Si on detecte de l'eau
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
-            PanelControllerElise.Instance.ActiveFilter("water");
+            PanelController.Instance.ActiveFilter("water");
             isInWater = true;
             _rb2D.gravityScale = 0;
         }
@@ -244,7 +254,7 @@ public class PlayerControllerElise : MonoBehaviour
             isInWater = false;
             _rb2D.gravityScale = 1;
             _rb2D.linearVelocity = new Vector2(0, 0);
-            PanelControllerElise.Instance.DeactiveFilter();
+            PanelController.Instance.DeactiveFilter();
         }
     }
 

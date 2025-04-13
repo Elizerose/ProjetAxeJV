@@ -14,26 +14,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   datas:
   - type: Garde
-    pv: 5
-    speed: 5
+    stats:
+      pv: 5
+      speed: 4
+      AttackCooldown: 0
     sprite: {fileID: 21300000, guid: a5892a0f47978cd4db03a71abbd7a8fc, type: 3}
     waitTimePatroll: 5
-    scale: 0.5
-    AttackDistance: 3
-    DistanceInSight: 6
+    scale: 8
+    detection:
+      AttackDistance: 2
+      DistanceInSight: 5
   - type: Poisson
-    pv: 3
-    speed: 7
+    stats:
+      pv: 0
+      speed: 0
+      AttackCooldown: 0
     sprite: {fileID: 8966945178157639174, guid: 1ee558d33cef0a6478cf5c4764577ca0, type: 3}
     waitTimePatroll: 1
-    scale: 0
-    AttackDistance: 0
-    DistanceInSight: 0
+    scale: 0.1
+    detection:
+      AttackDistance: 0
+      DistanceInSight: 0
   - type: Arbre
-    pv: 10
-    speed: 0
+    stats:
+      pv: 10
+      speed: 0
+      AttackCooldown: 3.5
     sprite: {fileID: 4787803259941035902, guid: 59779e7bd383f0f4dbc962a7d4fdcc24, type: 3}
     waitTimePatroll: 0
-    scale: 0
-    AttackDistance: 0
-    DistanceInSight: 0
+    scale: 8.5
+    detection:
+      AttackDistance: 12
+      DistanceInSight: 12
+  - type: Barbare
+    stats:
+      pv: 15
+      speed: 4
+      AttackCooldown: 0
+    sprite: {fileID: -4753702385071775785, guid: a7055a132928be34e94b343af54ea744, type: 3}
+    waitTimePatroll: 1
+    scale: 5
+    detection:
+      AttackDistance: 4
+      DistanceInSight: 6

@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PanelControllerElise : MonoBehaviour
+public class PanelController : MonoBehaviour
 {
     public Dictionary<string, Color> Colors = new Dictionary<string, Color>()
     {
@@ -12,7 +12,7 @@ public class PanelControllerElise : MonoBehaviour
     };
 
 
-    public static PanelControllerElise Instance { get; private set; }
+    public static PanelController Instance { get; private set; }
 
     [Header ("Game Objects")]
     [SerializeField] private GameObject filterPanel;
@@ -49,7 +49,7 @@ public class PanelControllerElise : MonoBehaviour
 
     public void ChangeSwimmingMode(int mode)
     {
-        PlayerControllerElise.Instance.swimMode = mode;
+        PlayerController.Instance.swimMode = mode;
 
         Color btnColor = new Color(0.4f,0.9f,1f,1f);
         GameObject CurrentBtn = SwimMode0;

@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
-using UnityEditor.Experimental.GraphView;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
     public string EnemyType;
     private EnemyData data;
 
+    [SerializeField] private GameObject feedbackImage;
+    private bool CanDisplayFeedBack = true;
 
     private Rigidbody2D _rb2D;
     private Collider2D _collider;
-    private Transform _enemyTransform;
     private SpriteRenderer _spriteRenderer;
+    private Animator _animator;
     
     public enum STATE
     {
@@ -23,6 +24,7 @@ public class EnemyController : MonoBehaviour
         IDLE,
         MOVE,
         FOLLOW,
+        CHARGE,
         FIRE,
         DEATH
     }
@@ -33,79 +35,141 @@ public class EnemyController : MonoBehaviour
     public List<Transform> points; // chemins de patrouilles
     private Transform targetPoint; // target
     private int destination = 0; // index de la target
-    private bool isWaiting;
     private float directionX;
-    
     private float cooldown;
-    private float WaitTimePatroll;
     private bool isFacingRight = true;
     private float speed;
+
+    // Charge ennemi 
+    Vector2 startChargePosition;
+    private float WarningDelay = 1f;
+    private bool isInCharge = false;
+    private bool CanRun = false;
+    private bool CanCharge = true;
+
+    // arbre
+    [SerializeField] GameObject projectilePrefab;
+
+    private float FireCoolDownTimer;
 
 
     void Awake()
     {
+        // On récupère nos composants
         TryGetComponent(out _rb2D);
         TryGetComponent(out _collider);
-        TryGetComponent(out _enemyTransform);
         TryGetComponent(out _spriteRenderer);
+        TryGetComponent(out _animator);
     }
 
     void Start()
     {
+        // On récupère la base de donnée de l'ennemi
         data = DatabaseManager.Instance.GetData(EnemyType);
         Init();
 
-        // Début de la patrouille Ennemis :
-        targetPoint = points[0]; 
+        // Début de la patrouille Ennemis : On initialise notre premier point (l'arbre ne bouge pas donc pas de patrouille pour lui)
+        if (data.type != "Arbre")
+            targetPoint = points[0]; 
     }
 
     private void Init()
     {
+        // On met l'etat de l'ennemi à INIT
         _state = STATE.INIT;
 
+        // On récupère et assigne ses data
         name = data.type;
         _spriteRenderer.sprite = data.sprite;
-        speed = data.speed;
+        speed = data.stats.speed;
         transform.localScale = new Vector3(data.scale, data.scale, data.scale);
         // on enleve et remet le collider pour le reset a la bonne taille
         _collider.enabled = false;
         _collider.enabled = true;
 
-        _state = STATE.IDLE;
+        feedbackImage.GetComponent<Image>().sprite = null;
+        feedbackImage.SetActive(false);
+
+        if (data.type == "Arbre")
+            FireCoolDownTimer = data.stats.AttackCooldown;
+
+            // Une fois terminé, on change son état pour idle
+            _state = STATE.IDLE;
 
     }
 
     void Update()
     {
+        // Si lennemi est en pleine initialisation, on ne fait rien
         if (_state < STATE.INIT)
             return;
 
+        // Si le joueur est en vu, on passe son état à Follow que pour les barbares, et l'arbre attaque a vu les autres ont juste une patrouille
         if (IsPlayerInSight())
-            _state = STATE.FOLLOW;
+        {
+            if (CanDisplayFeedBack)
+                StartCoroutine(FeedBackDisplay(HUDManager.Instance.exclamation));
 
+            if (data.type == "Barbare")
+                _state = STATE.CHARGE;
+            else if (data.type == "Arbre")
+                _state = STATE.FIRE;
+        }
+        else
+        {
+            CanDisplayFeedBack = true;
+        }
+        
+            
+
+        // Notre animator de l'arbre n'as pas de speed donc on évite
+        if (data.type != "Arbre")
+            _animator.SetFloat("Speed", Mathf.Abs(_rb2D.linearVelocity.x));
+
+        // Changement d'état
         switch (_state)
         {
             case STATE.IDLE:
-                if (cooldown > data.waitTimePatroll)
+
+                if (data.type != "Arbre")
                 {
-                    cooldown = 0;
-                    _state = STATE.MOVE;
-                    
+                    if (cooldown > data.waitTimePatroll)
+                    {
+                        if (data.type == "Barbare")
+                            _animator.SetBool("isCharging", false);
+
+                        // Quand le compteur d'attente est fini, onremet le cooldown à 0, et on remet l'etat à move pour quil continue la patrouille
+                        cooldown = 0;
+                        _state = STATE.MOVE;
+                    }
+                    // On arrete l'ennemi et incremente le cooldown
+                    _rb2D.linearVelocity = Vector2.zero;
+                    cooldown += Time.deltaTime;
+                } else
+                {
+                    // Si c'est notre arbre, on initialise sa direction
+                    directionX = 1;
                 }
-                _rb2D.linearVelocity = Vector2.zero;
-                cooldown += Time.deltaTime;
+                
                 break;
 
             case STATE.MOVE:
+                // on active la patouille
                 Patroll();
                 break;
 
             case STATE.FOLLOW:
-                Debug.Log("joueur en vue");
+                // on active la chasse
                 Chase();
                 break;
 
+            case STATE.CHARGE:
+                if (CanCharge)
+                    Charge();   
+                break;
+
             case STATE.FIRE:
+                Fire();
                 break;
 
             case STATE.DEATH:
@@ -116,6 +180,10 @@ public class EnemyController : MonoBehaviour
         Flip();
     }
 
+
+    // --------------------------- COMMUN  ----------------------------
+
+    // Fonction pour Flip l'ennemi
     private void Flip()
     {
         if ((isFacingRight && directionX < 0f || !isFacingRight && directionX > 0f))
@@ -126,19 +194,21 @@ public class EnemyController : MonoBehaviour
             transform.localScale = localscale;
         }
     }
+    
 
+    // Fonction de Patrouille
     private void Patroll()
     {
-        // calcul de la direction
+        // calcul de la direction (sens)
         directionX = Mathf.Sign(targetPoint.position.x - transform.position.x); // Math.Sign renvoie la direction : 1 si droite / -1 si gauche / 0 si rien (distance entre notre ennemis et notre target)
                                                                                 // si position.x enemis = 2 et position.x point = -5, notre joueur doit aller à gauche : - 5 - 2 = -7 Math.Sign renvoie le signe donc - 1 
-
-        _rb2D.linearVelocity = new Vector2(directionX * speed, _rb2D.linearVelocity.y); // On déplace l'ennemis
+         // On déplace l'ennemi
+        _rb2D.linearVelocity = new Vector2(directionX * speed, _rb2D.linearVelocity.y);
 
         // Quand l'ennemi atteint (à 0.3f près) le points target de patrouille, on passe au point suivant
         if (Mathf.Abs(transform.position.x - targetPoint.position.x) < 0.3f)
         {
-            // On arrete l'ennemi au point pendant quelques secondes, avant qu'il reprenne sa route
+            // On passe son état à IDLE
             _state = STATE.IDLE;
             // On passe au point target suivant
             destination = (destination + 1) % points.Count; // récupère le reste pour ne jamais finir une patrouille
@@ -150,56 +220,243 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    // Check si le player est en vue 
-    private bool IsPlayerInSight()
-    {
-        Vector3 sightTransform = new Vector3(transform.position.x + data.DistanceInSight / 2 * directionX, transform.position.y, transform.position.z);
-        Collider2D[] targets = Physics2D.OverlapBoxAll(sightTransform, new Vector2(data.DistanceInSight * directionX, transform.localScale.y + 2f), 0);
 
-        foreach (Collider2D target in targets)
-        {
-            if (target.CompareTag("Player"))
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-
+    // Chase / Follow
     private void Chase()
     {
-        // Check si le joueur est assez proche pour l'attaquer
-        Vector3 attackTransform = new Vector3(transform.position.x + data.AttackDistance / 2 * directionX, transform.position.y, transform.position.z);
-        Collider2D[] targets = Physics2D.OverlapBoxAll(attackTransform, new Vector2(data.AttackDistance * directionX, transform.localScale.y + 2f), 0);
-
-        // Chasse du joueur
+        // calcul de la direction (sens)
         directionX = Mathf.Sign(GameManager.Instance.Player.position.x - transform.position.x);
         // Math.Sign renvoie la direction : 1 si droite / -1 si gauche / 0 si rien (distance entre notre ennemis et notre target)
         // si position.x enemis = 2 et position.x point = -5, notre joueur doit aller à gauche : - 5 - 2 = -7 Math.Sign renvoie le signe donc - 1 
 
+        // L'ennemi suit le joueur
         _rb2D.linearVelocity = new Vector2(directionX * speed, _rb2D.linearVelocity.y);
 
+        // Si l'ennemi est à 1 du joueur il se stop (pour pas qu'il lui rentre dedans)
         if (Mathf.Abs(GameManager.Instance.Player.position.x - transform.position.x) < 1f)
         {
             _rb2D.linearVelocity = Vector3.zero;
         }
 
+        // Si le joueur n'est plus en vu, il repasse en idle et reprendra sa patrouille
         if (!IsPlayerInSight())
             _state = STATE.IDLE;
+    }
+
+
+
+
+    // --------------------------- CHECKS ----------------------------
+
+    // Check si le player est en vue 
+    private bool IsPlayerInSight()
+    {
+        // on défini la 'position de centre' d'ou va se creer notre boite invisible pour regarder si le joueur est dedans
+        float checkposition;
+        if (data.type == "Arbre") // on check devant et derriere si c'est un arbre donc on part du milieu de son transform
+            checkposition = transform.position.x;
+        else
+            checkposition = transform.position.x + data.detection.DistanceInSight / 2 * directionX; // Sinon, on prend le milieu entre le personnage et sa distance a verifier pour que la distance se creer bien de l'ennemi à la distance voulu * la direction (l'orientation de l'ennemi = devant lui)
+
+        // On cree un vecteur X correspondant
+        Vector3 sightTransform = new Vector3(checkposition, transform.position.y, transform.position.z);
+
+        // On cree notre boite invisible pour detecter le joueur
+        Collider2D[] targets = Physics2D.OverlapBoxAll(sightTransform, new Vector2(data.detection.DistanceInSight, transform.localScale.y + 2f), 0);
+
+        // Si le player est détécté dans cette box, le joueur est en vue, on return true, sinon false
+        foreach (Collider2D target in targets)
+        {
+            if (target.CompareTag("Player"))
+                return true;
+        }
+
+        return false;
+    }
+
+    // Check si l'ennemi peut attaquer
+    private bool CanAttack()
+    {
+        // pareil qu'au dessus mais cette fois ci avec la distance d'attaque
+
+        float checkposition;
+        if (data.type == "Arbre") 
+            checkposition = transform.position.x;
+        else
+            checkposition = transform.position.x + data.detection.AttackDistance / 2 * directionX; 
+
+        Vector3 sightTransform = new Vector3(checkposition, transform.position.y, transform.position.z);
+
+        Collider2D[] targets = Physics2D.OverlapBoxAll(sightTransform, new Vector2(data.detection.AttackDistance, transform.localScale.y + 2f), 0);
+
+        foreach (Collider2D target in targets)
+        {
+            if (target.CompareTag("Player"))
+                return true;
+        }
+
+        return false;
+    }
+
+    IEnumerator FeedBackDisplay(Sprite feedback)
+    {
+        CanDisplayFeedBack = false;
+        feedbackImage.GetComponent<Image>().sprite = feedback;
+        feedbackImage.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+        feedbackImage.SetActive(false);
+    }
+
+
+    // --------------------------- BARBARE ----------------------------
+
+    // Charge de l'ennemi 
+    private void Charge()
+    {
+        
+        _animator.SetBool("isCharging", true);
+
+        // on bouge plus mais change son orientation selon le player
+        _rb2D.linearVelocity = Vector2.zero;
+        directionX = Mathf.Sign(startChargePosition.x + 10f - transform.position.x); // calcul de l'orientation selon le joueur
+
+        // Si notre barbare n'est pas deja en etat de charge, peut charger et ne peut pas encore nous courir dessus, il prend sa pose de charge et clignote
+        if (!isInCharge && CanCharge && !CanRun)
+        {
+            StartCoroutine(TimeToCharge());
+        }
+
+        // booléen pour indiquer si la charge (attaque) est fini
+        bool finishCharge = false;
+
+        // Si notre ennemi peut nous foncer dessus
+        if (CanRun)
+        {
+            // Charge ennemi
+            if (Mathf.Abs(startChargePosition.x + 10f - transform.position.x) > 1f)
+            {
+                _rb2D.linearVelocity = new Vector2(directionX * 12, _rb2D.linearVelocity.y);
+            }
+            else
+            {
+                finishCharge = true;
+            }
+        }
+
+        // Si pendant la charge le joueur n'est plus en vu, ou alors que la charge est fini, on arrete la charge et réeinitialise toutes les valeurs
+        if (!IsPlayerInSight() || finishCharge)
+        {
+            _rb2D.linearVelocity = Vector2.zero;
+            _animator.SetBool("isCharging", false);
+            
+            StartCoroutine(WaitBeforeCharge());
+            
+        }
+
+    }
+
+    // Coroutine de précharge
+    private IEnumerator TimeToCharge()
+    {
+        
+        isInCharge = true;
+        float delay = WarningDelay;
+        startChargePosition = transform.position;
+
+        for (int i = 0;  i < 7; i++)
+        {
+            _spriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(0.1f);
+            _spriteRenderer.color = Color.white;
+            yield return new WaitForSeconds(delay);
+            delay -= 0.6f;
+        }
+        isInCharge = false;
+        CanRun = true;
+
+    }
+
+    // Coroutine de cooldown pour la charge
+    private IEnumerator WaitBeforeCharge()
+    {
+        Debug.Log("Wait !");
+        _rb2D.linearVelocity = Vector2.zero;
+        // animation regard droite gauche
+
+        CanCharge = false;
+
+        StartCoroutine(FeedBackDisplay(HUDManager.Instance.interrogation));
+
+        yield return new WaitForSeconds(4f);
+
+        _state = STATE.IDLE;
+
+        StopCoroutine(TimeToCharge());
+        CanDisplayFeedBack = true;
+
+        isInCharge = false;
+        CanCharge = true;
+        CanRun = false;
+
 
     }
 
 
-    //private void OnDrawGizmos()
-    //{
-    //    Vector3 sightTransform = new Vector3(transform.position.x + data.DistanceInSight / 2 * directionX, transform.position.y, transform.position.z);
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireCube(sightTransform, new Vector3(data.DistanceInSight * directionX, transform.localScale.y + 2f, 1f));
 
-    //    Vector3 attackTransform = new Vector3(transform.position.x + data.AttackDistance / 2 * directionX, transform.position.y, transform.position.z);
-    //    Gizmos.color = Color.blue;
-    //    Gizmos.DrawWireCube(attackTransform, new Vector3(data.AttackDistance *directionX, transform.localScale.y + 2f, 1f));
-    //}
+
+    // --------------------------- ARBRE ----------------------------
+    private void Fire()
+    {
+        // petit feedback pour dire que l'arbre nous a vu et nous regarde
+
+
+        // Calcul de l'orientation de l'ennemi
+        directionX = Mathf.Sign(GameManager.Instance.Player.position.x - transform.position.x); // calcul de l'orientation selon le joueur
+
+        // feedback temps de chargement du projectile
+        if (CanAttack() && FireCoolDownTimer<=0f)
+        {
+            GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
+            ProjectileController controller = projectile.GetComponent<ProjectileController>();
+            if (controller != null)
+            {
+                controller.SetDirection(directionX * Vector2.right);
+                FireCoolDownTimer = data.stats.AttackCooldown;
+            }
+            else
+            {
+                Debug.LogError("pas de scirpt trouvé.");
+            }
+            
+        }
+
+        FireCoolDownTimer -= Time.deltaTime;
+
+
+    }
+
+
+
+
+    // --------------------------- DEBUG ----------------------------
+    private void OnDrawGizmos()
+    {
+        if (data != null)
+        {
+            float checkposition;
+            if (data.type == "Arbre") // on check devant et derriere !
+                checkposition = transform.position.x;
+            else
+                checkposition = transform.position.x + data.detection.DistanceInSight / 2 * directionX;
+
+            Vector3 sightTransform = new Vector3(checkposition, transform.position.y, transform.position.z);
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(sightTransform, new Vector3(data.detection.DistanceInSight * directionX, transform.localScale.y + 2f, 1f));
+
+            //Vector3 attackTransform = new Vector3(transform.position.x + data.detection.AttackDistance / 2 * directionX, transform.position.y, transform.position.z);
+            //Gizmos.color = Color.blue;
+            //Gizmos.DrawWireCube(attackTransform, new Vector3(data.detection.AttackDistance * directionX, transform.localScale.y + 2f, 1f));
+        }
+    }
 }

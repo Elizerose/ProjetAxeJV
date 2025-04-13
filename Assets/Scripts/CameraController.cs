@@ -1,50 +1,50 @@
+using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
 
-    [SerializeField] private Transform _target;
-    [SerializeField] private Vector3 _offset;
-    [SerializeField] private float _smoothTime = 0.1f;
-
-    private Vector3 _velocity;
+    [SerializeField] Transform _trackingTarget;
+    [SerializeField] private GameObject _camera;
+    private float orthographicsize;
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _target = GameManager.Instance.Player;
+        orthographicsize = _camera.GetComponent<CinemachineCamera>().Lens.OrthographicSize;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowPanorama()
     {
-        var limiteLeft = transform.TransformPoint(-SizeBoxCast / 2);
-        var limiteRight = transform.TransformPoint(SizeBoxCast / 2);
-
-        var isOutLeft = _target.position.x < limiteLeft.x;
-        var isOutRight = _target.position.x > limiteRight.x;
-
-        Vector2 targetOut = isOutLeft ? limiteLeft : isOutRight ? limiteRight : transform.position;
+        _camera.GetComponent<CinemachinePositionComposer>().Damping = new Vector3(3f, 3f, 3f);
+        _camera.GetComponent<CinemachineCamera>().Target.TrackingTarget = _trackingTarget;
+        _camera.GetComponent<CinemachineCamera>().Lens.OrthographicSize = 8f;
         
-
-
-        var smoothPos = Vector3.SmoothDamp(transform.position, targetOut, ref _velocity, _smoothTime);
-        Vector3 targetPos = new Vector3(smoothPos.x, smoothPos.y, transform.position.z);
-
-
-        transform.position = targetPos;
-        
+        StartCoroutine(showForSeconds());
     }
 
-    [SerializeField] private Vector2 SizeBoxCast;
-
-    private void OnDrawGizmosSelected()
+    IEnumerator showForSeconds()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, SizeBoxCast);
+        yield return new WaitForSeconds(7f);
+        _camera.GetComponent<CinemachineCamera>().Target.TrackingTarget = GameManager.Instance.Player;
+        _camera.GetComponent<CinemachineCamera>().Lens.OrthographicSize = orthographicsize;
+        _camera.GetComponent<CinemachinePositionComposer>().Damping = new Vector3(1f, 1f, 1f);
+
+        Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (_camera != null)
+        {
+            ShowPanorama();
+        }
+    }
+
+
 }
