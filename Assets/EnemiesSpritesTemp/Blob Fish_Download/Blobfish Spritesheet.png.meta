@@ -178,6 +178,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -722,7 +735,31 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Blobfish Spritesheet_0: -5819004903766876413
+      Blobfish Spritesheet_1: -8706702635642776784
+      Blobfish Spritesheet_10: -8762611283513242198
+      Blobfish Spritesheet_11: 5239106907138156401
+      Blobfish Spritesheet_12: -3472015012996131633
+      Blobfish Spritesheet_13: 2584212593693076124
+      Blobfish Spritesheet_14: 7493221908320982051
+      Blobfish Spritesheet_15: 3426197451884517808
+      Blobfish Spritesheet_16: 3467237376588973327
+      Blobfish Spritesheet_17: -1942638519079369335
+      Blobfish Spritesheet_18: -7383957997184595231
+      Blobfish Spritesheet_19: -1390587347101712413
+      Blobfish Spritesheet_2: 7387790263614138178
+      Blobfish Spritesheet_20: 2288726392108213668
+      Blobfish Spritesheet_21: -6071736153665122556
+      Blobfish Spritesheet_22: -4968494601285408417
+      Blobfish Spritesheet_23: -2888492840176348399
+      Blobfish Spritesheet_3: 7931326088231713249
+      Blobfish Spritesheet_4: 3200634723164796490
+      Blobfish Spritesheet_5: -5610932248364525560
+      Blobfish Spritesheet_6: -8051518952768226894
+      Blobfish Spritesheet_7: -6814144774837103405
+      Blobfish Spritesheet_8: 9171819080649538933
+      Blobfish Spritesheet_9: 4637732594757477337
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
