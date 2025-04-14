@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HUDManager : MonoBehaviour
@@ -11,6 +12,10 @@ public class HUDManager : MonoBehaviour
     public Sprite exclamation;
     public Sprite interrogation;
 
+    [Header("USP COLOR PALETTE")]
+
+    public GameObject ColorsContainer;
+
 
     private void Awake()
     {
@@ -21,6 +26,9 @@ public class HUDManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+
+    // e activer la roue : pas de deplacement pendant la roue activée
+
 
 
 }

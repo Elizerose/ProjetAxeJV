@@ -15,7 +15,7 @@ public class Movements : MonoBehaviour
 
     void Update()
     {
-        if (gameObject.GetComponent<Water>().InWater == false)
+        if (gameObject.GetComponent<Water>().InWater == false) //&& !ColorPowerController.Instance.isInColorChoice)
         {
             Move();
             Jump();
