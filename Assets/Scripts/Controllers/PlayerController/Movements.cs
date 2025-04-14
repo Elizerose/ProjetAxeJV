@@ -11,7 +11,7 @@ public class Movements : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (gameObject.GetComponent<Water>().InWater == false)
         {

@@ -15,7 +15,7 @@ public class Vines : MonoBehaviour
 
     void Update()
     {
-        if (isTouchingVine && Input.GetKeyDown(KeyCode.Q))
+        if (isTouchingVine && (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Space)))
         {
             IsClimbing = !IsClimbing; 
             rb.gravityScale = IsClimbing ? 0 : 1;
