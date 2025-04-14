@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ivy
   - Slope
+  - Vine
+  - BVine
   layers:
   - Default
   - TransparentFX
