@@ -74,7 +74,6 @@ public class ColorPowerController : MonoBehaviour
             _palettePanel.SetActive(isInColorChoice);
 
             if (!isInColorChoice)
-                Debug.Log("ok ?");
                 GameManager.Instance.Player.GetComponent<PlayerAbilities>().SetAbility((ColorAbilities)_currentIndexColor);
         }
 

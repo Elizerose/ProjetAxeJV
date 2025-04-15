@@ -6591,7 +6591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 519420028}
-  ParallaxSpeed: 0.7
+  ParallaxSpeed: 0
   player: {fileID: 232519070}
 --- !u!1 &1225063450
 GameObject:
