@@ -6,16 +6,18 @@ public class Movements : MonoBehaviour
     public float JumpForce = 15f;
     private Rigidbody2D rb;
     private Vector3 PlayerScale;
+    private Animator _animator;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        PlayerScale = GetComponent<Transform>().localScale; 
+        PlayerScale = GetComponent<Transform>().localScale;
+        TryGetComponent<Animator>(out _animator);
     }
 
     void Update()
     {
-        if (gameObject.GetComponent<Water>().InWater == false) //&& !ColorPowerController.Instance.isInColorChoice)
+        if (gameObject.GetComponent<Water>().InWater == false && !ColorPowerController.Instance.isInColorChoice)
         {
             Move();
             Jump();
@@ -26,7 +28,9 @@ public class Movements : MonoBehaviour
     void Move()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        rb.linearVelocity = new Vector2(horizontalInput * MoveSpeed, rb.linearVelocity.y); 
+        rb.linearVelocity = new Vector2(horizontalInput * MoveSpeed, rb.linearVelocity.y);
+
+        _animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
 
         if (horizontalInput > 0)
             transform.localScale = new Vector3(PlayerScale.x, PlayerScale.y, PlayerScale.z);
@@ -46,6 +50,7 @@ public class Movements : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && CheckIfGround())
         {
+            _animator.SetTrigger("Jump");
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
         }
     }
