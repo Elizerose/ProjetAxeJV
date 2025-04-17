@@ -4,13 +4,18 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 
+/// Gestion et comportements des ennemis
+/// 
+/// </summary>
 public class EnemyController : MonoBehaviour
 {
-    public string EnemyType;
-    private EnemyData data;
+    public Type EnemyType;
+    private EnemyData _data;
 
-    [SerializeField] private GameObject feedbackImage;
-    private bool CanDisplayFeedBack = true;
+    [SerializeField] private GameObject _feedbackImage;
+    private bool _canDisplayFeedBack = true;
 
     private Rigidbody2D _rb2D;
     private Collider2D _collider;
@@ -65,11 +70,11 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         // On récupère la base de donnée de l'ennemi
-        data = DatabaseManager.Instance.GetData(EnemyType);
+        _data = DatabaseManager.Instance.GetData(EnemyType);
         Init();
 
         // Début de la patrouille Ennemis : On initialise notre premier point (l'arbre ne bouge pas donc pas de patrouille pour lui)
-        if (data.type != "Arbre")
+        if (_data.type != Type.Arbre)
             targetPoint = points[0]; 
     }
 
@@ -78,23 +83,24 @@ public class EnemyController : MonoBehaviour
         // On met l'etat de l'ennemi à INIT
         _state = STATE.INIT;
 
-        // On récupère et assigne ses data
-        name = data.type;
-        _spriteRenderer.sprite = data.sprite;
-        speed = data.stats.speed;
-        transform.localScale = new Vector3(data.scale, data.scale, data.scale);
+        // On récupère et assigne ses _data
+        name = _data.type.ToString();
+        Debug.Log(name);
+        _spriteRenderer.sprite = _data.sprite;
+        speed = _data.stats.speed;
+        //transform.localScale = new Vector3(_data.scale, _data.scale, _data.scale);
         // on enleve et remet le collider pour le reset a la bonne taille
         _collider.enabled = false;
         _collider.enabled = true;
 
-        feedbackImage.GetComponent<Image>().sprite = null;
-        feedbackImage.SetActive(false);
+        _feedbackImage.GetComponent<Image>().sprite = null;
+        _feedbackImage.SetActive(false);
 
-        if (data.type == "Arbre")
-            FireCoolDownTimer = data.stats.AttackCooldown;
+        if (_data.type == Type.Arbre)
+            FireCoolDownTimer = _data.stats.AttackCooldown;
 
-            // Une fois terminé, on change son état pour idle
-            _state = STATE.IDLE;
+        // Une fois terminé, on change son état pour idle
+        _state = STATE.IDLE;
 
     }
 
@@ -107,23 +113,23 @@ public class EnemyController : MonoBehaviour
         // Si le joueur est en vu, on passe son état à Follow que pour les barbares, et l'arbre attaque a vu les autres ont juste une patrouille
         if (IsPlayerInSight())
         {
-            if (CanDisplayFeedBack)
-                StartCoroutine(FeedBackDisplay(HUDManager.Instance.exclamation));
+            if (_canDisplayFeedBack)
+                StartCoroutine(FeedBackDisplay(HUDManager.Instance.Exclamation));
 
-            if (data.type == "Barbare")
+            if (_data.type == Type.Barbare)
                 _state = STATE.CHARGE;
-            else if (data.type == "Arbre")
+            else if (_data.type == Type.Arbre)
                 _state = STATE.FIRE;
         }
         else
         {
-            CanDisplayFeedBack = true;
+            _canDisplayFeedBack = true;
         }
         
             
 
         // Notre animator de l'arbre n'as pas de speed donc on évite
-        if (data.type != "Arbre")
+        if (_data.type != Type.Arbre)
             _animator.SetFloat("Speed", Mathf.Abs(_rb2D.linearVelocity.x));
 
         // Changement d'état
@@ -131,11 +137,11 @@ public class EnemyController : MonoBehaviour
         {
             case STATE.IDLE:
 
-                if (data.type != "Arbre")
+                if (_data.type != Type.Arbre)
                 {
-                    if (cooldown > data.waitTimePatroll)
+                    if (cooldown > _data.waitTimePatroll)
                     {
-                        if (data.type == "Barbare")
+                        if (_data.type == Type.Barbare)
                             _animator.SetBool("isCharging", false);
 
                         // Quand le compteur d'attente est fini, onremet le cooldown à 0, et on remet l'etat à move pour quil continue la patrouille
@@ -253,16 +259,16 @@ public class EnemyController : MonoBehaviour
     {
         // on défini la 'position de centre' d'ou va se creer notre boite invisible pour regarder si le joueur est dedans
         float checkposition;
-        if (data.type == "Arbre") // on check devant et derriere si c'est un arbre donc on part du milieu de son transform
+        if (_data.type == Type.Arbre) // on check devant et derriere si c'est un arbre donc on part du milieu de son transform
             checkposition = transform.position.x;
         else
-            checkposition = transform.position.x + data.detection.DistanceInSight / 2 * directionX; // Sinon, on prend le milieu entre le personnage et sa distance a verifier pour que la distance se creer bien de l'ennemi à la distance voulu * la direction (l'orientation de l'ennemi = devant lui)
+            checkposition = transform.position.x + _data.detection.DistanceInSight / 2 * directionX; // Sinon, on prend le milieu entre le personnage et sa distance a verifier pour que la distance se creer bien de l'ennemi à la distance voulu * la direction (l'orientation de l'ennemi = devant lui)
 
         // On cree un vecteur X correspondant
         Vector3 sightTransform = new Vector3(checkposition, transform.position.y, transform.position.z);
 
         // On cree notre boite invisible pour detecter le joueur
-        Collider2D[] targets = Physics2D.OverlapBoxAll(sightTransform, new Vector2(data.detection.DistanceInSight, transform.localScale.y + 2f), 0);
+        Collider2D[] targets = Physics2D.OverlapBoxAll(sightTransform, new Vector2(_data.detection.DistanceInSight, transform.localScale.y), 0);
 
         // Si le player est détécté dans cette box, le joueur est en vue, on return true, sinon false
         foreach (Collider2D target in targets)
@@ -274,20 +280,52 @@ public class EnemyController : MonoBehaviour
         return false;
     }
 
+    //private bool IsPlayerInSight()
+    //{
+    //    Vector2 origin = transform.position;
+
+    //    if (_data.type == Type.Arbre)
+    //    {
+    //        Vector2 rightTarget = origin + Vector2.right * _data.detection.DistanceInSight;
+    //        Vector2 leftTarget = origin + Vector2.left * _data.detection.DistanceInSight;
+
+    //        Debug.DrawLine(origin, rightTarget, Color.red);
+    //        Debug.DrawLine(origin, leftTarget, Color.cyan);
+
+    //        RaycastHit2D hitFront = Physics2D.Raycast(origin, Vector2.right, _data.detection.DistanceInSight);
+    //        RaycastHit2D hitBack = Physics2D.Raycast(origin, Vector2.left, _data.detection.DistanceInSight);
+
+    //        return (hitFront.collider != null && hitFront.collider.CompareTag("Player")) ||
+    //               (hitBack.collider != null && hitBack.collider.CompareTag("Player"));
+    //    }
+    //    else
+    //    {
+    //        Vector2 direction = Vector2.right * directionX;
+    //        Vector2 target = origin + direction * _data.detection.DistanceInSight;
+
+    //        Debug.DrawLine(origin, target, Color.red);
+
+    //        RaycastHit2D hit = Physics2D.Raycast(origin, direction, _data.detection.DistanceInSight);
+
+    //        return hit.collider != null && hit.collider.CompareTag("Player");
+    //    }
+    //}
+
+
     // Check si l'ennemi peut attaquer
     private bool CanAttack()
     {
         // pareil qu'au dessus mais cette fois ci avec la distance d'attaque
 
         float checkposition;
-        if (data.type == "Arbre") 
+        if (_data.type == Type.Arbre)
             checkposition = transform.position.x;
         else
-            checkposition = transform.position.x + data.detection.AttackDistance / 2 * directionX; 
+            checkposition = transform.position.x + _data.detection.AttackDistance / 2 * directionX;
 
         Vector3 sightTransform = new Vector3(checkposition, transform.position.y, transform.position.z);
 
-        Collider2D[] targets = Physics2D.OverlapBoxAll(sightTransform, new Vector2(data.detection.AttackDistance, transform.localScale.y + 2f), 0);
+        Collider2D[] targets = Physics2D.OverlapBoxAll(sightTransform, new Vector2(_data.detection.AttackDistance, transform.localScale.y + 2f), 0);
 
         foreach (Collider2D target in targets)
         {
@@ -298,14 +336,46 @@ public class EnemyController : MonoBehaviour
         return false;
     }
 
+    //private bool CanAttack()
+    //{
+    //    Vector2 origin = transform.position;
+
+    //    if (_data.type == Type.Arbre)
+    //    {
+    //        Vector2 rightTarget = origin + Vector2.right * _data.detection.AttackDistance;
+    //        Vector2 leftTarget = origin + Vector2.left * _data.detection.AttackDistance;
+
+    //        Debug.DrawLine(origin, rightTarget, Color.yellow);
+    //        Debug.DrawLine(origin, leftTarget, Color.green);
+
+    //        RaycastHit2D hitFront = Physics2D.Raycast(origin, Vector2.right, _data.detection.AttackDistance);
+    //        RaycastHit2D hitBack = Physics2D.Raycast(origin, Vector2.left, _data.detection.AttackDistance);
+
+    //        return (hitFront.collider != null && hitFront.collider.CompareTag("Player")) ||
+    //               (hitBack.collider != null && hitBack.collider.CompareTag("Player"));
+    //    }
+    //    else
+    //    {
+    //        Vector2 direction = Vector2.right * directionX;
+    //        Vector2 target = origin + direction * _data.detection.AttackDistance;
+
+    //        Debug.DrawLine(origin, target, Color.yellow);
+
+    //        RaycastHit2D hit = Physics2D.Raycast(origin, direction, _data.detection.AttackDistance);
+
+    //        return hit.collider != null && hit.collider.CompareTag("Player");
+    //    }
+    //}
+
+
     IEnumerator FeedBackDisplay(Sprite feedback)
     {
-        CanDisplayFeedBack = false;
-        feedbackImage.GetComponent<Image>().sprite = feedback;
-        feedbackImage.SetActive(true);
+        _canDisplayFeedBack = false;
+        _feedbackImage.GetComponent<Image>().sprite = feedback;
+        _feedbackImage.SetActive(true);
 
         yield return new WaitForSeconds(2f);
-        feedbackImage.SetActive(false);
+        _feedbackImage.SetActive(false);
     }
 
 
@@ -386,14 +456,14 @@ public class EnemyController : MonoBehaviour
 
         CanCharge = false;
 
-        StartCoroutine(FeedBackDisplay(HUDManager.Instance.interrogation));
+        StartCoroutine(FeedBackDisplay(HUDManager.Instance.Interrogation));
 
         yield return new WaitForSeconds(4f);
 
         _state = STATE.IDLE;
 
         StopCoroutine(TimeToCharge());
-        CanDisplayFeedBack = true;
+        _canDisplayFeedBack = true;
 
         isInCharge = false;
         CanCharge = true;
@@ -422,7 +492,7 @@ public class EnemyController : MonoBehaviour
             if (controller != null)
             {
                 controller.SetDirection(directionX * Vector2.right);
-                FireCoolDownTimer = data.stats.AttackCooldown;
+                FireCoolDownTimer = _data.stats.AttackCooldown;
             }
             else
             {
@@ -442,21 +512,21 @@ public class EnemyController : MonoBehaviour
     // --------------------------- DEBUG ----------------------------
     private void OnDrawGizmos()
     {
-        if (data != null)
+        if (_data != null)
         {
             float checkposition;
-            if (data.type == "Arbre") // on check devant et derriere !
+            if (_data.type == Type.Arbre) // on check devant et derriere !
                 checkposition = transform.position.x;
             else
-                checkposition = transform.position.x + data.detection.DistanceInSight / 2 * directionX;
+                checkposition = transform.position.x + _data.detection.DistanceInSight / 2 * directionX;
 
             Vector3 sightTransform = new Vector3(checkposition, transform.position.y, transform.position.z);
             Gizmos.color = Color.red;
-            Gizmos.DrawWireCube(sightTransform, new Vector3(data.detection.DistanceInSight * directionX, transform.localScale.y + 2f, 1f));
+            Gizmos.DrawWireCube(sightTransform, new Vector3(_data.detection.DistanceInSight * directionX, 2f, 1f));
 
-            //Vector3 attackTransform = new Vector3(transform.position.x + data.detection.AttackDistance / 2 * directionX, transform.position.y, transform.position.z);
+            //Vector3 attackTransform = new Vector3(transform.position.x + _data.detection.AttackDistance / 2 * directionX, transform.position.y, transform.position.z);
             //Gizmos.color = Color.blue;
-            //Gizmos.DrawWireCube(attackTransform, new Vector3(data.detection.AttackDistance * directionX, transform.localScale.y + 2f, 1f));
+            //Gizmos.DrawWireCube(attackTransform, new Vector3(_data.detection.AttackDistance * directionX, transform.localScale.y / 2f, 1f));
         }
     }
 }

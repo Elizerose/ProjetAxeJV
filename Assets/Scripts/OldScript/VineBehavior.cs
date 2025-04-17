@@ -32,11 +32,12 @@ public class VineBehavior : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        PlayerController.Instance.isOnVine = true;
+        //PlayerController.Instance.isOnVine = true;
 
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.transform.SetParent(transform.parent, true);
+            collision.GetComponent<Rigidbody2D>().gravityScale = 0;
             collision.transform.rotation = Quaternion.identity;
         }
     }
@@ -46,9 +47,10 @@ public class VineBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.transform.SetParent(null);
+            collision.GetComponent<Rigidbody2D>().gravityScale = 1;
             collision.transform.rotation = Quaternion.Euler(0, 0, 0);
 
-            PlayerController.Instance.isOnVine = false;
+            //PlayerController.Instance.isOnVine = false;
         }
     }
 

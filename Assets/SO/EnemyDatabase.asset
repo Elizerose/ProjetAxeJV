@@ -13,40 +13,40 @@ MonoBehaviour:
   m_Name: EnemyDatabase
   m_EditorClassIdentifier: 
   datas:
-  - type: Garde
+  - type: 0
     stats:
       pv: 5
       speed: 4
       AttackCooldown: 0
-    sprite: {fileID: 21300000, guid: a5892a0f47978cd4db03a71abbd7a8fc, type: 3}
+    sprite: {fileID: 815424164945274260, guid: 58ced4b4a477b3b4a912dc52b2872805, type: 3}
     waitTimePatroll: 5
     scale: 8
     detection:
       AttackDistance: 2
       DistanceInSight: 5
-  - type: Poisson
+  - type: 3
     stats:
       pv: 0
-      speed: 0
+      speed: 1
       AttackCooldown: 0
-    sprite: {fileID: 8966945178157639174, guid: 1ee558d33cef0a6478cf5c4764577ca0, type: 3}
-    waitTimePatroll: 1
+    sprite: {fileID: -4815392422137678508, guid: a40c601fee387284ea59c52be75c1f97, type: 3}
+    waitTimePatroll: 2
     scale: 0.1
     detection:
       AttackDistance: 0
       DistanceInSight: 0
-  - type: Arbre
+  - type: 1
     stats:
       pv: 10
       speed: 0
       AttackCooldown: 3.5
-    sprite: {fileID: 4787803259941035902, guid: 59779e7bd383f0f4dbc962a7d4fdcc24, type: 3}
+    sprite: {fileID: 7311913477826023045, guid: 495ae8b6623d38f428ccb97b3e94dba2, type: 3}
     waitTimePatroll: 0
     scale: 8.5
     detection:
       AttackDistance: 12
       DistanceInSight: 12
-  - type: Barbare
+  - type: 2
     stats:
       pv: 15
       speed: 4

@@ -8,7 +8,7 @@ public class EnemyDatabase : ScriptableObject
 {
     [SerializeField] private List<EnemyData> datas = new();
 
-    public EnemyData GetData(string type)
+    public EnemyData GetData(Type type)
     {
         // On checher l'ennemi avec son type plutot que l'id (plus pratique)
         foreach (EnemyData data in datas)

@@ -1,23 +1,15 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 /// <summary>
 /// 
-/// Class ColorPowerController :  gère l'USP 
-/// 
-/// Gestion de l'UI : 
-///     
-///     - InvokeColorPalette() -> Gestion de l'affichage des couleurs
-///     - RotatePalette(int direction) -> Gestion de la rotation et des nouvelles variables
-///     - IEnumerator Rotation(float angle) -> Gestion de l'animation de rotation
-///     
-/// Gestion des pouvoirs : 
-/// 
-///     
+///  gère la palette de couleur et la selection de la couleur
 /// 
 /// </summary>
 
@@ -32,12 +24,21 @@ public class ColorPowerController : MonoBehaviour
     [SerializeField] private GameObject _palette;
     [SerializeField] private GameObject _palettePanel;
 
+    [SerializeField] private GameObject _currentColorFeedback;
+
     private int _rotationStep = 90; // dans le cas d'un triangle
-    private int _currentIndexColor = 0;
+    [HideInInspector] public int _currentIndexColor = 0;
     private int _oldIndexColor;
     private bool _isRotating = false;
 
-    public bool isInColorChoice = false;
+    private Vector3 _startSize;
+    private Vector3 _endSize;
+
+    private Quaternion _startRotation;
+
+    public bool IsInColorChoice = false;
+
+    public bool CanInvokePaletteUnderWater = false;
 
     public enum ColorAbilities
     {
@@ -62,6 +63,7 @@ public class ColorPowerController : MonoBehaviour
     void Start()
     {
         _palettePanel.SetActive(false);
+        _currentColorFeedback.SetActive(false);
     }
 
     // Update is called once per frame
@@ -70,18 +72,25 @@ public class ColorPowerController : MonoBehaviour
         // Si on appuie sur E on active la roue de couleurs
         if (Input.GetKeyDown(KeyCode.E))
         {
-            isInColorChoice = !isInColorChoice;
-            _palettePanel.SetActive(isInColorChoice);
+            // si on est dans l'eau on ne peut pas invoquer la palette
+            if (GameManager.Instance.Player.GetComponent<Water>().InWater && !CanInvokePaletteUnderWater)
+            {
+                HUDManager.Instance.DisplayError("Vous ne pouvez pas invoquer la palette de couleurs dans l'eau ...");
+                return;
+            }
 
-            if (!isInColorChoice)
+
+            IsInColorChoice = !IsInColorChoice;
+            _palettePanel.SetActive(IsInColorChoice);
+
+            // Si on a choisit, on envoie la couleur a PlayerAbilities pour qu'il declenche le pouvoir correspondant
+            if (!IsInColorChoice)
                 GameManager.Instance.Player.GetComponent<PlayerAbilities>().SetAbility((ColorAbilities)_currentIndexColor);
         }
 
-        if (isInColorChoice &&!_isRotating)
+        if (IsInColorChoice && !_isRotating)
             InvokeColorPalette();
     }
-
-
 
     private void InvokeColorPalette()
     {
@@ -98,6 +107,7 @@ public class ColorPowerController : MonoBehaviour
         }
     }
 
+    // tourner la palette
     private void RotatePalette(int direction)
     {
         _oldIndexColor = _currentIndexColor;
@@ -110,29 +120,62 @@ public class ColorPowerController : MonoBehaviour
         _isRotating = true;
         float duration = 0.2f;
 
-        Quaternion startRotation = _palette.transform.rotation;
-        Quaternion endRotation = startRotation * Quaternion.Euler(0f, 0f, angle); // * entre deux rotation = +
+        _startRotation = _palette.transform.rotation;
+        Quaternion endRotation = _startRotation * Quaternion.Euler(0f, 0f, angle); // * entre deux rotation = +
 
-        Vector3 startSize = _colorsList[_currentIndexColor].transform.localScale;
-        Vector3 EndSize = startSize + new Vector3(0.2f, 0.2f, 0.2f);
+        _startSize = _colorsList[_currentIndexColor].transform.localScale;
+        _endSize = _startSize + new Vector3(0.2f, 0.2f, 0.2f);
 
+        // rotation progressive 
         for (float time = 0f; time < duration; time += Time.deltaTime)
         {
-            _palette.transform.rotation = Quaternion.Slerp(startRotation, endRotation, time / duration);
-            _colorsList[_currentIndexColor].transform.localScale = Vector3.Lerp(startSize, EndSize, time / duration);
+            _palette.transform.rotation = Quaternion.Slerp(_startRotation, endRotation, time / duration);
+            _colorsList[_currentIndexColor].transform.localScale = Vector3.Lerp(_startSize, _endSize, time / duration);
 
 
-            // resize the old color
-            _colorsList[_oldIndexColor].transform.localScale = Vector3.Lerp(EndSize, startSize, time / duration);
+            // resize la old color
+            _colorsList[_oldIndexColor].transform.localScale = Vector3.Lerp(_endSize, _startSize, time / duration);
 
             yield return null;
         }
 
         _palette.transform.rotation = endRotation;
-        _colorsList[_currentIndexColor].transform.localScale = EndSize;
-        _colorsList[_oldIndexColor].transform.localScale = startSize;
+        _colorsList[_currentIndexColor].transform.localScale = _endSize;
+        _colorsList[_oldIndexColor].transform.localScale = _startSize;
 
         _isRotating = false;
     }
+
+    // Remettre la current color power a none
+    public void ResetPower()
+    {
+        _currentIndexColor = 0;
+        _palette.transform.rotation = Quaternion.Euler(0f, 0f, -45f);
+
+        for (int i = 0; i < _colorsList.Count; i++)
+        {
+            _colorsList[i].transform.localScale = _startSize;
+        }
+
+        _colorsList[_currentIndexColor].transform.localScale = _endSize;
+    }
+
+
+    // achier visuellement la couleur active
+    public void ShowCurrentColor()
+    {
+        _currentColorFeedback.GetComponent<Image>().color = _colorsList[_currentIndexColor].GetComponent<Image>().color;
+
+        if (_currentIndexColor == 0)
+        {
+            _currentColorFeedback.SetActive(false);
+        } else
+        {
+            _currentColorFeedback.SetActive(true);
+        }
+        
+        
+    }
+
 
 }

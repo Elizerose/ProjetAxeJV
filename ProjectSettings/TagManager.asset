@@ -8,6 +8,7 @@ TagManager:
   - Slope
   - Vine
   - BVine
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -56,6 +57,12 @@ TagManager:
     locked: 0
   - name: Rock
     uniqueID: 4017162087
+    locked: 0
+  - name: enemy
+    uniqueID: 650732577
+    locked: 0
+  - name: player
+    uniqueID: 94501177
     locked: 0
   m_RenderingLayers:
   - Default

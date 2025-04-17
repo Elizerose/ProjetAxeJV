@@ -1,5 +1,7 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
@@ -9,12 +11,23 @@ public class HUDManager : MonoBehaviour
 
     [Header("ENNEMIES HUD")]
 
-    public Sprite exclamation;
-    public Sprite interrogation;
+    public Sprite Exclamation;
+    public Sprite Interrogation;
 
     [Header("USP COLOR PALETTE")]
+    public GameObject PowerTimer;
 
-    public GameObject ColorsContainer;
+    [Header("OXYGENE")]
+
+    public GameObject OxygeneTimerGO;
+
+
+    [Header("DEATH")]
+    public GameObject DeathPanel;
+
+    [Header("INFOS")]
+    public GameObject TextInfos;
+    private bool _isDisplaying;
 
 
     private void Awake()
@@ -27,8 +40,26 @@ public class HUDManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // e activer la roue : pas de deplacement pendant la roue activée
+    private void Start()
+    {
+        OxygeneTimerGO.SetActive(false);
+    }
 
+    // Fonction qui affiche des petits messages d'erreur (ex : vous ne pouvez pas placer le bloc ici ... )
+    public void DisplayError(string error)
+    {
+        TextInfos.GetComponent<Text>().text = error;
+        if (!_isDisplaying)
+            StartCoroutine(DelayToDisplay());
+    }
 
-
+    // Delai d'affichage
+    IEnumerator DelayToDisplay()
+    {
+        _isDisplaying = true;
+        TextInfos.GetComponent<Animator>().SetTrigger("FadeIn");
+        yield return new WaitForSeconds(2.5f);
+        TextInfos.GetComponent<Animator>().SetTrigger("FadeOut");
+        _isDisplaying = false;
+    }
 }

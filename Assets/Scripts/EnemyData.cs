@@ -2,6 +2,15 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+public enum Type
+{
+    Garde,
+    Arbre,
+    Barbare,
+    Poisson
+}
+
 [Serializable]
 public struct EnemyStats
 {
@@ -35,7 +44,10 @@ public struct EnemyDetection
 [Serializable]
 public class EnemyData
 {
-    public string type;
+    
+
+    public Type type;
+
 
     [Header("STATS")]
     public EnemyStats stats;

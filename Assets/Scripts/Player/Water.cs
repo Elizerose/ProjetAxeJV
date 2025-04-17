@@ -1,16 +1,26 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+using static ColorPowerController;
+using static GameManager;
 
 public class Water : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public bool CanSwim = true;
+    private bool CanSwim = true;
     public bool InWater = false;
-    public float ImpulseSpeed = 3f;
-    public float WaterGrav = 0.1f;
+    private float ImpulseSpeed = 3f;
+    private float WaterGrav = 0.1f;
     private float NormalGrav;
     private bool CanImpulse = true;
-    public float ImpulseCDTime = 0.35f;
+    private float ImpulseCDTime = 0.35f;
+
+
+    private float OxygeneTimer;
+    public bool CanBreatheUnderWater = false;
+
+
+
 
     void Start()
     {
@@ -23,6 +33,32 @@ public class Water : MonoBehaviour
         if (InWater && Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(Swim());
+        }
+        if (InWater)
+        {
+            if (!CanBreatheUnderWater)
+            {
+                HUDManager.Instance.OxygeneTimerGO.SetActive(true);
+                HUDManager.Instance.OxygeneTimerGO.GetComponent<Text>().text = ((int)OxygeneTimer).ToString();
+                OxygeneTimer -= Time.deltaTime;
+                if (OxygeneTimer <= 0)
+                {
+                    GameManager.Instance.Death(DeathCauses.Water);
+                    OxygeneTimer = 25f;
+                }
+                
+            }
+            else
+            {
+                HUDManager.Instance.OxygeneTimerGO.SetActive(false);
+            }
+            
+                
+        } 
+        else
+        {
+            HUDManager.Instance.OxygeneTimerGO.SetActive(false);
+            OxygeneTimer = 25f;
         }
     }
 
@@ -46,9 +82,9 @@ public class Water : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void EnterWater()
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Water") && CanSwim)
+        if (CanSwim)
         {
             InWater = true;
             rb.gravityScale = WaterGrav;
@@ -57,9 +93,9 @@ public class Water : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void ExitWater()
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Water") && CanSwim)
+        if (CanSwim)
         {
             InWater = false;
             rb.gravityScale = NormalGrav;
