@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("MOVE")]
     [SerializeField]private float moveSpeed;
-    private bool _isFacingRight = true;
+    public bool IsFacingRight = true;
 
     [Header("JUMP")]
     [SerializeField] private float jumpForce;
@@ -122,9 +122,9 @@ public class PlayerController : MonoBehaviour
     void Flip()
     {
         // Flip
-        if ((_isFacingRight && Input.GetAxis("Horizontal") < 0f || !_isFacingRight && Input.GetAxis("Horizontal") > 0f))
+        if ((IsFacingRight && Input.GetAxis("Horizontal") < 0f || !IsFacingRight && Input.GetAxis("Horizontal") > 0f))
         {
-            _isFacingRight = !_isFacingRight;
+            IsFacingRight = !IsFacingRight;
             Vector3 localscale = transform.localScale;
             localscale.x *= -1f;
             transform.localScale = localscale;

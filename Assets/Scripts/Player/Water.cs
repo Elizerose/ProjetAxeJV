@@ -71,14 +71,21 @@ public class Water : MonoBehaviour
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
 
+
             if (horizontal != 0 || vertical != 0)
             {
                 Debug.Log("swim");
                 rb.linearVelocity = new Vector2(horizontal * ImpulseSpeed, vertical * ImpulseSpeed);
             }
+            
+
             yield return new WaitForSeconds(ImpulseCDTime);
             CanImpulse = true;
+
+            
         }
+
+        GetComponent<Movements>().Flip();
 
     }
 

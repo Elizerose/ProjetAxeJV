@@ -49,13 +49,10 @@ public class PlayerAbilities : MonoBehaviour
 
     public void SetAbility(ColorAbilities ability)
     {
+
         CurrentAbility = ability;
         ColorPowerController.Instance.ShowCurrentColor();
     }
-
-
-
-
 
     public void Update()
     {
@@ -129,7 +126,7 @@ public class PlayerAbilities : MonoBehaviour
         float offsetY = -(playerHeight / 2f) + (platformHeight / 2f);
 
         // Calcul de la starting Position (position du joueur + 2f de decalage)
-        _startingPosition = transform.position + new Vector3(offsetX * currentPlayerDirection, offsetY - 0.2f, 0);
+        _startingPosition = transform.position + new Vector3(offsetX * currentPlayerDirection, offsetY - 0.1f, 0);
 
         // Si on a pas déjà invoqué la plateforme
         if (!_hasInvoke)
@@ -230,6 +227,8 @@ public class PlayerAbilities : MonoBehaviour
             ResetPower();
         }
     }
+
+    // --------------------------- Reference au current object et gestion apres placement a faire dans un script a part ---------------------
      
     // Délai de destruction
     private IEnumerator TimeToDestroy(float delay)

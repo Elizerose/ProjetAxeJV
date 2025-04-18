@@ -492,6 +492,7 @@ public class EnemyController : MonoBehaviour
             if (controller != null)
             {
                 controller.SetDirection(directionX * Vector2.right);
+                controller.SetTarget("Player");
                 FireCoolDownTimer = _data.stats.AttackCooldown;
             }
             else

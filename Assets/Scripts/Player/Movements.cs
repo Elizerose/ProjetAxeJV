@@ -7,7 +7,10 @@ public class Movements : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 PlayerScale;
     private Animator _animator;
-    
+
+    private bool _isFacingRight = true;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,11 +35,25 @@ public class Movements : MonoBehaviour
 
         _animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
 
-        if (horizontalInput > 0)
-            transform.localScale = new Vector3(PlayerScale.x, PlayerScale.y, PlayerScale.z);
-        else if (horizontalInput < 0)
-            transform.localScale = new Vector3(-PlayerScale.x, PlayerScale.y, PlayerScale.z);
+        //if (horizontalInput > 0)
+        //    transform.localScale = new Vector3(PlayerScale.x, PlayerScale.y, PlayerScale.z);
+        //else if (horizontalInput < 0)
+        //    transform.localScale = new Vector3(-PlayerScale.x, PlayerScale.y, PlayerScale.z);
 
+        Flip();
+
+    }
+
+    public void Flip()
+    {
+        // Flip
+        if ((_isFacingRight && Input.GetAxis("Horizontal") < 0f || !_isFacingRight && Input.GetAxis("Horizontal") > 0f))
+        {
+            _isFacingRight = !_isFacingRight;
+            Vector3 localscale = transform.localScale;
+            localscale.x *= -1f;
+            transform.localScale = localscale;
+        }
     }
 
     bool CheckIfGround()
