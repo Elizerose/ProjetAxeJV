@@ -255,117 +255,117 @@ public class EnemyController : MonoBehaviour
     // --------------------------- CHECKS ----------------------------
 
     // Check si le player est en vue 
-    private bool IsPlayerInSight()
-    {
-        // on défini la 'position de centre' d'ou va se creer notre boite invisible pour regarder si le joueur est dedans
-        float checkposition;
-        if (_data.type == Type.Arbre) // on check devant et derriere si c'est un arbre donc on part du milieu de son transform
-            checkposition = transform.position.x;
-        else
-            checkposition = transform.position.x + _data.detection.DistanceInSight / 2 * directionX; // Sinon, on prend le milieu entre le personnage et sa distance a verifier pour que la distance se creer bien de l'ennemi à la distance voulu * la direction (l'orientation de l'ennemi = devant lui)
-
-        // On cree un vecteur X correspondant
-        Vector3 sightTransform = new Vector3(checkposition, transform.position.y, transform.position.z);
-
-        // On cree notre boite invisible pour detecter le joueur
-        Collider2D[] targets = Physics2D.OverlapBoxAll(sightTransform, new Vector2(_data.detection.DistanceInSight, transform.localScale.y), 0);
-
-        // Si le player est détécté dans cette box, le joueur est en vue, on return true, sinon false
-        foreach (Collider2D target in targets)
-        {
-            if (target.CompareTag("Player"))
-                return true;
-        }
-
-        return false;
-    }
-
     //private bool IsPlayerInSight()
     //{
-    //    Vector2 origin = transform.position;
-
-    //    if (_data.type == Type.Arbre)
-    //    {
-    //        Vector2 rightTarget = origin + Vector2.right * _data.detection.DistanceInSight;
-    //        Vector2 leftTarget = origin + Vector2.left * _data.detection.DistanceInSight;
-
-    //        Debug.DrawLine(origin, rightTarget, Color.red);
-    //        Debug.DrawLine(origin, leftTarget, Color.cyan);
-
-    //        RaycastHit2D hitFront = Physics2D.Raycast(origin, Vector2.right, _data.detection.DistanceInSight);
-    //        RaycastHit2D hitBack = Physics2D.Raycast(origin, Vector2.left, _data.detection.DistanceInSight);
-
-    //        return (hitFront.collider != null && hitFront.collider.CompareTag("Player")) ||
-    //               (hitBack.collider != null && hitBack.collider.CompareTag("Player"));
-    //    }
+    //    // on défini la 'position de centre' d'ou va se creer notre boite invisible pour regarder si le joueur est dedans
+    //    float checkposition;
+    //    if (_data.type == Type.Arbre) // on check devant et derriere si c'est un arbre donc on part du milieu de son transform
+    //        checkposition = transform.position.x;
     //    else
+    //        checkposition = transform.position.x + _data.detection.DistanceInSight / 2 * directionX; // Sinon, on prend le milieu entre le personnage et sa distance a verifier pour que la distance se creer bien de l'ennemi à la distance voulu * la direction (l'orientation de l'ennemi = devant lui)
+
+    //    // On cree un vecteur X correspondant
+    //    Vector3 sightTransform = new Vector3(checkposition, transform.position.y, transform.position.z);
+
+    //    // On cree notre boite invisible pour detecter le joueur
+    //    Collider2D[] targets = Physics2D.OverlapBoxAll(sightTransform, new Vector2(_data.detection.DistanceInSight, transform.localScale.y), 0);
+
+    //    // Si le player est détécté dans cette box, le joueur est en vue, on return true, sinon false
+    //    foreach (Collider2D target in targets)
     //    {
-    //        Vector2 direction = Vector2.right * directionX;
-    //        Vector2 target = origin + direction * _data.detection.DistanceInSight;
-
-    //        Debug.DrawLine(origin, target, Color.red);
-
-    //        RaycastHit2D hit = Physics2D.Raycast(origin, direction, _data.detection.DistanceInSight);
-
-    //        return hit.collider != null && hit.collider.CompareTag("Player");
+    //        if (target.CompareTag("Player"))
+    //            return true;
     //    }
+
+    //    return false;
     //}
+
+    private bool IsPlayerInSight()
+    {
+        Vector2 origin = transform.position;
+
+        if (_data.type == Type.Arbre)
+        {
+            Vector2 rightTarget = origin + Vector2.right * _data.detection.DistanceInSight;
+            Vector2 leftTarget = origin + Vector2.left * _data.detection.DistanceInSight;
+
+            Debug.DrawLine(origin, rightTarget, Color.red);
+            Debug.DrawLine(origin, leftTarget, Color.cyan);
+
+            RaycastHit2D hitFront = Physics2D.Raycast(origin, Vector2.right, _data.detection.DistanceInSight);
+            RaycastHit2D hitBack = Physics2D.Raycast(origin, Vector2.left, _data.detection.DistanceInSight);
+
+            return (hitFront.collider != null && hitFront.collider.CompareTag("Player")) ||
+                   (hitBack.collider != null && hitBack.collider.CompareTag("Player"));
+        }
+        else
+        {
+            Vector2 direction = Vector2.right * directionX;
+            Vector2 target = origin + direction * _data.detection.DistanceInSight;
+
+            Debug.DrawLine(origin, target, Color.red);
+
+            RaycastHit2D hit = Physics2D.Raycast(origin, direction, _data.detection.DistanceInSight);
+
+            return hit.collider != null && hit.collider.CompareTag("Player");
+        }
+    }
 
 
     // Check si l'ennemi peut attaquer
-    private bool CanAttack()
-    {
-        // pareil qu'au dessus mais cette fois ci avec la distance d'attaque
-
-        float checkposition;
-        if (_data.type == Type.Arbre)
-            checkposition = transform.position.x;
-        else
-            checkposition = transform.position.x + _data.detection.AttackDistance / 2 * directionX;
-
-        Vector3 sightTransform = new Vector3(checkposition, transform.position.y, transform.position.z);
-
-        Collider2D[] targets = Physics2D.OverlapBoxAll(sightTransform, new Vector2(_data.detection.AttackDistance, transform.localScale.y + 2f), 0);
-
-        foreach (Collider2D target in targets)
-        {
-            if (target.CompareTag("Player"))
-                return true;
-        }
-
-        return false;
-    }
-
     //private bool CanAttack()
     //{
-    //    Vector2 origin = transform.position;
+    //    // pareil qu'au dessus mais cette fois ci avec la distance d'attaque
 
+    //    float checkposition;
     //    if (_data.type == Type.Arbre)
-    //    {
-    //        Vector2 rightTarget = origin + Vector2.right * _data.detection.AttackDistance;
-    //        Vector2 leftTarget = origin + Vector2.left * _data.detection.AttackDistance;
-
-    //        Debug.DrawLine(origin, rightTarget, Color.yellow);
-    //        Debug.DrawLine(origin, leftTarget, Color.green);
-
-    //        RaycastHit2D hitFront = Physics2D.Raycast(origin, Vector2.right, _data.detection.AttackDistance);
-    //        RaycastHit2D hitBack = Physics2D.Raycast(origin, Vector2.left, _data.detection.AttackDistance);
-
-    //        return (hitFront.collider != null && hitFront.collider.CompareTag("Player")) ||
-    //               (hitBack.collider != null && hitBack.collider.CompareTag("Player"));
-    //    }
+    //        checkposition = transform.position.x;
     //    else
+    //        checkposition = transform.position.x + _data.detection.AttackDistance / 2 * directionX;
+
+    //    Vector3 sightTransform = new Vector3(checkposition, transform.position.y, transform.position.z);
+
+    //    Collider2D[] targets = Physics2D.OverlapBoxAll(sightTransform, new Vector2(_data.detection.AttackDistance, transform.localScale.y + 2f), 0);
+
+    //    foreach (Collider2D target in targets)
     //    {
-    //        Vector2 direction = Vector2.right * directionX;
-    //        Vector2 target = origin + direction * _data.detection.AttackDistance;
-
-    //        Debug.DrawLine(origin, target, Color.yellow);
-
-    //        RaycastHit2D hit = Physics2D.Raycast(origin, direction, _data.detection.AttackDistance);
-
-    //        return hit.collider != null && hit.collider.CompareTag("Player");
+    //        if (target.CompareTag("Player"))
+    //            return true;
     //    }
+
+    //    return false;
     //}
+
+    private bool CanAttack()
+    {
+        Vector2 origin = transform.position;
+
+        if (_data.type == Type.Arbre)
+        {
+            Vector2 rightTarget = origin + Vector2.right * _data.detection.AttackDistance;
+            Vector2 leftTarget = origin + Vector2.left * _data.detection.AttackDistance;
+
+            Debug.DrawLine(origin, rightTarget, Color.yellow);
+            Debug.DrawLine(origin, leftTarget, Color.green);
+
+            RaycastHit2D hitFront = Physics2D.Raycast(origin, Vector2.right, _data.detection.AttackDistance);
+            RaycastHit2D hitBack = Physics2D.Raycast(origin, Vector2.left, _data.detection.AttackDistance);
+
+            return (hitFront.collider != null && hitFront.collider.CompareTag("Player")) ||
+                   (hitBack.collider != null && hitBack.collider.CompareTag("Player"));
+        }
+        else
+        {
+            Vector2 direction = Vector2.right * directionX;
+            Vector2 target = origin + direction * _data.detection.AttackDistance;
+
+            Debug.DrawLine(origin, target, Color.yellow);
+
+            RaycastHit2D hit = Physics2D.Raycast(origin, direction, _data.detection.AttackDistance);
+
+            return hit.collider != null && hit.collider.CompareTag("Player");
+        }
+    }
 
 
     IEnumerator FeedBackDisplay(Sprite feedback)
@@ -511,23 +511,23 @@ public class EnemyController : MonoBehaviour
 
 
     // --------------------------- DEBUG ----------------------------
-    private void OnDrawGizmos()
-    {
-        if (_data != null)
-        {
-            float checkposition;
-            if (_data.type == Type.Arbre) // on check devant et derriere !
-                checkposition = transform.position.x;
-            else
-                checkposition = transform.position.x + _data.detection.DistanceInSight / 2 * directionX;
+    //private void OnDrawGizmos()
+    //{
+    //    if (_data != null)
+    //    {
+    //        float checkposition;
+    //        if (_data.type == Type.Arbre) // on check devant et derriere !
+    //            checkposition = transform.position.x;
+    //        else
+    //            checkposition = transform.position.x + _data.detection.DistanceInSight / 2 * directionX;
 
-            Vector3 sightTransform = new Vector3(checkposition, transform.position.y, transform.position.z);
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireCube(sightTransform, new Vector3(_data.detection.DistanceInSight * directionX, 2f, 1f));
+    //        Vector3 sightTransform = new Vector3(checkposition, transform.position.y, transform.position.z);
+    //        Gizmos.color = Color.red;
+    //        Gizmos.DrawWireCube(sightTransform, new Vector3(_data.detection.DistanceInSight * directionX, 2f, 1f));
 
-            //Vector3 attackTransform = new Vector3(transform.position.x + _data.detection.AttackDistance / 2 * directionX, transform.position.y, transform.position.z);
-            //Gizmos.color = Color.blue;
-            //Gizmos.DrawWireCube(attackTransform, new Vector3(_data.detection.AttackDistance * directionX, transform.localScale.y / 2f, 1f));
-        }
-    }
+    //        //Vector3 attackTransform = new Vector3(transform.position.x + _data.detection.AttackDistance / 2 * directionX, transform.position.y, transform.position.z);
+    //        //Gizmos.color = Color.blue;
+    //        //Gizmos.DrawWireCube(attackTransform, new Vector3(_data.detection.AttackDistance * directionX, transform.localScale.y / 2f, 1f));
+    //    }
+    //}
 }
