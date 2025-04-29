@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Balance : MonoBehaviour
@@ -20,7 +21,7 @@ public class Balance : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("BVine") && hinge == null)
+        if (collision.gameObject.CompareTag("BVine") && hinge == null && IsSwinging == false)
         {
             Attach(collision.gameObject);
         }
@@ -48,7 +49,13 @@ public class Balance : MonoBehaviour
         {
             Destroy(hinge);
             hinge = null; 
-            IsSwinging = false;
+            StartCoroutine(CD());
         }
+    }
+
+    private IEnumerator CD()
+    {
+        yield return new WaitForSeconds(1f);
+        IsSwinging = false;
     }
 }

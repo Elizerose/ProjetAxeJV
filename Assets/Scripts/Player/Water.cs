@@ -11,6 +11,7 @@ public class Water : MonoBehaviour
     private float NormalGrav;
     private bool CanImpulse = true;
     public float ImpulseCDTime = 0.35f;
+    public ParticleSystem BubbleEffect;
 
     void Start()
     {
@@ -51,6 +52,7 @@ public class Water : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Water") && CanSwim)
         {
             InWater = true;
+            BubbleEffect.gameObject.SetActive(true);
             rb.gravityScale = WaterGrav;
             rb.linearVelocity = Vector2.zero;
 
@@ -61,6 +63,7 @@ public class Water : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Water") && CanSwim)
         {
+            BubbleEffect.gameObject.SetActive(false);
             InWater = false;
             rb.gravityScale = NormalGrav;
         }

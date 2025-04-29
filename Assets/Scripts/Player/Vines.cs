@@ -15,7 +15,7 @@ public class Vines : MonoBehaviour
 
     void Update()
     {
-        if (isTouchingVine && (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Space)))
+        if (isTouchingVine && Input.GetKeyDown(KeyCode.Space))
         {
             IsClimbing = !IsClimbing; 
             rb.gravityScale = IsClimbing ? 0 : 1;
@@ -25,12 +25,9 @@ public class Vines : MonoBehaviour
         if (IsClimbing)
         {
             float vertical = Input.GetAxisRaw("Vertical");
-            rb.linearVelocity = new Vector2(0, vertical * ClimbSpeed);
+            float horizontal = Input.GetAxisRaw("Horizontal");
 
-            if (currentVine != null)
-            {
-                transform.position = new Vector2(currentVine.position.x, transform.position.y);
-            }
+            rb.linearVelocity = new Vector2(horizontal * ClimbSpeed, vertical * ClimbSpeed);
         }
     }
 
