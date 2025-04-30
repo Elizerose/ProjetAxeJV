@@ -17,12 +17,12 @@ public class Checks : MonoBehaviour
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer != LayerMask.NameToLayer("Ground"))
-            GameManager.Instance.Player.GetComponent<PlayerAbilities>()._canPlace = false;
+            GameManager.Instance.Player.GetComponent<PlateformPlacement>()._canPlace = false;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.layer != LayerMask.NameToLayer("Ground"))
-            GameManager.Instance.Player.GetComponent<PlayerAbilities>()._canPlace = true;
+            GameManager.Instance.Player.GetComponent<PlateformPlacement>()._canPlace = true;
     }
 }

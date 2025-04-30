@@ -2,7 +2,6 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-
 public enum Type
 {
     Garde,
@@ -42,18 +41,15 @@ public struct EnemyDetection
 }
 
 [Serializable]
-public class EnemyData
+public class EnemyData : BaseData
 {
-    
-
     public Type type;
-
 
     [Header("STATS")]
     public EnemyStats stats;
 
     [Header("SETUP")]
-    public Sprite sprite;
+
     public float waitTimePatroll;
     public float scale;
 

@@ -31,7 +31,9 @@ public class PlateformesData
 {
     public ColorPowerController.ColorAbilities color;
 
+    public Color PowerColor;
     public GameObject Prefab;
     public float AutoDestroyTimer;
     public bool Istrigger;
+
 }

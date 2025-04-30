@@ -1,4 +1,5 @@
 using UnityEngine;
+using static ColorPowerController;
 using static PlateformesDataBase;
 
 /// <summary>
@@ -12,6 +13,7 @@ public class DatabaseManager : MonoBehaviour
 
     [SerializeField] private EnemyDatabase _enemyDatabase;
     [SerializeField] private PlateformesDataBase _plateformesDataBase;
+    [SerializeField] private ItemDatabase _itemDataBase;
 
     private void Awake()
     {
@@ -25,7 +27,10 @@ public class DatabaseManager : MonoBehaviour
 
     public EnemyData GetData(Type type)  => _enemyDatabase.GetData(type);
 
-    public PlateformesData GetPlateformesData(ColorPowerController.ColorAbilities color) => _plateformesDataBase.GetData(color);
+    public PlateformesData GetPlateformesData(ColorAbilities color) => _plateformesDataBase.GetData(color);
+
+    public ItemData GetItemData(ColorAbilities itemColor) => _itemDataBase.GetData(itemColor);
+
 
 
 }

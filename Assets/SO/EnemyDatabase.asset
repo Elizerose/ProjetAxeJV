@@ -13,45 +13,49 @@ MonoBehaviour:
   m_Name: EnemyDatabase
   m_EditorClassIdentifier: 
   datas:
-  - type: 0
+  - sprite: {fileID: 815424164945274260, guid: 58ced4b4a477b3b4a912dc52b2872805, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    type: 0
     stats:
       pv: 5
       speed: 4
       AttackCooldown: 0
-    sprite: {fileID: 815424164945274260, guid: 58ced4b4a477b3b4a912dc52b2872805, type: 3}
     waitTimePatroll: 5
     scale: 8
     detection:
       AttackDistance: 2
       DistanceInSight: 5
-  - type: 3
+  - sprite: {fileID: -4815392422137678508, guid: a40c601fee387284ea59c52be75c1f97, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    type: 3
     stats:
       pv: 0
       speed: 1
       AttackCooldown: 0
-    sprite: {fileID: -4815392422137678508, guid: a40c601fee387284ea59c52be75c1f97, type: 3}
     waitTimePatroll: 2
     scale: 0.1
     detection:
       AttackDistance: 0
       DistanceInSight: 0
-  - type: 1
+  - sprite: {fileID: 7311913477826023045, guid: 495ae8b6623d38f428ccb97b3e94dba2, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    type: 1
     stats:
       pv: 10
       speed: 0
       AttackCooldown: 3.5
-    sprite: {fileID: 7311913477826023045, guid: 495ae8b6623d38f428ccb97b3e94dba2, type: 3}
     waitTimePatroll: 0
     scale: 8.5
     detection:
       AttackDistance: 12
       DistanceInSight: 12
-  - type: 2
+  - sprite: {fileID: -4753702385071775785, guid: a7055a132928be34e94b343af54ea744, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    type: 2
     stats:
       pv: 15
       speed: 4
       AttackCooldown: 0
-    sprite: {fileID: -4753702385071775785, guid: a7055a132928be34e94b343af54ea744, type: 3}
     waitTimePatroll: 1
     scale: 5
     detection:

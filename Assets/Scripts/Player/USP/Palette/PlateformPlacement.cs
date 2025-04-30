@@ -1,27 +1,24 @@
-using System.Collections;
-using System.Runtime.CompilerServices;
-using UnityEditor.Playables;
 using UnityEngine;
 using UnityEngine.UI;
 using static ColorPowerController;
 
-/// <summary>
-///  Gere les differents pouvoirs d'invocation de plateformes selon les couleurs
-/// </summary>
-/// 
-public class PlayerAbilities : MonoBehaviour
+public class PlateformPlacement : MonoBehaviour
 {
-    public ColorAbilities CurrentAbility = ColorAbilities.None;
+    // Singleton
+    private static PlateformPlacement _instance;
+    public static PlateformPlacement Instance => _instance;
 
-    private PlateformesData _data;
+    [Header("Pouvoir")]
+    private PlateformesData _currentData;
 
 
-    [Header("Yellow power")]
 
     [HideInInspector] public bool _canPlace = true;
 
     private bool _hasInvoke = false;
-    private GameObject _currentPlatform = null;
+
+    [HideInInspector] public GameObject _currentPlatform = null;
+
     private float _maxDistance = 5f;
     private Vector3 _startingPosition;
 
@@ -29,11 +26,6 @@ public class PlayerAbilities : MonoBehaviour
     //private float FireCoolDownTimer = 1f;
     //private bool _canAttack = true;
     //[SerializeField] GameObject _projectilePrefab;
-
-    [Header("PREFABS")]
-    [SerializeField] private GameObject _platformYellowPrefab;
-    [SerializeField] private GameObject _platformBluePrefab;
-    [SerializeField] private GameObject _platformRedPrefab;
 
 
     // Temps de pose de pouvoir
@@ -43,27 +35,36 @@ public class PlayerAbilities : MonoBehaviour
     [Header("Pouvoir Rouge")]
     [HideInInspector] public bool HasBounce = false;
 
-
-    private Coroutine _currentCoroutine;
-
-
-    public void SetAbility(ColorAbilities ability)
+    private void Awake()
     {
+        if (_instance == null)
+            _instance = this;
+        else
+            Destroy(gameObject);
+    }
 
-        CurrentAbility = ability;
-        ColorPowerController.Instance.ShowCurrentColor();
+
+
+
+
+
+
+    public void SetAbility(PlateformesData ability)
+    {
+        ResetPower();
+        _currentData = ability;
+        //ColorPowerController.Instance.ShowCurrentColor();
+        
     }
 
     public void Update()
     {
-        if (CurrentAbility != ColorAbilities.None)
+        if (_currentData != null)
         {
-            _data = DatabaseManager.Instance.GetPlateformesData(CurrentAbility);
-        }
+            InvokePlatform(); 
+            //_data = DatabaseManager.Instance.GetPlateformesData(CurrentAbility);
+        }            
 
-        if (_data != null) 
-            InvokePlatform();
-        
     }
 
 
@@ -71,21 +72,19 @@ public class PlayerAbilities : MonoBehaviour
     // invoquer la plateforme correspondante
     public void InvokePlatform()
     {
-
+        // Si le délai de pose est dépacé, on eneleve le pouvoir actuel
         if (_powerDelay <= 0 && !_placed)
         {
-            
             ResetPower();
-            
-            
             return;
         }
 
-        else if (_powerDelay <= 0 || _placed) 
+        // Si le délai est encore en cours et qu'on a placé la platefome, on arrête le délai
+        else if (_powerDelay <= 0 || _placed)
         {
             HUDManager.Instance.PowerTimer.SetActive(false);
         }
-
+        // Sinon le délai continue
         else
         {
             _powerDelay -= Time.deltaTime;
@@ -94,9 +93,7 @@ public class PlayerAbilities : MonoBehaviour
         }
 
 
-        
-
-        // calcul de l'oriantation du joueure
+        // calcul de l'orientation du joueur
         float currentPlayerDirection = Mathf.Sign(GameManager.Instance.Player.localScale.x);
 
         // Taille du joueur
@@ -106,21 +103,17 @@ public class PlayerAbilities : MonoBehaviour
         float platformHeight;
         float offsetX = 2f;
 
-        if (_data.color != ColorAbilities.Blue)
+        // Si la current color est pas égale à bleu, c'est un box collider 
+        if (_currentData.color != ColorAbilities.Blue)
         {
-            platformHeight = _data.Prefab.GetComponent<BoxCollider2D>().size.y * _data.Prefab.transform.localScale.y ;
-        } else
+            platformHeight = _currentData.Prefab.GetComponent<BoxCollider2D>().size.y * _currentData.Prefab.transform.localScale.y;
+        }
+        // Si c'est le pouvoir bleu, c'est un circle collider
+        else
         {
             offsetX = 4;
-            platformHeight = _data.Prefab.GetComponent<CircleCollider2D>().radius * _data.Prefab.transform.localScale.y;
+            platformHeight = _currentData.Prefab.GetComponent<CircleCollider2D>().radius * _currentData.Prefab.transform.localScale.y;
         }
-
-
-
-
-        
-
-
 
         // Calcul du offset vertical pour que le bas de la plateforme soit aligné au bas du joueur
         float offsetY = -(playerHeight / 2f) + (platformHeight / 2f);
@@ -132,10 +125,16 @@ public class PlayerAbilities : MonoBehaviour
         if (!_hasInvoke)
         {
             // step 1 : instancier un 'fantome' de la plateforme avec des reperes de placement
-            _currentPlatform = Instantiate(_data.Prefab, _startingPosition, transform.rotation); 
+            _currentPlatform = Instantiate(_currentData.Prefab, _startingPosition, transform.rotation);
 
             // Mettre sa couleur en bleu et opacité 50%
             _currentPlatform.GetComponent<SpriteRenderer>().color = new Color32(173, 216, 230, 128);
+
+            _currentPlatform.GetComponent<PlateformBehavior>().Init(_currentData);
+
+
+            
+
 
             // Le mettre en enfant du joueur pou qu'elle le suive avec lui
             _currentPlatform.transform.SetParent(transform);
@@ -196,8 +195,9 @@ public class PlayerAbilities : MonoBehaviour
                 if (currentPlayerDirection > 0)
                 {
                     distance = position.x - _startingPosition.x;
-                   
-                } else
+
+                }
+                else
                 {
                     distance = _startingPosition.x - position.x;
                 }
@@ -214,7 +214,7 @@ public class PlayerAbilities : MonoBehaviour
             {
                 ActivePlateforme();
 
-                _currentCoroutine = StartCoroutine(TimeToDestroy(_data.AutoDestroyTimer));   
+                //_currentCoroutine = StartCoroutine(TimeToDestroy(_data.AutoDestroyTimer));   
             }
             else if (Input.GetKeyDown(KeyCode.Return) && !_canPlace)
             {
@@ -228,37 +228,31 @@ public class PlayerAbilities : MonoBehaviour
         }
     }
 
-    // --------------------------- Reference au current object et gestion apres placement a faire dans un script a part ---------------------
-     
-    // Délai de destruction
-    private IEnumerator TimeToDestroy(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        ResetPower();
-    }
 
     private void ResetPower()
     {
-        Destroy(_currentPlatform);
-        HUDManager.Instance.PowerTimer.SetActive(false);
+        ColorPowerController.Instance._state = STATE_POWER.NONE;
+        HUDManager.Instance.PalettePanel.SetActive(false);
+
+        //HUDManager.Instance.PowerTimer.SetActive(false);
         _currentPlatform = null;
         HasBounce = false;
         _powerDelay = 0f;
         // reset the color power
-        ColorPowerController.Instance.ResetPower();
-        SetAbility(ColorAbilities.None);
+        //ColorPowerController.Instance.ResetPower();
+        //SetAbility(ColorAbilities.None);
         _hasInvoke = false;
         _placed = false;
         _powerDelay = 20f;
-        _data = null;
-        _currentCoroutine = null;
+        _currentData = null;
+        //_currentCoroutine = null;
     }
 
 
     private void ActivePlateforme()
     {
-        if (!_data.Istrigger)
+
+        if (!_currentData.Istrigger)
             _currentPlatform.GetComponent<Collider2D>().isTrigger = false;
 
         _currentPlatform.GetComponent<SpriteRenderer>().color = Color.white;
@@ -266,7 +260,7 @@ public class PlayerAbilities : MonoBehaviour
         _currentPlatform.transform.SetParent(null);
         _placed = true;
 
-        switch (CurrentAbility)
+        switch (_currentData.color)
         {
             case ColorAbilities.Red:
                 break;
@@ -282,76 +276,22 @@ public class PlayerAbilities : MonoBehaviour
                 break;
         }
 
+        // On display la current color
+        HUDManager.Instance.ColorsListActive.Add(_currentData);
+        HUDManager.Instance.ShowCurrentPower(_currentPlatform);
+
+        // On récupère le script behavior de la plateforme
+        PlateformBehavior plateformBehavior = _currentPlatform.GetComponent<PlateformBehavior>();
+
+        // La plateforme est placé, on appelle son auto destroy
+        plateformBehavior.TimeToDestroy();
+
+        
+        
 
     }
 
 
-
-    //// --------------------------- RED --------------------------
-
-    //// Fonction pour l'attaquer / lancé de projectile peut s'adapter au pouvoir orange avec un parametre a mettre en place
-    //private void Attack()
-    //{
-    //    abilityTimer -= Time.deltaTime;
-
-    //    if (abilityTimer <= 0)
-    //    {
-    //        ColorPowerController.Instance.ResetPower();
-    //        SetAbility(ColorAbilities.None);
-    //        _canAttack = true;
-    //        abilityTimer = 10f;
-    //        return;
-    //    }
-    //    else
-    //    {
-    //        if (Input.GetKeyDown(KeyCode.Return))
-    //        {
-    //            if (_canAttack)
-    //            {
-    //                GameObject projectile = Instantiate(_projectilePrefab, transform.position, transform.rotation);
-    //                ProjectileController controller = projectile.GetComponent<ProjectileController>();
-    //                if (controller != null)
-    //                {
-    //                    controller.SetDirection(Mathf.Sign(GameManager.Instance.Player.localScale.x) * Vector2.right);
-    //                    controller.SetTarget("Enemy");
-    //                }
-    //                else
-    //                {
-    //                    Debug.LogError("pas de script trouvé.");
-    //                }
-
-    //                _canAttack = false;
-
-    //            }
-
-                
-    //        }
-
-    //        _canAttack = FireCoolDownTimer <= 0;
-
-    //        FireCoolDownTimer -= Time.deltaTime;
-
-    //    }
-    //}
-
-    //private void BreatheUnderWater()
-    //{
-    //    OxygeneCooldwon -= Time.deltaTime;
-
-    //    if (OxygeneCooldwon <= 0)
-    //    {
-    //        GetComponent<Water>().CanBreatheUnderWater = false;
-    //        HUDManager.Instance.OxygeneTimerGO.SetActive(false);
-    //        SetAbility(ColorAbilities.None);
-    //        OxygeneCooldwon = 45f;
-    //    } 
-    //    else
-    //    {
-    //        GetComponent<Water>().CanBreatheUnderWater = true;
-    //        HUDManager.Instance.OxygeneTimerGO.SetActive(true);
-    //        HUDManager.Instance.OxygeneTimerGO.GetComponent<Text>().text = ((int)OxygeneCooldwon).ToString();
-    //    }
-    //}
 
 
 }

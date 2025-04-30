@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,8 +18,18 @@ public class HUDManager : MonoBehaviour
     [Header("USP COLOR PALETTE")]
     public GameObject PowerTimer;
 
-    [Header("OXYGENE")]
+    public GameObject currentColorFeedbackPrefab;
+    public Transform _currentColorParent;
+    public GameObject PalettePanel;
 
+    public List<GameObject> Compteurs;
+    public List<GameObject> ColorsList;
+
+    public GameObject Palette;
+    public List<PlateformesData> ColorsListActive;
+
+
+    [Header("OXYGENE")]
     public GameObject OxygeneTimerGO;
 
 
@@ -42,6 +53,7 @@ public class HUDManager : MonoBehaviour
 
     private void Start()
     {
+        PalettePanel.SetActive(false);
         OxygeneTimerGO.SetActive(false);
     }
 
@@ -62,4 +74,44 @@ public class HUDManager : MonoBehaviour
         TextInfos.GetComponent<Animator>().SetTrigger("FadeOut");
         _isDisplaying = false;
     }
+
+
+    // afficher visuellement la couleur active
+    public void ShowCurrentPower(GameObject currentPlatform = null)
+    {
+
+        // Si notre liste de couleurs actives est pas vide
+        if (ColorsListActive.Count > 0)
+        {
+            _currentColorParent.gameObject.SetActive(true);
+            // On parcours toutes les couleurs actives pour les afficher 
+
+            foreach (Transform go in _currentColorParent)
+            {
+                Destroy(go.gameObject);
+            }
+
+            foreach (PlateformesData data in ColorsListActive)
+            {
+                GameObject _currentColor = Instantiate(currentColorFeedbackPrefab, _currentColorParent);
+                _currentColor.GetComponent<Image>().color = data.PowerColor;
+
+                if (currentPlatform != null)
+                {
+                    Text timer = _currentColor.GetComponentInChildren<Text>();
+                    currentPlatform.GetComponent<PlateformBehavior>().timer = timer;
+                }
+                
+            }
+            
+
+
+            
+        }
+        else
+        {
+            _currentColorParent.gameObject.SetActive(false);
+        }
+    }
+
 }

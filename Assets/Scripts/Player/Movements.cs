@@ -1,26 +1,30 @@
 using UnityEngine;
 
-public class Movements : MonoBehaviour
+public class Movements : BaseController 
+
 {
     public float MoveSpeed = 4f;
     public float JumpForce = 15f;
     private Rigidbody2D rb;
     private Vector3 PlayerScale;
-    private Animator _animator;
 
     private bool _isFacingRight = true;
 
-
-    void Start()
+    protected override void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        PlayerScale = GetComponent<Transform>().localScale;
-        TryGetComponent<Animator>(out _animator);
+        base.Awake();
     }
+
+    protected override void Init()
+    {
+        base.Init();
+        PlayerScale = GetComponent<Transform>().localScale;
+    }
+
 
     void Update()
     {
-        if (gameObject.GetComponent<Water>().InWater == false && !ColorPowerController.Instance.IsInColorChoice)
+        if (gameObject.GetComponent<Water>().InWater == false && ColorPowerController.Instance._state != ColorPowerController.STATE_POWER.INCHOICE)
         {
             Move();
             Jump();
@@ -31,9 +35,9 @@ public class Movements : MonoBehaviour
     void Move()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        rb.linearVelocity = new Vector2(horizontalInput * MoveSpeed, rb.linearVelocity.y);
+        _rb.linearVelocity = new Vector2(horizontalInput * MoveSpeed, _rb.linearVelocity.y);
 
-        _animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
+        _animator.SetFloat("Speed", Mathf.Abs(_rb.linearVelocity.x));
 
         //if (horizontalInput > 0)
         //    transform.localScale = new Vector3(PlayerScale.x, PlayerScale.y, PlayerScale.z);
@@ -68,7 +72,7 @@ public class Movements : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && CheckIfGround())
         {
             _animator.SetTrigger("Jump");
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
+            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, JumpForce);
         }
     }
 }

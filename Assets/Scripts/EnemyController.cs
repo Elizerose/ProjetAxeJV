@@ -9,7 +9,7 @@ using UnityEngine.UI;
 /// Gestion et comportements des ennemis
 /// 
 /// </summary>
-public class EnemyController : MonoBehaviour
+public class EnemyController : BaseController
 {
     public Type EnemyType;
     private EnemyData _data;
@@ -17,10 +17,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject _feedbackImage;
     private bool _canDisplayFeedBack = true;
 
-    private Rigidbody2D _rb2D;
     private Collider2D _collider;
-    private SpriteRenderer _spriteRenderer;
-    private Animator _animator;
+
     
     public enum STATE
     {
@@ -57,35 +55,29 @@ public class EnemyController : MonoBehaviour
 
     private float FireCoolDownTimer;
 
-
-    void Awake()
+    // On récupère notre awake de base Controller
+    protected override void Awake()
     {
-        // On récupère nos composants
-        TryGetComponent(out _rb2D);
+        base.Awake();
         TryGetComponent(out _collider);
-        TryGetComponent(out _spriteRenderer);
-        TryGetComponent(out _animator);
     }
 
-    void Start()
+    // On récupère notre Init de base Controller
+    protected override void Init()
     {
+        base.Init();
+
         // On récupère la base de donnée de l'ennemi
         _data = DatabaseManager.Instance.GetData(EnemyType);
-        Init();
 
         // Début de la patrouille Ennemis : On initialise notre premier point (l'arbre ne bouge pas donc pas de patrouille pour lui)
         if (_data.type != Type.Arbre)
-            targetPoint = points[0]; 
-    }
-
-    private void Init()
-    {
+            targetPoint = points[0];
         // On met l'etat de l'ennemi à INIT
         _state = STATE.INIT;
 
         // On récupère et assigne ses _data
         name = _data.type.ToString();
-        Debug.Log(name);
         _spriteRenderer.sprite = _data.sprite;
         speed = _data.stats.speed;
         //transform.localScale = new Vector3(_data.scale, _data.scale, _data.scale);
@@ -130,7 +122,7 @@ public class EnemyController : MonoBehaviour
 
         // Notre animator de l'arbre n'as pas de speed donc on évite
         if (_data.type != Type.Arbre)
-            _animator.SetFloat("Speed", Mathf.Abs(_rb2D.linearVelocity.x));
+            _animator.SetFloat("Speed", Mathf.Abs(_rb.linearVelocity.x));
 
         // Changement d'état
         switch (_state)
@@ -149,7 +141,7 @@ public class EnemyController : MonoBehaviour
                         _state = STATE.MOVE;
                     }
                     // On arrete l'ennemi et incremente le cooldown
-                    _rb2D.linearVelocity = Vector2.zero;
+                    _rb.linearVelocity = Vector2.zero;
                     cooldown += Time.deltaTime;
                 } else
                 {
@@ -208,8 +200,8 @@ public class EnemyController : MonoBehaviour
         // calcul de la direction (sens)
         directionX = Mathf.Sign(targetPoint.position.x - transform.position.x); // Math.Sign renvoie la direction : 1 si droite / -1 si gauche / 0 si rien (distance entre notre ennemis et notre target)
                                                                                 // si position.x enemis = 2 et position.x point = -5, notre joueur doit aller à gauche : - 5 - 2 = -7 Math.Sign renvoie le signe donc - 1 
-         // On déplace l'ennemi
-        _rb2D.linearVelocity = new Vector2(directionX * speed, _rb2D.linearVelocity.y);
+                                                                                // On déplace l'ennemi
+        _rb.linearVelocity = new Vector2(directionX * speed, _rb.linearVelocity.y);
 
         // Quand l'ennemi atteint (à 0.3f près) le points target de patrouille, on passe au point suivant
         if (Mathf.Abs(transform.position.x - targetPoint.position.x) < 0.3f)
@@ -236,12 +228,12 @@ public class EnemyController : MonoBehaviour
         // si position.x enemis = 2 et position.x point = -5, notre joueur doit aller à gauche : - 5 - 2 = -7 Math.Sign renvoie le signe donc - 1 
 
         // L'ennemi suit le joueur
-        _rb2D.linearVelocity = new Vector2(directionX * speed, _rb2D.linearVelocity.y);
+        _rb.linearVelocity = new Vector2(directionX * speed, _rb.linearVelocity.y);
 
         // Si l'ennemi est à 1 du joueur il se stop (pour pas qu'il lui rentre dedans)
         if (Mathf.Abs(GameManager.Instance.Player.position.x - transform.position.x) < 1f)
         {
-            _rb2D.linearVelocity = Vector3.zero;
+            _rb.linearVelocity = Vector3.zero;
         }
 
         // Si le joueur n'est plus en vu, il repasse en idle et reprendra sa patrouille
@@ -388,7 +380,7 @@ public class EnemyController : MonoBehaviour
         _animator.SetBool("isCharging", true);
 
         // on bouge plus mais change son orientation selon le player
-        _rb2D.linearVelocity = Vector2.zero;
+        _rb.linearVelocity = Vector2.zero;
         directionX = Mathf.Sign(startChargePosition.x + 10f - transform.position.x); // calcul de l'orientation selon le joueur
 
         // Si notre barbare n'est pas deja en etat de charge, peut charger et ne peut pas encore nous courir dessus, il prend sa pose de charge et clignote
@@ -406,7 +398,7 @@ public class EnemyController : MonoBehaviour
             // Charge ennemi
             if (Mathf.Abs(startChargePosition.x + 10f - transform.position.x) > 1f)
             {
-                _rb2D.linearVelocity = new Vector2(directionX * 12, _rb2D.linearVelocity.y);
+                _rb.linearVelocity = new Vector2(directionX * 12, _rb.linearVelocity.y);
             }
             else
             {
@@ -417,7 +409,7 @@ public class EnemyController : MonoBehaviour
         // Si pendant la charge le joueur n'est plus en vu, ou alors que la charge est fini, on arrete la charge et réeinitialise toutes les valeurs
         if (!IsPlayerInSight() || finishCharge)
         {
-            _rb2D.linearVelocity = Vector2.zero;
+            _rb.linearVelocity = Vector2.zero;
             _animator.SetBool("isCharging", false);
             
             StartCoroutine(WaitBeforeCharge());
@@ -451,7 +443,7 @@ public class EnemyController : MonoBehaviour
     private IEnumerator WaitBeforeCharge()
     {
         Debug.Log("Wait !");
-        _rb2D.linearVelocity = Vector2.zero;
+        _rb.linearVelocity = Vector2.zero;
         // animation regard droite gauche
 
         CanCharge = false;
