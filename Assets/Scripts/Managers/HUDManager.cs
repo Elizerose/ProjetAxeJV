@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static ColorPowerController;
 
 public class HUDManager : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class HUDManager : MonoBehaviour
     public Transform _currentColorParent;
     public GameObject PalettePanel;
 
-    public List<GameObject> Compteurs;
+    [Header("ORDRE IMPORTANT : Nocolor / blue / yellow / red")]
     public List<GameObject> ColorsList;
 
     public GameObject Palette;
@@ -41,6 +42,10 @@ public class HUDManager : MonoBehaviour
     private bool _isDisplaying;
 
 
+    // Dictionnaire pour associer chaque ColorAbility à un GameObject color
+    public Dictionary<ColorAbilities, GameObject> ColorAbilitiesPalette = new Dictionary<ColorAbilities, GameObject>();
+
+
     private void Awake()
     {
         if (_instance == null)
@@ -55,6 +60,12 @@ public class HUDManager : MonoBehaviour
     {
         PalettePanel.SetActive(false);
         OxygeneTimerGO.SetActive(false);
+
+        // Associer les couleurs à leurs GameObjects respectifs
+        ColorAbilitiesPalette.Add(ColorAbilities.None, ColorsList[0]);
+        ColorAbilitiesPalette.Add(ColorAbilities.Blue, ColorsList[1]);
+        ColorAbilitiesPalette.Add(ColorAbilities.Yellow, ColorsList[2]);
+        ColorAbilitiesPalette.Add(ColorAbilities.Red, ColorsList[3]);
     }
 
     // Fonction qui affiche des petits messages d'erreur (ex : vous ne pouvez pas placer le bloc ici ... )
@@ -91,18 +102,18 @@ public class HUDManager : MonoBehaviour
                 Destroy(go.gameObject);
             }
 
-            foreach (PlateformesData data in ColorsListActive)
-            {
-                GameObject _currentColor = Instantiate(currentColorFeedbackPrefab, _currentColorParent);
-                _currentColor.GetComponent<Image>().color = data.PowerColor;
+            //foreach (PlateformesData data in ColorsListActive)
+            //{
+            //    GameObject _currentColor = Instantiate(currentColorFeedbackPrefab, _currentColorParent);
+            //    _currentColor.GetComponent<Image>().color = data.PowerColor;
 
-                if (currentPlatform != null)
-                {
-                    Text timer = _currentColor.GetComponentInChildren<Text>();
-                    currentPlatform.GetComponent<PlateformBehavior>().timer = timer;
-                }
+            //    if (currentPlatform != null)
+            //    {
+            //        Text timer = _currentColor.GetComponentInChildren<Text>();
+            //        currentPlatform.GetComponent<PlateformBehavior>().timer = timer;
+            //    }
                 
-            }
+            //}
             
 
 

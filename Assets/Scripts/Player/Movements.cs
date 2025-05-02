@@ -75,4 +75,11 @@ public class Movements : BaseController
             _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, JumpForce);
         }
     }
+
+    public int GetPlayerOrientation()
+    {
+        if (_isFacingRight)
+            return 1;
+        else return -1;
+    }
 }

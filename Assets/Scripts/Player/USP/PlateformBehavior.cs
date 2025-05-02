@@ -6,37 +6,43 @@ using static ColorPowerController;
 
 public class PlateformBehavior : MonoBehaviour
 {
-    private PlateformesData plateformesData;
-    private float _autoDestroy;
+    public bool StartDelai;
+    private float _autoDestroyTimer;
     [HideInInspector] public Text timer;
     public void Init(PlateformesData data)
     {
         // récupérer les infos du pouvoir
-        plateformesData = data;
+        _autoDestroyTimer = data.AutoDestroyTimer;
+        timer = GetComponentInChildren<Text>();
+    }
+
+    private void Update()
+    {
+        if (StartDelai)
+        {
+            TimeToDestroy();
+        }
     }
 
     public void TimeToDestroy()
     {
+        _autoDestroyTimer -= Time.deltaTime;
 
-        for (float i = plateformesData.AutoDestroyTimer; i > 0 ; i -= Time.deltaTime)
+        if (_autoDestroyTimer < 0 )
         {
-            Debug.Log(i);
-            if (timer != null)
-                timer.text = i.ToString();
+            //HUDManager.Instance.ColorsListActive.Remove(DatabaseManager.Instance.GetPlateformesData(color));
+            HUDManager.Instance.ShowCurrentPower();
+            Destroy(gameObject);
         }
-        HUDManager.Instance.ColorsListActive.Remove(DatabaseManager.Instance.GetPlateformesData(plateformesData.color));
-        HUDManager.Instance.ShowCurrentPower();
-        Destroy(gameObject);
+        else
+        {
+            if (timer != null)
+            {
+                timer.text = ((int)_autoDestroyTimer).ToString();
+            }
+                
+        }
+        
     }
 
-
-    //public IEnumerator TimeToDestroy()
-    //{
-    //    yield return new WaitForSeconds(plateformesData.AutoDestroyTimer);
-
-
-        
-
-    //    //ResetPower();
-    //}
 }

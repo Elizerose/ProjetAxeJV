@@ -9,14 +9,17 @@ using UnityEngine;
 
 public class BlueChecks : MonoBehaviour
 {
-    void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Water"))
             GameManager.Instance.Player.GetComponent<PlateformPlacement>()._canPlace = true;
+        else
+            GameManager.Instance.Player.GetComponent<PlateformPlacement>()._canPlace = false;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        GameManager.Instance.Player.GetComponent<PlateformPlacement>()._canPlace = false;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Water"))
+            GameManager.Instance.Player.GetComponent<PlateformPlacement>()._canPlace = false;
     }
 }

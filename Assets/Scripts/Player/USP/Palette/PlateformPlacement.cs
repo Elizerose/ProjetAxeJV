@@ -11,16 +11,17 @@ public class PlateformPlacement : MonoBehaviour
     [Header("Pouvoir")]
     private PlateformesData _currentData;
 
+    [Header("PLacement")]
+    [HideInInspector] public bool _canPlace = false; // Peut-on poser la plateforme ?
+    [HideInInspector] public bool _hasInvoke = false; // A-t-on invoqué la plateforme fantôme ?
+    [HideInInspector] public GameObject _currentPlatform = null; // La plateforme actuelle
 
+    private float _maxDistance = 5f; // distance de pose maximal par rapport au joueur
+    private Vector3 _startingPosition; // position de départ de la plateforme
+    
+    private float _powerDelay = 20f; // Temps de pose de pouvoir
+    private bool _placed = false; // Est-ce que la plateforme est posée ?
 
-    [HideInInspector] public bool _canPlace = true;
-
-    private bool _hasInvoke = false;
-
-    [HideInInspector] public GameObject _currentPlatform = null;
-
-    private float _maxDistance = 5f;
-    private Vector3 _startingPosition;
 
     //[Header("Red power")]
     //private float FireCoolDownTimer = 1f;
@@ -28,15 +29,13 @@ public class PlateformPlacement : MonoBehaviour
     //[SerializeField] GameObject _projectilePrefab;
 
 
-    // Temps de pose de pouvoir
-    private float _powerDelay = 20f;
-    private bool _placed = false;
-
     [Header("Pouvoir Rouge")]
     [HideInInspector] public bool HasBounce = false;
 
+
     private void Awake()
     {
+        // Initialisation du Singleton
         if (_instance == null)
             _instance = this;
         else
@@ -44,45 +43,61 @@ public class PlateformPlacement : MonoBehaviour
     }
 
 
-
-
-
-
-
+    /// <summary>
+    /// Appelé quand on sélectionne un pouvoir (depuis la palette de couleur -> ColorPowerController)
+    /// </summary>
     public void SetAbility(PlateformesData ability)
     {
-        ResetPower();
+        // On désactive le panel de la palette 
+        HUDManager.Instance.PalettePanel.SetActive(false);
+
+        // On stocke la data de la plateforme sélectionnée
         _currentData = ability;
-        //ColorPowerController.Instance.ShowCurrentColor();
-        
+
+        // On réinitialise les variables
+        _currentPlatform = null;
+        _hasInvoke = false;
+        _placed = false;
+        _powerDelay = 20f;
+
+        // Afficher la couleur de placement 
+        // ColorPowerController.Instance.ShowCurrentColor();
     }
+
+
 
     public void Update()
     {
+        
         if (_currentData != null)
         {
+            UpdatePlacementTimer();
             InvokePlatform(); 
-            //_data = DatabaseManager.Instance.GetPlateformesData(CurrentAbility);
         }            
 
     }
 
-
-
-    // invoquer la plateforme correspondante
-    public void InvokePlatform()
+    /// <summary>
+    /// Gère le timer de pose de bloc
+    /// </summary>
+    private void UpdatePlacementTimer()
     {
         // Si le délai de pose est dépacé, on eneleve le pouvoir actuel
         if (_powerDelay <= 0 && !_placed)
         {
             ResetPower();
+            if (_currentPlatform != null)
+                Destroy(_currentPlatform);
+
+            HUDManager.Instance.PowerTimer.SetActive(false);
             return;
         }
 
         // Si le délai est encore en cours et qu'on a placé la platefome, on arrête le délai
-        else if (_powerDelay <= 0 || _placed)
+        else if (_powerDelay >= 0 && _placed)
         {
             HUDManager.Instance.PowerTimer.SetActive(false);
+            ResetPower();
         }
         // Sinon le délai continue
         else
@@ -91,7 +106,17 @@ public class PlateformPlacement : MonoBehaviour
             HUDManager.Instance.PowerTimer.SetActive(true);
             HUDManager.Instance.PowerTimer.GetComponent<Text>().text = ((int)_powerDelay).ToString();
         }
+    }
 
+
+
+    /// <summary>
+    /// Appelé quand on sélectionne un pouvoir (depuis la palette de couleur -> ColorPowerController)
+    /// </summary>
+    public void InvokePlatform()
+    {
+        if (_currentData == null)
+            return;
 
         // calcul de l'orientation du joueur
         float currentPlayerDirection = Mathf.Sign(GameManager.Instance.Player.localScale.x);
@@ -101,7 +126,7 @@ public class PlateformPlacement : MonoBehaviour
 
         // Taille de la plateforme (attention : la prefab est souvent en échelle 1)
         float platformHeight;
-        float offsetX = 2f;
+        float offsetX = _currentData.startingPositionOffsetX;
 
         // Si la current color est pas égale à bleu, c'est un box collider 
         if (_currentData.color != ColorAbilities.Blue)
@@ -111,7 +136,6 @@ public class PlateformPlacement : MonoBehaviour
         // Si c'est le pouvoir bleu, c'est un circle collider
         else
         {
-            offsetX = 4;
             platformHeight = _currentData.Prefab.GetComponent<CircleCollider2D>().radius * _currentData.Prefab.transform.localScale.y;
         }
 
@@ -146,6 +170,13 @@ public class PlateformPlacement : MonoBehaviour
         // Su notre plateforme est invoqué et bien en mémoire
         if (_currentPlatform != null && !_placed)
         {
+            Text timer = _currentPlatform.GetComponentInChildren<Text>();
+            Vector3 newScale = timer.transform.localScale;
+            newScale.x = Mathf.Abs(newScale.x) * GameManager.Instance.Player.GetComponent<Movements>().GetPlayerOrientation();
+            timer.GetComponentInChildren<Text>().transform.localScale = newScale;
+
+
+
             // Si je peux la placer, elle est en bleue
             if (_canPlace)
             {
@@ -229,23 +260,16 @@ public class PlateformPlacement : MonoBehaviour
     }
 
 
+
     private void ResetPower()
     {
         ColorPowerController.Instance._state = STATE_POWER.NONE;
-        HUDManager.Instance.PalettePanel.SetActive(false);
 
-        //HUDManager.Instance.PowerTimer.SetActive(false);
-        _currentPlatform = null;
-        HasBounce = false;
-        _powerDelay = 0f;
-        // reset the color power
-        //ColorPowerController.Instance.ResetPower();
-        //SetAbility(ColorAbilities.None);
-        _hasInvoke = false;
-        _placed = false;
-        _powerDelay = 20f;
         _currentData = null;
-        //_currentCoroutine = null;
+        //HUDManager.Instance.PowerTimer.SetActive(false);
+
+        HasBounce = false;
+
     }
 
 
@@ -277,16 +301,16 @@ public class PlateformPlacement : MonoBehaviour
         }
 
         // On display la current color
-        HUDManager.Instance.ColorsListActive.Add(_currentData);
-        HUDManager.Instance.ShowCurrentPower(_currentPlatform);
+        //HUDManager.Instance.ColorsListActive.Add(_currentData);
+        //HUDManager.Instance.ShowCurrentPower(_currentPlatform);
 
         // On récupère le script behavior de la plateforme
         PlateformBehavior plateformBehavior = _currentPlatform.GetComponent<PlateformBehavior>();
 
         // La plateforme est placé, on appelle son auto destroy
-        plateformBehavior.TimeToDestroy();
+        plateformBehavior.StartDelai = true;
+        _currentPlatform = null;
 
-        
         
 
     }

@@ -1730,7 +1730,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 94501177
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 20
   m_Sprite: {fileID: -8388983951095186656, guid: 5cff327d778a3264aadf46e395aad8aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1836,6 +1836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canPlace: 1
+  _hasInvoke: 0
   _currentPlatform: {fileID: 0}
   HasBounce: 0
 --- !u!1 &258078469
@@ -3405,7 +3406,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000a34c34e6670771ef7980bf4ee97d20fe2164c92639f9a105
+  m_ApplyToSortingLayers: 00000000a34c34e6670771ef7980bf4ee97d20fe2164c92639f9a105a3c56c05
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -7214,6 +7215,7 @@ GameObject:
   - component: {fileID: 1114489261}
   - component: {fileID: 1114489260}
   - component: {fileID: 1114489259}
+  - component: {fileID: 1114489262}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -7310,6 +7312,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1184379583}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1114489262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114489258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ApplyAfter: 2
+  ChannelMask: 1
+  Gain: 1
+  Use2DDistance: 0
+  UseCameraSpace: 1
+  ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!4 &1115603423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6004755054006754971, guid: ef56304e260dc94419ae5a102adbc5c9, type: 3}

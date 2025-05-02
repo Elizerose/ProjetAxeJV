@@ -10,12 +10,24 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    // Singleton
+    private static CameraController _instance;
+    public static CameraController Instance => _instance;
+
 
     [SerializeField] private Transform _trackingTarget;
     [SerializeField] private GameObject _camera;
     private float _orthographicsize;
 
 
+    private void Awake()
+    {
+        // Initialisation du Singleton
+        if (_instance == null)
+            _instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -52,5 +64,11 @@ public class CameraController : MonoBehaviour
         }
     }
 
+
+    // chaking de la camera pour dire qu'on peut pas invoquer le pouvoir choisit
+    public void Shake()
+    {
+        _camera.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
+    }
 
 }

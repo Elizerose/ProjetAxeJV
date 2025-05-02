@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Database des plateformes de couleurs
@@ -30,10 +31,15 @@ public class PlateformesDataBase : ScriptableObject
 public class PlateformesData
 {
     public ColorPowerController.ColorAbilities color;
-
-    public Color PowerColor;
+    
+    [Header("placement de la plateforme")]
     public GameObject Prefab;
+    public float startingPositionOffsetX;
     public float AutoDestroyTimer;
     public bool Istrigger;
+    public Color PowerColor;
 
+    [Header("Item pot de peinture")]
+    public float number;
+    public Sprite ItemSprite;
 }
