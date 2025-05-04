@@ -469,6 +469,14 @@ public class EnemyController : BaseController
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && (_data.type == Type.Barbare))
+        {
+            GameManager.Instance.Death(GameManager.DeathCauses.Enemy);
+        }
+    }
+
 
 
 
