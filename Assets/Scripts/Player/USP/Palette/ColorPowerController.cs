@@ -107,6 +107,11 @@ public class ColorPowerController : MonoBehaviour
                 }
                 else
                 {
+                    if (PlateformPlacement.Instance._currentPlatform != null)
+                    {
+                        Destroy(PlateformPlacement.Instance._currentPlatform);
+                    }
+
                     HUDManager.Instance.PalettePanel.SetActive(false);
                     _state = STATE_POWER.NONE;
                 }
@@ -151,7 +156,6 @@ public class ColorPowerController : MonoBehaviour
         // couleur de gauche
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Debug.Log("on rotate");
             RotatePalette(-1);
         }
         // couleur de droite

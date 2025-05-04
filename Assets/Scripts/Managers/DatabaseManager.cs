@@ -13,7 +13,6 @@ public class DatabaseManager : MonoBehaviour
 
     [SerializeField] private EnemyDatabase _enemyDatabase;
     [SerializeField] private PlateformesDataBase _plateformesDataBase;
-    [SerializeField] private ItemDatabase _itemDataBase;
 
     private void Awake()
     {
@@ -29,7 +28,6 @@ public class DatabaseManager : MonoBehaviour
 
     public PlateformesData GetPlateformesData(ColorAbilities color) => _plateformesDataBase.GetData(color);
 
-    public ItemData GetItemData(ColorAbilities itemColor) => _itemDataBase.GetData(itemColor);
 
 
 

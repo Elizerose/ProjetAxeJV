@@ -275,6 +275,7 @@ public class PlateformPlacement : MonoBehaviour
 
     private void ActivePlateforme()
     {
+        _currentData.number -= 1;
 
         if (!_currentData.Istrigger)
             _currentPlatform.GetComponent<Collider2D>().isTrigger = false;

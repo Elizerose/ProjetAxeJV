@@ -16,7 +16,7 @@ public class ChackpointCheck : MonoBehaviour
             CPText.transform.position = nearestCP.position + new Vector3(0, 1f, 0);
             CPText.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 player.GetComponent<PlayerHealth>().Lastcheckpoint = nearestCP;
 
