@@ -18,7 +18,7 @@ public class ChackpointCheck : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-               // player.GetComponent<PlayerHealthMain>().Lastcheckpoint = nearestCP;
+                player.GetComponent<PlayerHealth>().Lastcheckpoint = nearestCP;
 
                 ParticleSystem newCPEffect = Instantiate(CPEffect, nearestCP.position, Quaternion.identity);
 

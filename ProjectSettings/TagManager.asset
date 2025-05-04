@@ -8,6 +8,9 @@ TagManager:
   - Slope
   - Vine
   - BVine
+  - Projectile
+  - Enemy
+  - Peinture
   layers:
   - Default
   - TransparentFX

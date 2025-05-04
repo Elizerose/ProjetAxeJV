@@ -313,6 +313,7 @@ MonoBehaviour:
   points:
   - {fileID: 8323684325759634237}
   - {fileID: 5127761838996351426}
+  projectilePrefab: {fileID: 0}
 --- !u!50 &3681835468060790778
 Rigidbody2D:
   serializedVersion: 5
