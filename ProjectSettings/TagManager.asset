@@ -9,6 +9,9 @@ TagManager:
   - Vine
   - BVine
   - Enemy
+  - Projectile
+  - Enemy
+  - Peinture
   layers:
   - Default
   - TransparentFX

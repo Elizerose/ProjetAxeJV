@@ -13,7 +13,7 @@ public class Water : MonoBehaviour
     private float WaterGrav = 0.1f;
     private float NormalGrav;
     private bool CanImpulse = true;
-    private float ImpulseCDTime = 0.35f;
+
 
 
     private float OxygeneTimer;
@@ -21,10 +21,14 @@ public class Water : MonoBehaviour
 
 
 
+    public float ImpulseCDTime = 0.35f;
+    public ParticleSystem BubbleEffect;
+    private Vector3 PlayerScale;
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        PlayerScale = GetComponent<Transform>().localScale; 
         NormalGrav = rb.gravityScale; 
     }
 
@@ -75,6 +79,10 @@ public class Water : MonoBehaviour
             if (horizontal != 0 || vertical != 0)
             {
                 Debug.Log("swim");
+                if (horizontal > 0)
+                    transform.localScale = new Vector3(PlayerScale.x, PlayerScale.y, PlayerScale.z);
+                else if (horizontal < 0)
+                    transform.localScale = new Vector3(-PlayerScale.x, PlayerScale.y, PlayerScale.z);
                 rb.linearVelocity = new Vector2(horizontal * ImpulseSpeed, vertical * ImpulseSpeed);
             }
             
@@ -94,6 +102,7 @@ public class Water : MonoBehaviour
         if (CanSwim)
         {
             InWater = true;
+            BubbleEffect.gameObject.SetActive(true);
             rb.gravityScale = WaterGrav;
             rb.linearVelocity = Vector2.zero;
 
@@ -104,6 +113,7 @@ public class Water : MonoBehaviour
     {
         if (CanSwim)
         {
+            BubbleEffect.gameObject.SetActive(false);
             InWater = false;
             rb.gravityScale = NormalGrav;
         }
