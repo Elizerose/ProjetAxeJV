@@ -10,6 +10,7 @@ public class BounceCheck : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("le joueur a sauté dessus");
             // Si le joueur sort du trigger c'est qu'il a rebondit alors on peut détruire le GameObject
             GameManager.Instance.Player.GetComponent<PlateformPlacement>().HasBounce = true;
             Destroy(gameObject);

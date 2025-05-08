@@ -13,8 +13,6 @@ public class BlueChecks : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Water"))
             GameManager.Instance.Player.GetComponent<PlateformPlacement>()._canPlace = true;
-        else
-            GameManager.Instance.Player.GetComponent<PlateformPlacement>()._canPlace = false;
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -27,7 +27,7 @@ MonoBehaviour:
     AutoDestroyTimer: 10
     Istrigger: 0
     PowerColor: {r: 1, g: 0, b: 0, a: 1}
-    number: 1
+    number: 4
     ItemSprite: {fileID: 0}
   - color: 1
     Prefab: {fileID: 3429389496650276000, guid: 0f202d4830d02aa4a897c8b11a67de64, type: 3}
