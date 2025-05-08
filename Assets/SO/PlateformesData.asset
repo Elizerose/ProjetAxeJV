@@ -19,7 +19,7 @@ MonoBehaviour:
     AutoDestroyTimer: 10
     Istrigger: 1
     PowerColor: {r: 1, g: 0.84313726, b: 0, a: 1}
-    number: 0
+    number: 3
     ItemSprite: {fileID: 0}
   - color: 3
     Prefab: {fileID: 4177928664267597892, guid: 76a4f2b13ba936249946bf2a22c87611, type: 3}
@@ -27,7 +27,7 @@ MonoBehaviour:
     AutoDestroyTimer: 10
     Istrigger: 0
     PowerColor: {r: 1, g: 0, b: 0, a: 1}
-    number: 0
+    number: 1
     ItemSprite: {fileID: 0}
   - color: 1
     Prefab: {fileID: 3429389496650276000, guid: 0f202d4830d02aa4a897c8b11a67de64, type: 3}
@@ -35,5 +35,5 @@ MonoBehaviour:
     AutoDestroyTimer: 20
     Istrigger: 1
     PowerColor: {r: 0, g: 0.5647059, b: 1, a: 1}
-    number: 0
+    number: 2
     ItemSprite: {fileID: 0}
