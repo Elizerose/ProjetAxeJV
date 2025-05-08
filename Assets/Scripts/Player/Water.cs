@@ -54,6 +54,7 @@ public class Water : MonoBehaviour
             }
             else
             {
+                OxygeneTimer = 25f;
                 HUDManager.Instance.OxygeneTimerGO.SetActive(false);
             }
             
