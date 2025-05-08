@@ -1,13 +1,5 @@
-using NUnit.Framework;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using TMPro;
-using Unity.Cinemachine;
-using UnityEditor.PackageManager;
-using UnityEditor.Playables;
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.UI;
 

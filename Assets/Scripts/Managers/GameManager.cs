@@ -60,4 +60,10 @@ public class GameManager : MonoBehaviour
         HUDManager.Instance.DeathPanel.GetComponent<Animator>().SetTrigger("FadeOut");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
