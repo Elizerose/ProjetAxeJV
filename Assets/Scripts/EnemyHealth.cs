@@ -21,5 +21,6 @@ public class EnemyHealth : MonoBehaviour
             Destroy(collision.gameObject);
             HP-=1;
         }
+        
     }
 }

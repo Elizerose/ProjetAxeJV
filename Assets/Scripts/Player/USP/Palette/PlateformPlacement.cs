@@ -21,6 +21,7 @@ public class PlateformPlacement : MonoBehaviour
     
     private float _powerDelay = 20f; // Temps de pose de pouvoir
     private bool _placed = false; // Est-ce que la plateforme est posée ?
+    private float lastOrientation; // derniere orientation du joueur
 
 
     //[Header("Red power")]
@@ -59,6 +60,8 @@ public class PlateformPlacement : MonoBehaviour
         _hasInvoke = false;
         _placed = false;
         _powerDelay = 20f;
+
+        lastOrientation = Mathf.Sign(GameManager.Instance.Player.localScale.x);
 
         // Afficher la couleur de placement 
         // ColorPowerController.Instance.ShowCurrentColor();
@@ -155,9 +158,11 @@ public class PlateformPlacement : MonoBehaviour
             _currentPlatform.GetComponent<SpriteRenderer>().color = new Color32(173, 216, 230, 128);
 
             _currentPlatform.GetComponent<PlateformBehavior>().Init(_currentData);
+            Text timer = _currentPlatform.GetComponentInChildren<Text>();
+            Vector3 newScale = timer.transform.localScale;
+            newScale.x = Mathf.Abs(newScale.x);
+            timer.transform.localScale = newScale;
 
-
-            
 
 
             // Le mettre en enfant du joueur pou qu'elle le suive avec lui
@@ -170,12 +175,28 @@ public class PlateformPlacement : MonoBehaviour
         // Su notre plateforme est invoqué et bien en mémoire
         if (_currentPlatform != null && !_placed)
         {
-            Text timer = _currentPlatform.GetComponentInChildren<Text>();
-            Vector3 newScale = timer.transform.localScale;
-            newScale.x = Mathf.Abs(newScale.x) * GameManager.Instance.Player.GetComponent<Movements>().GetPlayerOrientation();
-            timer.GetComponentInChildren<Text>().transform.localScale = newScale;
+            if (currentPlayerDirection != lastOrientation)
+            {
+                Debug.Log("-----");
+                Debug.Log("la joueur est tourné à " + currentPlayerDirection);
+                Debug.Log("Avant il était à " + lastOrientation);
 
 
+                Text timer = _currentPlatform.GetComponentInChildren<Text>();
+                Vector3 newScale = timer.transform.localScale;
+
+                if (currentPlayerDirection == 1) 
+                    newScale.x *=   -currentPlayerDirection ;
+                else
+                    newScale.x *=  currentPlayerDirection;
+
+
+                Debug.Log("On met notre newScale à " + newScale.x);
+
+                timer.transform.localScale = newScale;
+
+                lastOrientation = currentPlayerDirection;
+            }
 
             // Si je peux la placer, elle est en bleue
             if (_canPlace)

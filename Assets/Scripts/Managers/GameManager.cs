@@ -39,8 +39,6 @@ public class GameManager : MonoBehaviour
             _instance = this;
         else
             Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 
     // Mort du joueur
@@ -58,12 +56,17 @@ public class GameManager : MonoBehaviour
     public void ReStart()
     {
         HUDManager.Instance.DeathPanel.GetComponent<Animator>().SetTrigger("FadeOut");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 
 
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Pause(bool pause)
+    {
+        Time.timeScale = pause ? 0f : 1f;
     }
 }

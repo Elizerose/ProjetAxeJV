@@ -1349,7 +1349,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 644912086}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -4421,7 +4421,7 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 873791277}
+  - {fileID: 1286446646}
   - {fileID: 4896012}
   - {fileID: 56123504}
-  - {fileID: 1286446646}
-  - {fileID: 873791277}

@@ -14,6 +14,10 @@ using UnityEngine;
 
 public class Checks : MonoBehaviour
 {
+    private void Start()
+    {
+        GameManager.Instance.Player.GetComponent<PlateformPlacement>()._canPlace = true;
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer != LayerMask.NameToLayer("Ground"))
