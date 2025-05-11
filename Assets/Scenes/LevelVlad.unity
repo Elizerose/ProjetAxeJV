@@ -825,7 +825,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyDatabase: {fileID: 0}
   _plateformesDataBase: {fileID: 0}
-  _itemDataBase: {fileID: 0}
 --- !u!1 &444335215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,7 +1472,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63.645844, y: 6.208019, z: -11.080745}
+  m_LocalPosition: {x: -0.40999985, y: 2.6999998, z: -11.080745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6228,9 +6227,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58556e44a9a4a5c40b90b474603984ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filterPanel: {fileID: 1988531294}
-  SwimMode0: {fileID: 1534036358}
-  SwimMode1: {fileID: 334661174}
+  filterPanel: {fileID: 0}
+  SwimMode0: {fileID: 0}
+  SwimMode1: {fileID: 0}
 --- !u!4 &1341948669
 Transform:
   m_ObjectHideFlags: 0
