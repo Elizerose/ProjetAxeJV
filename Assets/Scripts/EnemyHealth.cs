@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (HP <= 0)
         {
-        Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
 
     }

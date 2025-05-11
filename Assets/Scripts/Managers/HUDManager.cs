@@ -37,6 +37,10 @@ public class HUDManager : MonoBehaviour
     [Header("DEATH")]
     public GameObject DeathPanel;
 
+    [Header("Victory")]
+    public GameObject VictoryPanel;
+
+
     [Header("INFOS")]
     public GameObject TextInfos;
     private bool _isDisplaying;

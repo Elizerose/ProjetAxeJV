@@ -72,13 +72,8 @@ public class ColorPowerController : MonoBehaviour
             // Si on était en choix, c'est qu'on a validé la couleur : on passe en mode placement
             if (_state == STATE_POWER.INCHOICE)
             {
-                // si on est dans l'eau on ne peut pas invoquer la palette
-                if (GameManager.Instance.Player.GetComponent<Water>().InWater && !CanInvokePaletteUnderWater)
-                {
-                    HUDManager.Instance.DisplayError("Vous ne pouvez pas invoquer la palette de couleurs dans l'eau ...");
-                    return;
-                }
-                else if ((ColorAbilities)_currentIndexColor != ColorAbilities.None)
+                
+                if ((ColorAbilities)_currentIndexColor != ColorAbilities.None)
                 {
                     // on vérifie sil a assez de pot de peinture
                     if (DatabaseManager.Instance.GetPlateformesData((ColorAbilities)_currentIndexColor).number > 0)
@@ -111,8 +106,15 @@ public class ColorPowerController : MonoBehaviour
             // Sinon, on passe en mode choix de couleur
             else
             {
-                _state = STATE_POWER.INCHOICE;
-            }
+                // si on est dans l'eau on ne peut pas invoquer la palette
+                if (GameManager.Instance.Player.GetComponent<Water>().InWater && !CanInvokePaletteUnderWater)
+                {
+                    HUDManager.Instance.DisplayError("Vous ne pouvez pas invoquer la palette de couleurs dans l'eau ...");
+                    return;
+                }
+                else
+                    _state = STATE_POWER.INCHOICE;
+            }   
 
         }
 

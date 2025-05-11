@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance => _instance ;
 
+    [SerializeField] private GameObject _ennemiWin;
+    private bool _victory = false;
+
     // causes de mort pour gerer les differentes animations
     public enum DeathCauses 
     {
@@ -41,6 +44,19 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    private void Update()
+    {
+        if (_ennemiWin == null && !_victory)
+            Win();
+    }
+
+    public void Win()
+    {
+        HUDManager.Instance.VictoryPanel.GetComponent<Animator>().SetTrigger("FadeIn");
+        
+        _victory = true;
+    }
+
     // Mort du joueur
     public void Death(DeathCauses cause)
     {
@@ -49,12 +65,14 @@ public class GameManager : MonoBehaviour
 
         // Affichage du panel de mort
         HUDManager.Instance.DeathPanel.GetComponent<Animator>().SetTrigger("FadeIn");
+        Pause(true);
         
     }
 
     // recommencer le niveau / la scene
     public void ReStart()
     {
+        Pause(false);
         HUDManager.Instance.DeathPanel.GetComponent<Animator>().SetTrigger("FadeOut");
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
@@ -69,4 +87,5 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = pause ? 0f : 1f;
     }
+
 }
