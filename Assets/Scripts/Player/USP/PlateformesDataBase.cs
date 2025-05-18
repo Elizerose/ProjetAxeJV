@@ -31,7 +31,11 @@ public class PlateformesDataBase : ScriptableObject
 public class PlateformesData
 {
     public ColorPowerController.ColorAbilities color;
-    
+
+    [Header("Description")]
+    public string Titre;
+    public string description;  
+
     [Header("placement de la plateforme")]
     public GameObject Prefab;
     public float startingPositionOffsetX;

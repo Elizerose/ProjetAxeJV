@@ -18,7 +18,7 @@ public class Checks : MonoBehaviour
     {
         GameManager.Instance.Player.GetComponent<PlateformPlacement>()._canPlace = true;
     }
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer != LayerMask.NameToLayer("Ground"))
             GameManager.Instance.Player.GetComponent<PlateformPlacement>()._canPlace = false;

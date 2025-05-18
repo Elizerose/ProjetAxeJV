@@ -16,7 +16,7 @@ public class Player_Shoot : MonoBehaviour
             Shoot_debounce = false;
         }
 
-        if (Input.GetMouseButtonDown(0) && !Shoot_debounce)
+        if (Input.GetMouseButtonDown(0) && !Shoot_debounce && ColorPowerController.Instance._state != ColorPowerController.STATE_POWER.INPLACEMENT)
         {
             Shoot_debounce = true;
             Last_used_time = Time.time;

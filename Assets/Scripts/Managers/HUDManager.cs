@@ -23,7 +23,10 @@ public class HUDManager : MonoBehaviour
     public Transform _currentColorParent;
     public GameObject PalettePanel;
 
-    [Header("ORDRE IMPORTANT : Nocolor / blue / yellow / red")]
+    public GameObject Description;
+    public GameObject Title;
+
+    [Header("ORDRE IMPORTANT : Nocolor / blue / red / green / yellow")]
     public List<GameObject> ColorsList;
 
     public GameObject Palette;
@@ -68,8 +71,10 @@ public class HUDManager : MonoBehaviour
         // Associer les couleurs à leurs GameObjects respectifs
         ColorAbilitiesPalette.Add(ColorAbilities.None, ColorsList[0]);
         ColorAbilitiesPalette.Add(ColorAbilities.Blue, ColorsList[1]);
-        ColorAbilitiesPalette.Add(ColorAbilities.Yellow, ColorsList[2]);
-        ColorAbilitiesPalette.Add(ColorAbilities.Red, ColorsList[3]);
+        ColorAbilitiesPalette.Add(ColorAbilities.Red, ColorsList[2]);
+        ColorAbilitiesPalette.Add(ColorAbilities.Green, ColorsList[3]);
+        ColorAbilitiesPalette.Add(ColorAbilities.Yellow, ColorsList[4]);
+        
     }
 
     // Fonction qui affiche des petits messages d'erreur (ex : vous ne pouvez pas placer le bloc ici ... )
