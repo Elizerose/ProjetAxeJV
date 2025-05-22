@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6994870502731061817}
+  - component: {fileID: 2578171330945372283}
+  - component: {fileID: 8010135522851136709}
   - component: {fileID: 5482783237280461878}
   - component: {fileID: 5897959317317185424}
   - component: {fileID: -8188613315976885145}
@@ -34,6 +36,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2578171330945372283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4243356310562406968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e64c45d7970004e8a33c63d64f681b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartDelai: 0
+  timer: {fileID: 0}
+--- !u!114 &8010135522851136709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4243356310562406968}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5da888af477c04099147b066baed8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &5482783237280461878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -119,7 +147,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

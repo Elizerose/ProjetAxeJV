@@ -17,7 +17,7 @@ public class PlateformPlacement : MonoBehaviour
     [HideInInspector] public bool _hasInvoke = false; // A-t-on invoqué la plateforme fantôme ?
     [HideInInspector] public GameObject _currentPlatform = null; // La plateforme actuelle
 
-    private float _maxDistance = 5f; // distance de pose maximal par rapport au joueur
+    private float _maxPoseDistance = 8f; // distance de pose maximal par rapport au joueur
     private Vector3 _startingPosition; // position de départ de la plateforme
     
     private float _powerDelay = 20f; // Temps de pose de pouvoir
@@ -150,7 +150,18 @@ public class PlateformPlacement : MonoBehaviour
         if (_currentPlatform != null && !_placed)
         {
 
-            _currentPlatform.transform.position = mousePos;
+            if (Vector3.Distance(transform.position, mousePos) <= _maxPoseDistance)
+                _currentPlatform.transform.position = mousePos;
+            else
+            {
+                // on calcule la position max du bord : transform.position : on part de la position du joueur / (mousePos - transform.position).normalized : on recupere la direction que le vecteur doit prendre / * max dist = pour qu'il soit a la max dist
+                Vector3 limitedPos = transform.position + (mousePos - transform.position).normalized * _maxPoseDistance;
+                _currentPlatform.transform.position = limitedPos;
+
+            }
+
+            // on check si ele depace pas le rayon max;
+
 
             // Si je peux la placer, elle est en bleue
             if (_canPlace)
@@ -212,6 +223,10 @@ public class PlateformPlacement : MonoBehaviour
 
             case ColorAbilities.Yellow:
                 _currentPlatform.transform.GetChild(0).gameObject.SetActive(true);
+                break;
+
+            case ColorAbilities.Green:
+                _currentPlatform.GetComponent<GreenPlateformBehavior>().enabled = true;
                 break;
 
             default:
