@@ -9,13 +9,13 @@ public class WaterTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-            collision.GetComponent<Water>().EnterWater();
+        if (collision.CompareTag("PlayerWaterCheck"))
+            collision.transform.parent.GetComponent<Water>().EnterWater();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-            collision.GetComponent<Water>().ExitWater();
+        if (collision.CompareTag("PlayerWaterCheck"))
+            collision.transform.parent.GetComponent<Water>().ExitWater();
     }
 }

@@ -1,0 +1,72 @@
+using UnityEngine;
+
+public class Vines : MonoBehaviour
+{
+    public bool IsClimbing = false;
+    public float ClimbSpeed = 3f;
+    private Rigidbody2D rb;
+    private bool isTouchingVine = false; 
+    private Transform currentVine; 
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        if (isTouchingVine)
+        {
+            if (Input.GetButton("Vertical") || Input.GetButton("Horizontal"))
+                MoveY();
+            else
+                rb.linearVelocity = Vector2.zero;
+        }
+
+        //    if (isTouchingVine) //&& Input.GetKeyDown(KeyCode.Space))
+        //    {
+        //        //IsClimbing = !IsClimbing; 
+        //        //rb.gravityScale = IsClimbing ? 0 : 1;
+        //        IsClimbing = true;
+        //        rb.gravityScale = 0;
+        //        rb.linearVelocity = Vector2.zero;
+        //    }
+
+        //    if (IsClimbing)
+        //    {
+        //        float vertical = Input.GetAxisRaw("Vertical");
+        //        float horizontal = Input.GetAxisRaw("Horizontal");
+
+        //        rb.linearVelocity = new Vector2(horizontal * ClimbSpeed, vertical * ClimbSpeed);
+        //    }
+    }
+
+    private void MoveY()
+    {
+        float vertical = Input.GetAxisRaw("Vertical");
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        rb.gravityScale = 0;
+        
+
+        rb.linearVelocity = new Vector2(horizontal * ClimbSpeed, vertical * ClimbSpeed);
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Vine"))
+        {
+            isTouchingVine = true;
+            currentVine = other.transform; 
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Vine"))
+        {
+            isTouchingVine = false;
+            IsClimbing = false;
+            rb.gravityScale = 1; 
+        }
+    }
+}

@@ -23,6 +23,7 @@ public class Water : MonoBehaviour
 
     public float ImpulseCDTime = 0.35f;
     public ParticleSystem BubbleEffect;
+    public ParticleSystem WaterEnter;
     private Vector3 PlayerScale;
 
     void Start()
@@ -71,7 +72,6 @@ public class Water : MonoBehaviour
     {
         if (CanImpulse)
         {
-            Debug.Log("CanImpulse");
             CanImpulse = false;
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
@@ -79,7 +79,6 @@ public class Water : MonoBehaviour
 
             if (horizontal != 0 || vertical != 0)
             {
-                Debug.Log("swim");
                 if (horizontal > 0)
                     transform.localScale = new Vector3(PlayerScale.x, PlayerScale.y, PlayerScale.z);
                 else if (horizontal < 0)
@@ -100,6 +99,7 @@ public class Water : MonoBehaviour
 
     public void EnterWater()
     {
+        WaterEnter.Play();
         if (CanSwim)
         {
             InWater = true;

@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static ColorPowerController;
@@ -13,22 +14,17 @@ public class PlateformPlacement : MonoBehaviour
     private PlateformesData _currentData;
 
     [Header("PLacement")]
-    [HideInInspector] public bool _canPlace = false; // Peut-on poser la plateforme ?
+    private bool _canPlace = false; // Peut-on poser la plateforme ?
+    public bool CanPlace { get => _canPlace; set { _canPlace = value; } } 
+
+
     [HideInInspector] public bool _hasInvoke = false; // A-t-on invoqué la plateforme fantôme ?
     [HideInInspector] public GameObject _currentPlatform = null; // La plateforme actuelle
 
     private float _maxPoseDistance = 8f; // distance de pose maximal par rapport au joueur
-    private Vector3 _startingPosition; // position de départ de la plateforme
     
     private float _powerDelay = 20f; // Temps de pose de pouvoir
     private bool _placed = false; // Est-ce que la plateforme est posée ?
-    private float lastOrientation; // derniere orientation du joueur
-
-
-    //[Header("Red power")]
-    //private float FireCoolDownTimer = 1f;
-    //private bool _canAttack = true;
-    //[SerializeField] GameObject _projectilePrefab;
 
 
     [Header("Pouvoir Rouge")]
@@ -59,8 +55,6 @@ public class PlateformPlacement : MonoBehaviour
         _hasInvoke = false;
         _placed = false;
         _powerDelay = 20f;
-
-        lastOrientation = Mathf.Sign(GameManager.Instance.Player.localScale.x);
 
         // Afficher la couleur de placement 
         // ColorPowerController.Instance.ShowCurrentColor();
@@ -149,6 +143,8 @@ public class PlateformPlacement : MonoBehaviour
         // Si notre plateforme est invoqué et bien en mémoire
         if (_currentPlatform != null && !_placed)
         {
+            
+            _currentPlatform.GetComponentInChildren<TextMeshProUGUI>().text = _currentData.AutoDestroyTimer.ToString();
 
             if (Vector3.Distance(transform.position, mousePos) <= _maxPoseDistance)
                 _currentPlatform.transform.position = mousePos;
@@ -159,8 +155,6 @@ public class PlateformPlacement : MonoBehaviour
                 _currentPlatform.transform.position = limitedPos;
 
             }
-
-            // on check si ele depace pas le rayon max;
 
 
             // Si je peux la placer, elle est en bleue
@@ -194,7 +188,6 @@ public class PlateformPlacement : MonoBehaviour
         ColorPowerController.Instance._state = STATE_POWER.NONE;
 
         _currentData = null;
-        //HUDManager.Instance.PowerTimer.SetActive(false);
 
         HasBounce = false;
 
@@ -208,37 +201,16 @@ public class PlateformPlacement : MonoBehaviour
         if (!_currentData.Istrigger)
             _currentPlatform.GetComponent<Collider2D>().isTrigger = false;
 
-        _currentPlatform.GetComponent<SpriteRenderer>().color = Color.white;
+        _currentPlatform.GetComponent<SpriteRenderer>().color = _currentData.PowerColor;
 
         _currentPlatform.transform.SetParent(null);
         _placed = true;
 
-        switch (_currentData.color)
-        {
-            case ColorAbilities.Red:
-                break;
-
-            case ColorAbilities.Blue:
-                break;
-
-            case ColorAbilities.Yellow:
-                _currentPlatform.transform.GetChild(0).gameObject.SetActive(true);
-                break;
-
-            case ColorAbilities.Green:
-                _currentPlatform.GetComponent<GreenPlateformBehavior>().enabled = true;
-                break;
-
-            default:
-                break;
-        }
-
-        // On display la current color
-        //HUDManager.Instance.ColorsListActive.Add(_currentData);
-        //HUDManager.Instance.ShowCurrentPower(_currentPlatform);
-
         // On récupère le script behavior de la plateforme
         PlateformBehavior plateformBehavior = _currentPlatform.GetComponent<PlateformBehavior>();
+
+        // On active son pouvoir
+        plateformBehavior.ActivePower();
 
         // La plateforme est placé, on appelle son auto destroy
         plateformBehavior.StartDelai = true;

@@ -89,6 +89,7 @@ public class ColorPowerController : MonoBehaviour
                         PlateformPlacement.Instance.SetAbility(DatabaseManager.Instance.GetPlateformesData((ColorAbilities)_currentIndexColor));
                         Compteurs[_currentIndexColor - 1].transform.parent.GetComponentInChildren<ParticleSystem>().Play();
                         _state = STATE_POWER.INPLACEMENT;
+                        Time.timeScale = 1f;
                     }
                     // Sinon on ne peux pas invoquer le pouvoir
                     else
@@ -102,7 +103,7 @@ public class ColorPowerController : MonoBehaviour
                     {
                         Destroy(PlateformPlacement.Instance._currentPlatform);
                     }
-
+                    Time.timeScale = 1f;
                     HUDManager.Instance.PalettePanel.SetActive(false);
                     _state = STATE_POWER.NONE;
                 }
@@ -139,6 +140,8 @@ public class ColorPowerController : MonoBehaviour
 
     private void InvokeColorPalette()
     {
+        // On ralenti le temps car sinon les ennemis peuvent nous attaquer trop facilement.
+        Time.timeScale = 0.3f;
 
         HUDManager.Instance.PalettePanel.SetActive(true);
 
@@ -146,7 +149,6 @@ public class ColorPowerController : MonoBehaviour
         {
             if (ability != ColorAbilities.None)
             {
-                Debug.Log(ability.ToString());
                 Compteurs.Add(HUDManager.Instance.ColorAbilitiesPalette[ability].GetComponentInChildren<Text>());
                 HUDManager.Instance.ColorAbilitiesPalette[ability].GetComponentInChildren<Text>().text = DatabaseManager.Instance.GetPlateformesData(ability).number.ToString();
             }
@@ -195,7 +197,7 @@ public class ColorPowerController : MonoBehaviour
         Vector3 _endSize = _startSize + new Vector3(0.2f, 0.2f, 0.2f);
 
         // rotation progressive 
-        for (float time = 0f; time < duration; time += Time.deltaTime)
+        for (float time = 0f; time < duration; time += Time.unscaledDeltaTime)
         {
             // Rotation de la palette
             HUDManager.Instance.Palette.transform.rotation = Quaternion.Slerp(PaletteRotationStart, endRotationPalette, time / duration);

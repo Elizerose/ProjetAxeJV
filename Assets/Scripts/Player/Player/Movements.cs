@@ -6,7 +6,7 @@ public class Movements : BaseController
     public float MoveSpeed = 4f;
     public float JumpForce = 15f;
     private Rigidbody2D rb;
-    private Vector3 PlayerScale;
+
 
     private bool _isFacingRight = true;
 
@@ -18,7 +18,6 @@ public class Movements : BaseController
     protected override void Init()
     {
         base.Init();
-        PlayerScale = GetComponent<Transform>().localScale;
     }
 
 

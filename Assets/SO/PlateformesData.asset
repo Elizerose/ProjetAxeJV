@@ -21,7 +21,7 @@ MonoBehaviour:
     AutoDestroyTimer: 10
     Istrigger: 1
     PowerColor: {r: 1, g: 0.84313726, b: 0, a: 1}
-    number: 14
+    number: 11
     ItemSprite: {fileID: 0}
   - color: 2
     Titre: Pouvoir Rouge
@@ -31,7 +31,7 @@ MonoBehaviour:
     AutoDestroyTimer: 10
     Istrigger: 0
     PowerColor: {r: 1, g: 0, b: 0, a: 1}
-    number: 15
+    number: 14
     ItemSprite: {fileID: 0}
   - color: 1
     Titre: Pouvoir Bleu
@@ -42,7 +42,7 @@ MonoBehaviour:
     AutoDestroyTimer: 20
     Istrigger: 1
     PowerColor: {r: 0, g: 0.5647059, b: 1, a: 1}
-    number: 15
+    number: 7
     ItemSprite: {fileID: 0}
   - color: 3
     Titre: Pouvoir vert
@@ -54,5 +54,5 @@ MonoBehaviour:
     AutoDestroyTimer: 20
     Istrigger: 1
     PowerColor: {r: 0, g: 0.72156864, b: 0.06666667, a: 1}
-    number: 15
+    number: 47
     ItemSprite: {fileID: 0}
