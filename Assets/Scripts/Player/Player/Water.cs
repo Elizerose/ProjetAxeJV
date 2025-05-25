@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static ColorPowerController;
@@ -14,9 +15,12 @@ public class Water : MonoBehaviour
     private float NormalGrav;
     private bool CanImpulse = true;
 
-
+    private float _time = 0f;
+    private float _duration = 1f;
 
     private float OxygeneTimer;
+    private TextMeshProUGUI _WaterTimerText;
+    private float _startFontSize;
     public bool CanBreatheUnderWater = false;
 
 
@@ -30,7 +34,11 @@ public class Water : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         PlayerScale = GetComponent<Transform>().localScale; 
-        NormalGrav = rb.gravityScale; 
+        NormalGrav = rb.gravityScale;
+
+        _WaterTimerText = HUDManager.Instance.OxygeneTimerGO.GetComponent<TextMeshProUGUI>();
+        _startFontSize = _WaterTimerText.fontSize;
+
     }
 
     void Update()
@@ -44,11 +52,25 @@ public class Water : MonoBehaviour
             if (!CanBreatheUnderWater)
             {
                 HUDManager.Instance.OxygeneTimerGO.SetActive(true);
-                HUDManager.Instance.OxygeneTimerGO.GetComponent<Text>().text = ((int)OxygeneTimer).ToString();
+                HUDManager.Instance.OxygeneTimerGO.GetComponent<TextMeshProUGUI>().text = ((int)OxygeneTimer).ToString();
                 OxygeneTimer -= Time.deltaTime;
+                if (OxygeneTimer <= 10f)
+                {
+                    float ratio = _time / _duration;
+                    float t = Mathf.Sin(ratio * Mathf.PI);
+                    HUDManager.Instance.OxygeneTimerGO.GetComponent<TextMeshProUGUI>().fontSize = Mathf.Lerp(_startFontSize + 10, _startFontSize + 20, t) ;
+                    HUDManager.Instance.OxygeneTimerGO.GetComponent<TextMeshProUGUI>().color = Color.red;
+
+                    _time += Time.unscaledDeltaTime;
+                    if (_time >= _duration)
+                        _time = 0 ;
+                }
                 if (OxygeneTimer <= 0)
                 {
                     GameManager.Instance.Death(DeathCauses.Water);
+                    HUDManager.Instance.OxygeneTimerGO.SetActive(false);
+                    _WaterTimerText.fontSize = _startFontSize;
+                    _WaterTimerText.color = Color.black;
                     OxygeneTimer = 25f;
                 }
                 

@@ -23,6 +23,7 @@ public class HUDManager : MonoBehaviour
     public Transform _currentColorParent;
     public GameObject PalettePanel;
 
+    public GameObject PaletteInfos;
     public GameObject Description;
     public GameObject Title;
 

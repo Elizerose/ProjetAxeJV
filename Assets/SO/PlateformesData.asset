@@ -46,9 +46,9 @@ MonoBehaviour:
     ItemSprite: {fileID: 0}
   - color: 3
     Titre: Pouvoir vert
-    description: "fait pousser du lierre de 5 blocs. <br> Si le bloc est pos\xE9
-      au sol : il pousse verticalement. <br> Si le bloc est pos\xE9 a une paroi /
-      mur : il pousse horizontalement. <br> Disparait apres 10s."
+    description: "fait pousser du lierre de 5 blocs. <br>Si le bloc est pos\xE9 au
+      sol : il pousse verticalement. <br>Si le bloc est pos\xE9 a une paroi / mur
+      : il pousse horizontalement. <br>Disparait apres 10s."
     Prefab: {fileID: 4243356310562406968, guid: c8f0164fd68d61b48bcef9416d9bf0cd, type: 3}
     startingPositionOffsetX: 4
     AutoDestroyTimer: 20

@@ -104,6 +104,7 @@ public class ColorPowerController : MonoBehaviour
                         Destroy(PlateformPlacement.Instance._currentPlatform);
                     }
                     Time.timeScale = 1f;
+                    HUDManager.Instance.PaletteInfos.SetActive(false);
                     HUDManager.Instance.PalettePanel.SetActive(false);
                     _state = STATE_POWER.NONE;
                 }
@@ -144,6 +145,7 @@ public class ColorPowerController : MonoBehaviour
         Time.timeScale = 0.3f;
 
         HUDManager.Instance.PalettePanel.SetActive(true);
+        HUDManager.Instance.PaletteInfos.SetActive(true);   
 
         foreach (ColorAbilities ability in HUDManager.Instance.ColorAbilitiesPalette.Keys)
         {

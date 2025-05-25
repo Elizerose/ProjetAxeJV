@@ -107,7 +107,7 @@ public class PlateformPlacement : MonoBehaviour
         {
             _powerDelay -= Time.deltaTime;
             HUDManager.Instance.PowerTimer.SetActive(true);
-            HUDManager.Instance.PowerTimer.GetComponent<Text>().text = ((int)_powerDelay).ToString();
+            HUDManager.Instance.PowerTimer.GetComponent<TextMeshProUGUI>().text = ((int)_powerDelay).ToString();
         }
     }
 
@@ -196,6 +196,7 @@ public class PlateformPlacement : MonoBehaviour
 
     private void ActivePlateforme()
     {
+        HUDManager.Instance.PaletteInfos.SetActive(false);
         _currentData.number -= 1;
 
         if (!_currentData.Istrigger)
