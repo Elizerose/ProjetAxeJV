@@ -7,12 +7,12 @@ public class MainMenu : MonoBehaviour
 {
     public void StartSceneByIndex(int p_index)
     {
-        SceneManager.LoadScene(p_index);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(p_index);
     }
 
     public void StartSceneByName(string p_name)
     {
-        SceneManager.LoadScene(p_name);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(p_name);
     }
 
     public void QuitGame()

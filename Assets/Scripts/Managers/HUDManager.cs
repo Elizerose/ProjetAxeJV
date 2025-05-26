@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,7 +24,11 @@ public class HUDManager : MonoBehaviour
     public Transform _currentColorParent;
     public GameObject PalettePanel;
 
-    [Header("ORDRE IMPORTANT : Nocolor / blue / yellow / red")]
+    public GameObject PaletteInfos;
+    public GameObject Description;
+    public GameObject Title;
+
+    [Header("ORDRE IMPORTANT : Nocolor / blue / red / green / yellow")]
     public List<GameObject> ColorsList;
 
     public GameObject Palette;
@@ -33,13 +38,22 @@ public class HUDManager : MonoBehaviour
     [Header("OXYGENE")]
     public GameObject OxygeneTimerGO;
 
-
     [Header("DEATH")]
     public GameObject DeathPanel;
+
+    [Header("Victory")]
+    public GameObject VictoryPanel;
+
 
     [Header("INFOS")]
     public GameObject TextInfos;
     private bool _isDisplaying;
+
+    [Header("ITEM")]
+    private Vector3 _startCollectedPanelPos;
+    private Vector3 _endCollectedPanelPos;
+    [SerializeField] private GameObject CollectedFeedbackCount;
+
 
 
     // Dictionnaire pour associer chaque ColorAbility à un GameObject color
@@ -64,17 +78,24 @@ public class HUDManager : MonoBehaviour
         // Associer les couleurs à leurs GameObjects respectifs
         ColorAbilitiesPalette.Add(ColorAbilities.None, ColorsList[0]);
         ColorAbilitiesPalette.Add(ColorAbilities.Blue, ColorsList[1]);
-        ColorAbilitiesPalette.Add(ColorAbilities.Yellow, ColorsList[2]);
-        ColorAbilitiesPalette.Add(ColorAbilities.Red, ColorsList[3]);
+        ColorAbilitiesPalette.Add(ColorAbilities.Red, ColorsList[2]);
+        ColorAbilitiesPalette.Add(ColorAbilities.Green, ColorsList[3]);
+        ColorAbilitiesPalette.Add(ColorAbilities.Yellow, ColorsList[4]);
+
+        _startCollectedPanelPos = CollectedFeedbackCount.GetComponent<RectTransform>().localPosition;
+        _endCollectedPanelPos = new Vector3(_startCollectedPanelPos.x, _startCollectedPanelPos.y + 200f, _startCollectedPanelPos.z);
+
     }
 
-    // Fonction qui affiche des petits messages d'erreur (ex : vous ne pouvez pas placer le bloc ici ... )
+    // Fonction qui affiche des petits messages d'erreur
     public void DisplayError(string error)
     {
         TextInfos.GetComponent<Text>().text = error;
         if (!_isDisplaying)
             StartCoroutine(DelayToDisplay());
     }
+
+    
 
     // Delai d'affichage
     IEnumerator DelayToDisplay()
@@ -101,22 +122,6 @@ public class HUDManager : MonoBehaviour
             {
                 Destroy(go.gameObject);
             }
-
-            //foreach (PlateformesData data in ColorsListActive)
-            //{
-            //    GameObject _currentColor = Instantiate(currentColorFeedbackPrefab, _currentColorParent);
-            //    _currentColor.GetComponent<Image>().color = data.PowerColor;
-
-            //    if (currentPlatform != null)
-            //    {
-            //        Text timer = _currentColor.GetComponentInChildren<Text>();
-            //        currentPlatform.GetComponent<PlateformBehavior>().timer = timer;
-            //    }
-                
-            //}
-            
-
-
             
         }
         else
@@ -125,4 +130,17 @@ public class HUDManager : MonoBehaviour
         }
     }
 
+    public void DisplayCollectedFeedback(ColorAbilities color)
+    {
+
+        PlateformesData _data = DatabaseManager.Instance.GetPlateformesData(color);
+        CollectedFeedbackCount.GetComponentInChildren<TextMeshProUGUI>().text = "+ 1 (" + _data.number.ToString() + ")";
+        CollectedFeedbackCount.GetComponentInChildren<TextMeshProUGUI>().color = _data.PowerColor;
+        CollectedFeedbackCount.GetComponentInChildren<Image>().sprite = _data.ItemSprite;
+
+        CollectedFeedbackCount.SetActive(true);
+        CollectedFeedbackCount.GetComponent<CanvasGroup>().alpha = 1;
+
+        CollectedFeedbackCount.GetComponent<Animator>().SetTrigger("Anim");
+    }
 }

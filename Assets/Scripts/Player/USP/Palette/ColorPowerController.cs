@@ -1,13 +1,6 @@
-using NUnit.Framework;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using TMPro;
-using Unity.Cinemachine;
-using UnityEditor.PackageManager;
-using UnityEditor.Playables;
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,7 +34,7 @@ public class ColorPowerController : MonoBehaviour
     private bool _isRotating = false;
 
     [Header("Gestion de la rotation")]
-    private int _rotationStep = 90;
+    private int _rotationStep = 72;
 
     [Header("Gestion de la couleur choisie")]
     [HideInInspector] public int _currentIndexColor = 0;
@@ -56,8 +49,9 @@ public class ColorPowerController : MonoBehaviour
     {
         None = 0,
         Blue,
-        Yellow,
-        Red
+        Red,
+        Green,
+        Yellow
     }
 
 
@@ -77,16 +71,12 @@ public class ColorPowerController : MonoBehaviour
         // Si on appuie sur E
         if (Input.GetKeyDown(KeyCode.E))
         {
+            UpdateDescription();
+
             // Si on était en choix, c'est qu'on a validé la couleur : on passe en mode placement
             if (_state == STATE_POWER.INCHOICE)
             {
-                // si on est dans l'eau on ne peut pas invoquer la palette
-                if (GameManager.Instance.Player.GetComponent<Water>().InWater && !CanInvokePaletteUnderWater)
-                {
-                    HUDManager.Instance.DisplayError("Vous ne pouvez pas invoquer la palette de couleurs dans l'eau ...");
-                    return;
-                }
-                else if ((ColorAbilities)_currentIndexColor != ColorAbilities.None)
+                if ((ColorAbilities)_currentIndexColor != ColorAbilities.None)
                 {
                     // on vérifie sil a assez de pot de peinture
                     if (DatabaseManager.Instance.GetPlateformesData((ColorAbilities)_currentIndexColor).number > 0)
@@ -97,7 +87,9 @@ public class ColorPowerController : MonoBehaviour
                         }
                         // Si on est en mode placement (on a choisi notre couleur) on envoie notre couleur choisi au script qui va gerer son placement
                         PlateformPlacement.Instance.SetAbility(DatabaseManager.Instance.GetPlateformesData((ColorAbilities)_currentIndexColor));
+                        Compteurs[_currentIndexColor - 1].transform.parent.GetComponentInChildren<ParticleSystem>().Play();
                         _state = STATE_POWER.INPLACEMENT;
+                        Time.timeScale = 1f;
                     }
                     // Sinon on ne peux pas invoquer le pouvoir
                     else
@@ -111,7 +103,8 @@ public class ColorPowerController : MonoBehaviour
                     {
                         Destroy(PlateformPlacement.Instance._currentPlatform);
                     }
-
+                    Time.timeScale = 1f;
+                    HUDManager.Instance.PaletteInfos.SetActive(false);
                     HUDManager.Instance.PalettePanel.SetActive(false);
                     _state = STATE_POWER.NONE;
                 }
@@ -119,8 +112,15 @@ public class ColorPowerController : MonoBehaviour
             // Sinon, on passe en mode choix de couleur
             else
             {
-                _state = STATE_POWER.INCHOICE;
-            }
+                // si on est dans l'eau on ne peut pas invoquer la palette
+                if (GameManager.Instance.Player.GetComponent<Water>().InWater && !CanInvokePaletteUnderWater)
+                {
+                    HUDManager.Instance.DisplayError("Vous ne pouvez pas invoquer la palette de couleurs dans l'eau ...");
+                    return;
+                }
+                else
+                    _state = STATE_POWER.INCHOICE;
+            }   
 
         }
 
@@ -132,7 +132,6 @@ public class ColorPowerController : MonoBehaviour
                 InvokeColorPalette();
                 break;
             case STATE_POWER.INPLACEMENT:
-
                 break;
 
 
@@ -142,7 +141,11 @@ public class ColorPowerController : MonoBehaviour
 
     private void InvokeColorPalette()
     {
+        // On ralenti le temps car sinon les ennemis peuvent nous attaquer trop facilement.
+        Time.timeScale = 0.3f;
+
         HUDManager.Instance.PalettePanel.SetActive(true);
+        HUDManager.Instance.PaletteInfos.SetActive(true);   
 
         foreach (ColorAbilities ability in HUDManager.Instance.ColorAbilitiesPalette.Keys)
         {
@@ -157,11 +160,13 @@ public class ColorPowerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             RotatePalette(-1);
+            UpdateDescription();
         }
         // couleur de droite
         else if (Input.GetKeyDown(KeyCode.D))
         {
             RotatePalette(1);
+            UpdateDescription();
         }
     }
 
@@ -194,7 +199,7 @@ public class ColorPowerController : MonoBehaviour
         Vector3 _endSize = _startSize + new Vector3(0.2f, 0.2f, 0.2f);
 
         // rotation progressive 
-        for (float time = 0f; time < duration; time += Time.deltaTime)
+        for (float time = 0f; time < duration; time += Time.unscaledDeltaTime)
         {
             // Rotation de la palette
             HUDManager.Instance.Palette.transform.rotation = Quaternion.Slerp(PaletteRotationStart, endRotationPalette, time / duration);
@@ -258,6 +263,32 @@ public class ColorPowerController : MonoBehaviour
         palette.transform.localPosition = originalPosition;
     }
 
+
+    private void UpdateDescription()
+    {
+        TextMeshProUGUI title = HUDManager.Instance.Title.GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI desc = HUDManager.Instance.Description.GetComponent<TextMeshProUGUI>();
+
+        PlateformesData data = DatabaseManager.Instance.GetPlateformesData((ColorAbilities)_currentIndexColor);
+
+
+        if ((ColorAbilities)_currentIndexColor == ColorAbilities.None)
+        {
+            title.color = Color.white;
+            desc.color = Color.white;
+
+            title.text = "Désactiver la palette";
+            desc.text = "Après avoir selectionné la couleur, vous avez 20s pour poser un bloc.";
+        } else
+        {
+            title.text = data.Titre;
+            desc.color = data.PowerColor;
+
+            desc.text = data.description;
+            title.color = data.PowerColor;
+        }
+
+    }
 
 }
 

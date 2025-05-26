@@ -12,6 +12,7 @@ TagManager:
   - Projectile
   - Enemy
   - Peinture
+  - PlayerWaterCheck
   layers:
   - Default
   - TransparentFX

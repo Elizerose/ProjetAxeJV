@@ -1,3 +1,5 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static ColorPowerController;
@@ -12,21 +14,17 @@ public class PlateformPlacement : MonoBehaviour
     private PlateformesData _currentData;
 
     [Header("PLacement")]
-    [HideInInspector] public bool _canPlace = false; // Peut-on poser la plateforme ?
+    private bool _canPlace = false; // Peut-on poser la plateforme ?
+    public bool CanPlace { get => _canPlace; set { _canPlace = value; } } 
+
+
     [HideInInspector] public bool _hasInvoke = false; // A-t-on invoqué la plateforme fantôme ?
     [HideInInspector] public GameObject _currentPlatform = null; // La plateforme actuelle
 
-    private float _maxDistance = 5f; // distance de pose maximal par rapport au joueur
-    private Vector3 _startingPosition; // position de départ de la plateforme
+    private float _maxPoseDistance = 8f; // distance de pose maximal par rapport au joueur
     
     private float _powerDelay = 20f; // Temps de pose de pouvoir
     private bool _placed = false; // Est-ce que la plateforme est posée ?
-
-
-    //[Header("Red power")]
-    //private float FireCoolDownTimer = 1f;
-    //private bool _canAttack = true;
-    //[SerializeField] GameObject _projectilePrefab;
 
 
     [Header("Pouvoir Rouge")]
@@ -42,15 +40,13 @@ public class PlateformPlacement : MonoBehaviour
             Destroy(gameObject);
     }
 
-
     /// <summary>
     /// Appelé quand on sélectionne un pouvoir (depuis la palette de couleur -> ColorPowerController)
     /// </summary>
     public void SetAbility(PlateformesData ability)
     {
-        // On désactive le panel de la palette 
-        HUDManager.Instance.PalettePanel.SetActive(false);
-
+        StartCoroutine(WaitForParticule());
+        
         // On stocke la data de la plateforme sélectionnée
         _currentData = ability;
 
@@ -62,6 +58,13 @@ public class PlateformPlacement : MonoBehaviour
 
         // Afficher la couleur de placement 
         // ColorPowerController.Instance.ShowCurrentColor();
+    }
+
+    private IEnumerator WaitForParticule()
+    {
+        yield return new WaitForSeconds(0.2f);
+        // On désactive le panel de la palette 
+        HUDManager.Instance.PalettePanel.SetActive(false);
     }
 
 
@@ -104,7 +107,7 @@ public class PlateformPlacement : MonoBehaviour
         {
             _powerDelay -= Time.deltaTime;
             HUDManager.Instance.PowerTimer.SetActive(true);
-            HUDManager.Instance.PowerTimer.GetComponent<Text>().text = ((int)_powerDelay).ToString();
+            HUDManager.Instance.PowerTimer.GetComponent<TextMeshProUGUI>().text = ((int)_powerDelay).ToString();
         }
     }
 
@@ -118,63 +121,40 @@ public class PlateformPlacement : MonoBehaviour
         if (_currentData == null)
             return;
 
-        // calcul de l'orientation du joueur
-        float currentPlayerDirection = Mathf.Sign(GameManager.Instance.Player.localScale.x);
 
-        // Taille du joueur
-        float playerHeight = GetComponent<CapsuleCollider2D>().size.y * transform.localScale.y;
-
-        // Taille de la plateforme (attention : la prefab est souvent en échelle 1)
-        float platformHeight;
-        float offsetX = _currentData.startingPositionOffsetX;
-
-        // Si la current color est pas égale à bleu, c'est un box collider 
-        if (_currentData.color != ColorAbilities.Blue)
-        {
-            platformHeight = _currentData.Prefab.GetComponent<BoxCollider2D>().size.y * _currentData.Prefab.transform.localScale.y;
-        }
-        // Si c'est le pouvoir bleu, c'est un circle collider
-        else
-        {
-            platformHeight = _currentData.Prefab.GetComponent<CircleCollider2D>().radius * _currentData.Prefab.transform.localScale.y;
-        }
-
-        // Calcul du offset vertical pour que le bas de la plateforme soit aligné au bas du joueur
-        float offsetY = -(playerHeight / 2f) + (platformHeight / 2f);
-
-        // Calcul de la starting Position (position du joueur + 2f de decalage)
-        _startingPosition = transform.position + new Vector3(offsetX * currentPlayerDirection, offsetY - 0.1f, 0);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
 
         // Si on a pas déjà invoqué la plateforme
         if (!_hasInvoke)
         {
-            // step 1 : instancier un 'fantome' de la plateforme avec des reperes de placement
-            _currentPlatform = Instantiate(_currentData.Prefab, _startingPosition, transform.rotation);
+
+            _currentPlatform = Instantiate(_currentData.Prefab, mousePos, transform.rotation);
 
             // Mettre sa couleur en bleu et opacité 50%
             _currentPlatform.GetComponent<SpriteRenderer>().color = new Color32(173, 216, 230, 128);
 
             _currentPlatform.GetComponent<PlateformBehavior>().Init(_currentData);
 
-
-            
-
-
-            // Le mettre en enfant du joueur pou qu'elle le suive avec lui
-            _currentPlatform.transform.SetParent(transform);
-
             // La plateforme est invoqué
             _hasInvoke = true;
         }
 
-        // Su notre plateforme est invoqué et bien en mémoire
+        // Si notre plateforme est invoqué et bien en mémoire
         if (_currentPlatform != null && !_placed)
         {
-            Text timer = _currentPlatform.GetComponentInChildren<Text>();
-            Vector3 newScale = timer.transform.localScale;
-            newScale.x = Mathf.Abs(newScale.x) * GameManager.Instance.Player.GetComponent<Movements>().GetPlayerOrientation();
-            timer.GetComponentInChildren<Text>().transform.localScale = newScale;
+            
+            _currentPlatform.GetComponentInChildren<TextMeshProUGUI>().text = _currentData.AutoDestroyTimer.ToString();
 
+            if (Vector3.Distance(transform.position, mousePos) <= _maxPoseDistance)
+                _currentPlatform.transform.position = mousePos;
+            else
+            {
+                // on calcule la position max du bord : transform.position : on part de la position du joueur / (mousePos - transform.position).normalized : on recupere la direction que le vecteur doit prendre / * max dist = pour qu'il soit a la max dist
+                Vector3 limitedPos = transform.position + (mousePos - transform.position).normalized * _maxPoseDistance;
+                _currentPlatform.transform.position = limitedPos;
+
+            }
 
 
             // Si je peux la placer, elle est en bleue
@@ -188,69 +168,11 @@ public class PlateformPlacement : MonoBehaviour
                 _currentPlatform.GetComponent<SpriteRenderer>().color = new Color32(255, 0, 0, 128);
             }
 
-
-
-            // Déplacer vers la gauche
-            if (Input.GetKey(KeyCode.W))
-            {
-                Vector3 position = _currentPlatform.transform.position;
-                position.x -= 0.1f;
-
-                float distance = 0f;
-
-                if (currentPlayerDirection > 0)
-                {
-                    distance = position.x - _startingPosition.x;
-
-                }
-                else
-                {
-                    distance = _startingPosition.x - position.x;
-                }
-
-                if (distance >= 0 && distance <= _maxDistance)
-                {
-                    _currentPlatform.transform.position = position;
-                }
-
-
-            }
-            // Déplacer vers la droite
-            if (Input.GetKey(KeyCode.X))
-            {
-                Vector3 position = _currentPlatform.transform.position;
-                position.x += 0.1f;
-
-                float distance = 0f;
-
-                if (currentPlayerDirection > 0)
-                {
-                    distance = position.x - _startingPosition.x;
-
-                }
-                else
-                {
-                    distance = _startingPosition.x - position.x;
-                }
-
-                if (distance >= 0 && distance <= _maxDistance)
-                {
-                    _currentPlatform.transform.position = position;
-                }
-
-            }
-
-            // Poser
-            if (Input.GetKeyDown(KeyCode.Return) && _canPlace)
-            {
+            if (Input.GetMouseButtonDown(0) && _canPlace)
                 ActivePlateforme();
-
-                //_currentCoroutine = StartCoroutine(TimeToDestroy(_data.AutoDestroyTimer));   
-            }
-            else if (Input.GetKeyDown(KeyCode.Return) && !_canPlace)
-            {
+            else if (Input.GetMouseButtonDown(0) && !_canPlace)
                 HUDManager.Instance.DisplayError("Pas assez d'espace pour poser le bloc ...");
-            }
+
         }
 
         if (HasBounce)
@@ -266,7 +188,6 @@ public class PlateformPlacement : MonoBehaviour
         ColorPowerController.Instance._state = STATE_POWER.NONE;
 
         _currentData = null;
-        //HUDManager.Instance.PowerTimer.SetActive(false);
 
         HasBounce = false;
 
@@ -275,38 +196,22 @@ public class PlateformPlacement : MonoBehaviour
 
     private void ActivePlateforme()
     {
+        HUDManager.Instance.PaletteInfos.SetActive(false);
         _currentData.number -= 1;
 
         if (!_currentData.Istrigger)
             _currentPlatform.GetComponent<Collider2D>().isTrigger = false;
 
-        _currentPlatform.GetComponent<SpriteRenderer>().color = Color.white;
+        _currentPlatform.GetComponent<SpriteRenderer>().color = _currentData.PowerColor;
 
         _currentPlatform.transform.SetParent(null);
         _placed = true;
 
-        switch (_currentData.color)
-        {
-            case ColorAbilities.Red:
-                break;
-
-            case ColorAbilities.Blue:
-                break;
-
-            case ColorAbilities.Yellow:
-                _currentPlatform.transform.GetChild(0).gameObject.SetActive(true);
-                break;
-
-            default:
-                break;
-        }
-
-        // On display la current color
-        //HUDManager.Instance.ColorsListActive.Add(_currentData);
-        //HUDManager.Instance.ShowCurrentPower(_currentPlatform);
-
         // On récupère le script behavior de la plateforme
         PlateformBehavior plateformBehavior = _currentPlatform.GetComponent<PlateformBehavior>();
+
+        // On active son pouvoir
+        plateformBehavior.ActivePower();
 
         // La plateforme est placé, on appelle son auto destroy
         plateformBehavior.StartDelai = true;
