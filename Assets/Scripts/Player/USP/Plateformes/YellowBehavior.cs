@@ -27,6 +27,7 @@ public class YellowBehavior : PlateformBehavior
 
     public override void ActivePower()
     {
+        base.ActivePower();
         GetComponent<Light2D>().enabled = true;
     }
 }

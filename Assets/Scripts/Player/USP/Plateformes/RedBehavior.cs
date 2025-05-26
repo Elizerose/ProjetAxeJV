@@ -24,4 +24,9 @@ public class RedBehavior : PlateformBehavior
         base.OnTriggerExit2D(collision);
     }
 
+    public override void ActivePower()
+    {
+        base.ActivePower();
+    }
+
 }

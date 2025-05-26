@@ -52,8 +52,10 @@ public class GreenBehavior : PlateformBehavior
 
     public override void ActivePower()
     {
+        base.ActivePower();
         _powerActive = true;
     }
+
 
 
     // Pouvoir vert

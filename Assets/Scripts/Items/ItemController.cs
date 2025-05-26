@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using static ColorPowerController;
 
 public class ItemController : MonoBehaviour
@@ -8,6 +9,7 @@ public class ItemController : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private PlateformesData _data;
     public ColorAbilities itemColor;
+    
 
     private void Awake()
     {
@@ -35,7 +37,10 @@ public class ItemController : MonoBehaviour
 
     IEnumerator WaitForParticules()
     {
+        HUDManager.Instance.DisplayCollectedFeedback(itemColor);
         yield return new WaitForSeconds(0.2f);
         gameObject.SetActive(false);
     }
+
+    
 }

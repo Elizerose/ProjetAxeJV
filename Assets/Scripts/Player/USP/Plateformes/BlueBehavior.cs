@@ -45,5 +45,10 @@ public class BlueBehavior : PlateformBehavior
         }
     }
 
+    public override void ActivePower()
+    {
+        base.ActivePower();
+    }
+
 
 }

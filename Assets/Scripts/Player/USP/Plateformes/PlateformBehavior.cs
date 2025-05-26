@@ -7,6 +7,8 @@ public class PlateformBehavior : MonoBehaviour
     private float _autoDestroyTimer;
     [HideInInspector] public TextMeshProUGUI timer;
 
+    private ParticleSystem _feedbackPlacement;
+
     protected bool _canPlace = false;
 
     private float _duration = 1f;
@@ -17,6 +19,7 @@ public class PlateformBehavior : MonoBehaviour
     {
         _canPlace = false;
         _autoDestroyTimer = data.AutoDestroyTimer;
+        _feedbackPlacement = GetComponentInChildren<ParticleSystem>();
         timer = GetComponentInChildren<TextMeshProUGUI>();
     }
 
@@ -37,7 +40,7 @@ public class PlateformBehavior : MonoBehaviour
 
         if (_autoDestroyTimer < 0 )
         {
-            HUDManager.Instance.ShowCurrentPower();
+            //HUDManager.Instance.ShowCurrentPower();
             Destroy(gameObject);
         }
         else
@@ -91,6 +94,6 @@ public class PlateformBehavior : MonoBehaviour
 
     public virtual void ActivePower()
     {
-
+        //_feedbackPlacement.Play();
     }
 }
