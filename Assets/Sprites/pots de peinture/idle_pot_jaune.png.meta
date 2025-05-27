@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: f85ec0841f6a01c4c804de03d0d8a5c5
+guid: 815033ce93b6e3440b932240d6ba9162
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7667193676822386260
-    second: Liam perso principal_0
+      213: 5123274491794436468
+    second: idle_pot_jaune_0
+  - first:
+      213: -6142072526073145291
+    second: idle_pot_jaune_1
+  - first:
+      213: 8446992752946357562
+    second: idle_pot_jaune_2
+  - first:
+      213: 2635387919651733735
+    second: idle_pot_jaune_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Liam perso principal_0
+      name: idle_pot_jaune_0
       rect:
         serializedVersion: 2
-        x: 757
-        y: 90
-        width: 421
-        height: 904
+        x: 96
+        y: 628
+        width: 224
+        height: 309
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca961e439f7a89590800000000000000
-      internalID: -7667193676822386260
+      spriteID: 4713a3a8107891740800000000000000
+      internalID: 5123274491794436468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_pot_jaune_1
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 662
+        width: 224
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53859b26499f2caa0800000000000000
+      internalID: -6142072526073145291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_pot_jaune_2
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 702
+        width: 224
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a35aaab972fb93570800000000000000
+      internalID: 8446992752946357562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_pot_jaune_3
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 662
+        width: 224
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e0823c9957c29420800000000000000
+      internalID: 2635387919651733735
       vertices: []
       indices: 
       edges: []

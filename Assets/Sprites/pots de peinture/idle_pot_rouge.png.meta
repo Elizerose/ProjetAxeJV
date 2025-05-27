@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: f85ec0841f6a01c4c804de03d0d8a5c5
+guid: 2c663ba8178ffea45a38c3b53b46b15b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7667193676822386260
-    second: Liam perso principal_0
+      213: 6012500182002432342
+    second: idle_pot_rouge_0
+  - first:
+      213: -380921857118919257
+    second: idle_pot_rouge_1
+  - first:
+      213: 3488346967530419553
+    second: idle_pot_rouge_2
+  - first:
+      213: -1762553875885832920
+    second: idle_pot_rouge_3
+  - first:
+      213: -48137913085991786
+    second: idle_pot_rouge_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Liam perso principal_0
+      name: idle_pot_rouge_0
       rect:
         serializedVersion: 2
-        x: 757
-        y: 90
-        width: 421
-        height: 904
+        x: 96
+        y: 628
+        width: 224
+        height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca961e439f7a89590800000000000000
-      internalID: -7667193676822386260
+      spriteID: 659f9385f01b07350800000000000000
+      internalID: 6012500182002432342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_pot_rouge_1
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 666
+        width: 224
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a5ae33d691b6baf0800000000000000
+      internalID: -380921857118919257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_pot_rouge_2
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 704
+        width: 224
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16536fcb519196030800000000000000
+      internalID: 3488346967530419553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_pot_rouge_3
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 666
+        width: 224
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 825465a96962a87e0800000000000000
+      internalID: -1762553875885832920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_pot_rouge_4
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 862
+        width: 6
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 694e746b2daf45ff0800000000000000
+      internalID: -48137913085991786
       vertices: []
       indices: 
       edges: []

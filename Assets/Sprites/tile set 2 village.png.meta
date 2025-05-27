@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: f85ec0841f6a01c4c804de03d0d8a5c5
+guid: a3fce1d0a985b434cb76368b09086d37
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7667193676822386260
-    second: Liam perso principal_0
+      213: -8102650790300261502
+    second: tile set 2 village_0
+  - first:
+      213: 823567832885634765
+    second: tile set 2 village_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Liam perso principal_0
+      name: tile set 2 village_0
       rect:
         serializedVersion: 2
-        x: 757
-        y: 90
-        width: 421
-        height: 904
+        x: 179
+        y: 313
+        width: 669
+        height: 564
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca961e439f7a89590800000000000000
-      internalID: -7667193676822386260
+      spriteID: 2836d11390a9d8f80800000000000000
+      internalID: -8102650790300261502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile set 2 village_1
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 308
+        width: 402
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc6269f9496ed6b00800000000000000
+      internalID: 823567832885634765
       vertices: []
       indices: 
       edges: []

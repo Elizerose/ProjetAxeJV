@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f85ec0841f6a01c4c804de03d0d8a5c5
+guid: e43298b159ed2d8499494589f674609b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7667193676822386260
-    second: Liam perso principal_0
+      213: 5257739158061013011
+    second: village plan 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Liam perso principal_0
+      name: village plan 1_0
       rect:
         serializedVersion: 2
-        x: 757
-        y: 90
-        width: 421
-        height: 904
+        x: 0
+        y: 133
+        width: 1920
+        height: 796
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca961e439f7a89590800000000000000
-      internalID: -7667193676822386260
+      spriteID: 31853e558ed37f840800000000000000
+      internalID: 5257739158061013011
       vertices: []
       indices: 
       edges: []

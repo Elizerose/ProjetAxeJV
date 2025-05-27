@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: f85ec0841f6a01c4c804de03d0d8a5c5
+guid: ed6c439e8bf7f5141bb03f1d7bcf1fb6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7667193676822386260
-    second: Liam perso principal_0
+      213: -5679364868699444450
+    second: liam_idle_jaune_0
+  - first:
+      213: 8006353609866549701
+    second: liam_idle_jaune_1
+  - first:
+      213: 3292020639004695471
+    second: liam_idle_jaune_2
+  - first:
+      213: 170140083552030810
+    second: liam_idle_jaune_3
+  - first:
+      213: 8342749409217076615
+    second: liam_idle_jaune_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Liam perso principal_0
+      name: liam_idle_jaune_0
       rect:
         serializedVersion: 2
-        x: 757
-        y: 90
-        width: 421
-        height: 904
+        x: 0
+        y: 522
+        width: 233
+        height: 499
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca961e439f7a89590800000000000000
-      internalID: -7667193676822386260
+      spriteID: e1b26531eb7de21b0800000000000000
+      internalID: -5679364868699444450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: liam_idle_jaune_1
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 522
+        width: 234
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c9134e40384c1f60800000000000000
+      internalID: 8006353609866549701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: liam_idle_jaune_2
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 522
+        width: 244
+        height: 495
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fab112d445b9fad20800000000000000
+      internalID: 3292020639004695471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: liam_idle_jaune_3
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 518
+        width: 236
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a509c2a21857c5200800000000000000
+      internalID: 170140083552030810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: liam_idle_jaune_4
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 522
+        width: 234
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78ddb7ac26667c370800000000000000
+      internalID: 8342749409217076615
       vertices: []
       indices: 
       edges: []
