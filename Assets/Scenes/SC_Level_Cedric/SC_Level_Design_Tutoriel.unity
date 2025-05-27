@@ -41991,9 +41991,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1440392686}
-  - component: {fileID: 1440392689}
   - component: {fileID: 1440392688}
   - component: {fileID: 1440392687}
+  - component: {fileID: 1440392689}
   m_Layer: 0
   m_Name: Panneau_04
   m_TagString: Untagged
@@ -42126,10 +42126,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1440392685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268a3e625e7b0cf4f8296e4d3f64e210, type: 3}
+  m_Script: {fileID: 11500000, guid: d1aee94ed7b329142bdc2d957c0b5c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogueLine: {fileID: 11400000, guid: 3ef4f302714377740bcfa7354bf79800, type: 2}
+  dialogue:
+    name: conseil
+    sprite: {fileID: -764781137135427469, guid: 93fb21d850192cc48b8df0427d3e3b63, type: 3}
+    sentences:
+    - si s'est le seul chemin alors saute !
 --- !u!1 &1483726734
 GameObject:
   m_ObjectHideFlags: 0
