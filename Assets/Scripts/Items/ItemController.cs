@@ -29,6 +29,7 @@ public class ItemController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            HUDManager.Instance.DisplayCollectedFeedback(itemColor);
             _data.number += 1;
             GetComponentInChildren<ParticleSystem>().Play();
             StartCoroutine(WaitForParticules());
@@ -37,7 +38,6 @@ public class ItemController : MonoBehaviour
 
     IEnumerator WaitForParticules()
     {
-        HUDManager.Instance.DisplayCollectedFeedback(itemColor);
         yield return new WaitForSeconds(0.2f);
         gameObject.SetActive(false);
     }

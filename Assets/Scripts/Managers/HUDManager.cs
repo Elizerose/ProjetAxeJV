@@ -66,8 +66,6 @@ public class HUDManager : MonoBehaviour
             _instance = this;
         else
             Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()

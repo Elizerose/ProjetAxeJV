@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject _ennemiWin;
     private bool _victory = false;
+    public Camera Camera;
 
     // causes de mort pour gerer les differentes animations
     public enum DeathCauses 

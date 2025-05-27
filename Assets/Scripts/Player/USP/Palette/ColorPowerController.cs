@@ -104,7 +104,7 @@ public class ColorPowerController : MonoBehaviour
                         Destroy(PlateformPlacement.Instance._currentPlatform);
                     }
                     Time.timeScale = 1f;
-                    HUDManager.Instance.PaletteInfos.SetActive(false);
+                    HUDManager.Instance.PaletteInfos.GetComponent<Animator>().SetBool("open", false);
                     HUDManager.Instance.PalettePanel.SetActive(false);
                     _state = STATE_POWER.NONE;
                 }
@@ -142,10 +142,10 @@ public class ColorPowerController : MonoBehaviour
     private void InvokeColorPalette()
     {
         // On ralenti le temps car sinon les ennemis peuvent nous attaquer trop facilement.
-        Time.timeScale = 0.3f;
+        Time.timeScale = 0.1f;
 
         HUDManager.Instance.PalettePanel.SetActive(true);
-        HUDManager.Instance.PaletteInfos.SetActive(true);   
+        HUDManager.Instance.PaletteInfos.GetComponent<Animator>().SetBool("open", true);   
 
         foreach (ColorAbilities ability in HUDManager.Instance.ColorAbilitiesPalette.Keys)
         {
