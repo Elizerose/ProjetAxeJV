@@ -663,6 +663,9 @@ MonoBehaviour:
   currentColorFeedbackPrefab: {fileID: 8137627748874520024, guid: 18ace2a40acd3e542824e78c4404efad, type: 3}
   _currentColorParent: {fileID: 1814701782}
   PalettePanel: {fileID: 481812135}
+  PaletteInfos: {fileID: 0}
+  Description: {fileID: 0}
+  Title: {fileID: 0}
   ColorsList:
   - {fileID: 686905615}
   - {fileID: 542775010}
@@ -672,7 +675,9 @@ MonoBehaviour:
   ColorsListActive: []
   OxygeneTimerGO: {fileID: 163353682}
   DeathPanel: {fileID: 1934778363}
+  VictoryPanel: {fileID: 0}
   TextInfos: {fileID: 869368661}
+  CollectedFeedbackCount: {fileID: 0}
 --- !u!1 &158358094
 GameObject:
   m_ObjectHideFlags: 0
@@ -14253,6 +14258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ea1ebc61b76da40bdeb9547b754174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ennemiWin: {fileID: 0}
   _player: {fileID: 1962835750}
 --- !u!1 &1213986728
 GameObject:
@@ -74740,7 +74746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80eaba39eb406c24381b6a8251f38424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canPlace: 1
   _hasInvoke: 0
   _currentPlatform: {fileID: 0}
   HasBounce: 0
@@ -74979,6 +74984,7 @@ MonoBehaviour:
   CanBreatheUnderWater: 0
   ImpulseCDTime: 0.35
   BubbleEffect: {fileID: 1260423484}
+  WaterEnter: {fileID: 0}
 --- !u!4 &1962835750
 Transform:
   m_ObjectHideFlags: 0
