@@ -67,15 +67,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5c10a552eddb4424aa5d41d48f3d1274, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 5c10a552eddb4424aa5d41d48f3d1274, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 32c4ef029cbfbea448925d0f1c921904, type: 2}
+  m_sharedMaterial: {fileID: 4757049727608852394, guid: 32c4ef029cbfbea448925d0f1c921904, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279835113
-  m_fontColor: {r: 0.9150943, g: 0.09927912, b: 0.09927912, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5064,8 +5064,8 @@ SpriteRenderer:
   m_SortingLayerID: 91014563
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5754717, g: 0.28502136, b: 0.28502136, a: 1}
+  m_Sprite: {fileID: 8431853064981907821, guid: 23c0c70e8a1f87c48b2ef4660b98f8ff, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5109,17 +5109,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.011856079, y: 0.01788038}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.8, y: 0.72333336}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.7857208, y: 0.6364949}
   m_EdgeRadius: 0
 --- !u!50 &-8652567958091998986
 Rigidbody2D:

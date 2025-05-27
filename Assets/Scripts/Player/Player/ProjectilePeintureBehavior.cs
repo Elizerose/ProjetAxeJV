@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class ProjectilePeintureBehavior : MonoBehaviour
 {
     private Vector3 StartingPos;
     private float MaxDistance = 8;
+
+    [SerializeField] private ParticleSystem _explodeParticule;
 
     private void Start()
     {
@@ -23,8 +26,20 @@ public class ProjectilePeintureBehavior : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            Destroy(gameObject);
+            _explodeParticule.Play();
+            StartCoroutine(WaitForParticleToEnd());
         }
     }
-        
+
+    private IEnumerator WaitForParticleToEnd()
+    {
+        // Attend que le système de particules soit terminé
+        while (_explodeParticule.isPlaying)
+        {
+            yield return null;
+        }
+
+        Destroy(gameObject);
+    }
+
 }

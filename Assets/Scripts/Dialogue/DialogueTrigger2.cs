@@ -19,7 +19,7 @@ public class DialogueTrigger2 : MonoBehaviour
             {
                 DialogueManager2.Instance.StartDialogue(dialogue);
                 //Destroy(gameObject);
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
             }
         }
         

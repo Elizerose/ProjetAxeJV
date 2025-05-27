@@ -36,7 +36,7 @@ public class Water : MonoBehaviour
         PlayerScale = GetComponent<Transform>().localScale; 
         NormalGrav = rb.gravityScale;
 
-        _WaterTimerText = HUDManager.Instance.OxygeneTimerGO.GetComponent<TextMeshProUGUI>();
+        _WaterTimerText = HUDManager.Instance.OxygeneTimerGO.GetComponentInChildren<TextMeshProUGUI>();
         _startFontSize = _WaterTimerText.fontSize;
 
     }
@@ -51,15 +51,19 @@ public class Water : MonoBehaviour
         {
             if (!CanBreatheUnderWater)
             {
+                HUDManager.Instance.OxygeneTimerGO.GetComponent<Image>().enabled = false;
+
                 HUDManager.Instance.OxygeneTimerGO.SetActive(true);
-                HUDManager.Instance.OxygeneTimerGO.GetComponent<TextMeshProUGUI>().text = ((int)OxygeneTimer).ToString();
+                HUDManager.Instance.OxygeneTimerGO.GetComponentInChildren<TextMeshProUGUI>().text = ((int)OxygeneTimer).ToString();
+
                 OxygeneTimer -= Time.deltaTime;
+
                 if (OxygeneTimer <= 10f)
                 {
                     float ratio = _time / _duration;
                     float t = Mathf.Sin(ratio * Mathf.PI);
-                    HUDManager.Instance.OxygeneTimerGO.GetComponent<TextMeshProUGUI>().fontSize = Mathf.Lerp(_startFontSize + 10, _startFontSize + 20, t) ;
-                    HUDManager.Instance.OxygeneTimerGO.GetComponent<TextMeshProUGUI>().color = Color.red;
+                    HUDManager.Instance.OxygeneTimerGO.GetComponentInChildren<TextMeshProUGUI>().fontSize = Mathf.Lerp(_startFontSize + 10, _startFontSize + 20, t) ;
+                    HUDManager.Instance.OxygeneTimerGO.GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
 
                     _time += Time.unscaledDeltaTime;
                     if (_time >= _duration)
@@ -75,10 +79,13 @@ public class Water : MonoBehaviour
                 }
                 
             }
+            // Il peut respirer sous leau
             else
             {
                 OxygeneTimer = 25f;
-                HUDManager.Instance.OxygeneTimerGO.SetActive(false);
+                //HUDManager.Instance.OxygeneTimerGO.SetActive(false);
+                HUDManager.Instance.OxygeneTimerGO.GetComponent<Image>().enabled = true;
+
             }
             
                 
@@ -108,10 +115,8 @@ public class Water : MonoBehaviour
                 rb.linearVelocity = new Vector2(horizontal * ImpulseSpeed, vertical * ImpulseSpeed);
             }
             
-
             yield return new WaitForSeconds(ImpulseCDTime);
             CanImpulse = true;
-
             
         }
 
