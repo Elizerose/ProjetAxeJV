@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pouvoir belu_0: 485515683663132828
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

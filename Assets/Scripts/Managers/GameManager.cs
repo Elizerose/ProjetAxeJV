@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     private bool _victory = false;
     public Camera Camera;
 
+    private bool _canWin = true;
+
     // causes de mort pour gerer les differentes animations
     public enum DeathCauses 
     {
@@ -45,9 +47,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        if (_ennemiWin == null)
+            _canWin = false;
+    }
+
     private void Update()
     {
-        if (_ennemiWin == null && !_victory)
+        if (_ennemiWin == null && !_victory && _canWin)
             Win();
     }
 
@@ -63,7 +71,7 @@ public class GameManager : MonoBehaviour
     {
         // gerer les différentes animations de mort
         // ...
-
+        HUDManager.Instance.DeathPanel.SetActive(true);
         // Affichage du panel de mort
         HUDManager.Instance.DeathPanel.GetComponent<Animator>().SetTrigger("FadeIn");
         Pause(true);

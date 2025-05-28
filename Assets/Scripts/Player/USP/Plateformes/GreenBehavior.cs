@@ -143,6 +143,7 @@ public class GreenBehavior : PlateformBehavior
             {
                 _dir = GrowDir.Down;
                 rotation = 180;
+                enableGround = false;
                 if (_powerActive)
                     return;
             }
@@ -158,6 +159,7 @@ public class GreenBehavior : PlateformBehavior
             {
                 _dir = GrowDir.Up;
                 rotation = 0;
+                enableGround = false;
                 if (_powerActive)
                     return;
             }

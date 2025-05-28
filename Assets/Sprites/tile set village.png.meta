@@ -180,6 +180,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -834,7 +847,36 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tile set village_0: 6707244824289952814
+      tile set village_1: 3948705786133102812
+      tile set village_10: 383022463548798653
+      tile set village_11: 5192744652241208971
+      tile set village_12: 4226549825308601637
+      tile set village_13: -9124715552421019217
+      tile set village_14: -6587246655676391357
+      tile set village_15: -8440587419406312353
+      tile set village_16: 629077342578605236
+      tile set village_17: -8896067518104194084
+      tile set village_18: -7290533119392212551
+      tile set village_19: 7480995028612620135
+      tile set village_2: -4823651306273044269
+      tile set village_20: 6220443257774503633
+      tile set village_21: -6574649691024676688
+      tile set village_22: -7308354311423289455
+      tile set village_23: 1297568885681081160
+      tile set village_24: -5117501629158355237
+      tile set village_25: -5731811783539177267
+      tile set village_26: -5268262716292103493
+      tile set village_27: -4512913060046084141
+      tile set village_28: -7405823476355638225
+      tile set village_3: 2265405361747133712
+      tile set village_4: -5098182866476642156
+      tile set village_5: 8220761291868877412
+      tile set village_6: 7142246294269772499
+      tile set village_7: -3016904394305884198
+      tile set village_8: 7214572419828057482
+      tile set village_9: -5723835935426212167
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

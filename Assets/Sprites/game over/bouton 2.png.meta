@@ -114,6 +114,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -123,10 +136,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1334
         y: 157
-        width: 30
+        width: 213
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -139,143 +152,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: bouton 2_1
-      rect:
-        serializedVersion: 2
-        x: 1364
-        y: 167
-        width: 32
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a204eb5c2ac12eeb0800000000000000
-      internalID: -4692156376338776022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bouton 2_2
-      rect:
-        serializedVersion: 2
-        x: 1395
-        y: 167
-        width: 20
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bda0aed739ca7b670800000000000000
-      internalID: 8554495766686206683
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bouton 2_3
-      rect:
-        serializedVersion: 2
-        x: 1414
-        y: 167
-        width: 33
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3d4b0f87292a85d80800000000000000
-      internalID: -8261674766433209133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bouton 2_4
-      rect:
-        serializedVersion: 2
-        x: 1447
-        y: 167
-        width: 33
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 461ec03c7be109d00800000000000000
-      internalID: 977314893739647332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bouton 2_5
-      rect:
-        serializedVersion: 2
-        x: 1479
-        y: 167
-        width: 30
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5a84b1934e3391b30800000000000000
-      internalID: 4258491977959164069
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bouton 2_6
-      rect:
-        serializedVersion: 2
-        x: 1508
-        y: 167
-        width: 38
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a0e01a8252a0f6b70800000000000000
-      internalID: 8894338943791730186
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2707bcd5fb037db41bae66fbccd3567c
     internalID: 0
     vertices: []
     indices: 
@@ -284,7 +165,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bouton 2_0: -3798206310118017705
+      bouton 2_1: -4692156376338776022
+      bouton 2_2: 8554495766686206683
+      bouton 2_3: -8261674766433209133
+      bouton 2_4: 977314893739647332
+      bouton 2_5: 4258491977959164069
+      bouton 2_6: 8894338943791730186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -435,6 +435,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2959,7 +2972,121 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      disparition_pot_rouge_0: -4913868053969997900
+      disparition_pot_rouge_1: -300418571565573990
+      disparition_pot_rouge_10: -1475008675522300190
+      disparition_pot_rouge_100: 2521007414051819404
+      disparition_pot_rouge_101: -873852228272514285
+      disparition_pot_rouge_102: -380351489485095060
+      disparition_pot_rouge_103: -5812953561122705097
+      disparition_pot_rouge_104: -2981242146108649503
+      disparition_pot_rouge_105: 9160439491063924835
+      disparition_pot_rouge_106: 8185044626319586944
+      disparition_pot_rouge_107: 5022763840547125394
+      disparition_pot_rouge_108: -710722918823349561
+      disparition_pot_rouge_109: 8769282950374232945
+      disparition_pot_rouge_11: 551298917766281763
+      disparition_pot_rouge_110: -7540494695587435841
+      disparition_pot_rouge_111: -2604392249948115964
+      disparition_pot_rouge_112: -1404868009644614780
+      disparition_pot_rouge_113: 4863845266102735715
+      disparition_pot_rouge_12: 7983810444807955282
+      disparition_pot_rouge_13: -382212028532833398
+      disparition_pot_rouge_14: 21015887629355952
+      disparition_pot_rouge_15: -7854088081584242540
+      disparition_pot_rouge_16: -3495034467541578092
+      disparition_pot_rouge_17: -3041233966544342923
+      disparition_pot_rouge_18: -6006190244240129574
+      disparition_pot_rouge_19: 6039358314130462950
+      disparition_pot_rouge_2: -983466399780830173
+      disparition_pot_rouge_20: 1993821041521701750
+      disparition_pot_rouge_21: 7263208932827182815
+      disparition_pot_rouge_22: 7320938671172430081
+      disparition_pot_rouge_23: -7947418849778688990
+      disparition_pot_rouge_24: -9192192962434481550
+      disparition_pot_rouge_25: -5557161228347508174
+      disparition_pot_rouge_26: -6956779677982865562
+      disparition_pot_rouge_27: -7620564062653900477
+      disparition_pot_rouge_28: -3550809043545692669
+      disparition_pot_rouge_29: 3077630176571289555
+      disparition_pot_rouge_3: 6682880902645222772
+      disparition_pot_rouge_30: 6858021261557163502
+      disparition_pot_rouge_31: -2039657517014346681
+      disparition_pot_rouge_32: 1726445897138765654
+      disparition_pot_rouge_33: -4900649757423563922
+      disparition_pot_rouge_34: 7161298846498117040
+      disparition_pot_rouge_35: -1650850429366282835
+      disparition_pot_rouge_36: -102403191345333545
+      disparition_pot_rouge_37: -4187925157978832816
+      disparition_pot_rouge_38: -2405692446460056646
+      disparition_pot_rouge_39: 3510781852923776842
+      disparition_pot_rouge_4: 8075590722071507338
+      disparition_pot_rouge_40: 6326018460713779538
+      disparition_pot_rouge_41: -6719174961171631445
+      disparition_pot_rouge_42: -681729427044200861
+      disparition_pot_rouge_43: -1680621145466543825
+      disparition_pot_rouge_44: -7871366364035967886
+      disparition_pot_rouge_45: 5106564842151538617
+      disparition_pot_rouge_46: 3478323509643149363
+      disparition_pot_rouge_47: -4147464903440051478
+      disparition_pot_rouge_48: 4110639789707043898
+      disparition_pot_rouge_49: -6357152603214202406
+      disparition_pot_rouge_5: -5206108465969398888
+      disparition_pot_rouge_50: 6538711988331309622
+      disparition_pot_rouge_51: -8577779241882081567
+      disparition_pot_rouge_52: -3179113571339480939
+      disparition_pot_rouge_53: 2935956386079085226
+      disparition_pot_rouge_54: 2942819800501290933
+      disparition_pot_rouge_55: 5580361029054546948
+      disparition_pot_rouge_56: -7731940989302115930
+      disparition_pot_rouge_57: -7278862208682097862
+      disparition_pot_rouge_58: -76872722727250750
+      disparition_pot_rouge_59: 6029911638457556381
+      disparition_pot_rouge_6: 2774304419856492790
+      disparition_pot_rouge_60: -2067954842694091327
+      disparition_pot_rouge_61: -2826103746673731081
+      disparition_pot_rouge_62: -6698310348963969918
+      disparition_pot_rouge_63: -5976542632540453423
+      disparition_pot_rouge_64: 7258273064928747066
+      disparition_pot_rouge_65: 6847994629817721665
+      disparition_pot_rouge_66: -7720492528297697570
+      disparition_pot_rouge_67: -6592609897961671825
+      disparition_pot_rouge_68: -2162310526341726910
+      disparition_pot_rouge_69: -4726768703147911933
+      disparition_pot_rouge_7: -884963555277525694
+      disparition_pot_rouge_70: 5438078222819731886
+      disparition_pot_rouge_71: -5590760639121713671
+      disparition_pot_rouge_72: -8970341531656310918
+      disparition_pot_rouge_73: -7461799024441609597
+      disparition_pot_rouge_74: -5302068520534018257
+      disparition_pot_rouge_75: 4329477364466546549
+      disparition_pot_rouge_76: -2498472832182663447
+      disparition_pot_rouge_77: 3138306608433105864
+      disparition_pot_rouge_78: 9057512386222382856
+      disparition_pot_rouge_79: 5443415436034796440
+      disparition_pot_rouge_8: 1521894277361798233
+      disparition_pot_rouge_80: 3498562130190030448
+      disparition_pot_rouge_81: -5271256222279320120
+      disparition_pot_rouge_82: -2447115849218739223
+      disparition_pot_rouge_83: -3040541269067928965
+      disparition_pot_rouge_84: 3166095747703312241
+      disparition_pot_rouge_85: 2622737309445489601
+      disparition_pot_rouge_86: 3138711727383515398
+      disparition_pot_rouge_87: -5232331486118357137
+      disparition_pot_rouge_88: 796288941226035148
+      disparition_pot_rouge_89: -3583150497373192376
+      disparition_pot_rouge_9: 2979197575501949542
+      disparition_pot_rouge_90: 2778571460841025905
+      disparition_pot_rouge_91: 201126549814390947
+      disparition_pot_rouge_92: -4378179573942390504
+      disparition_pot_rouge_93: -3040316378204896780
+      disparition_pot_rouge_94: 1020798672286063264
+      disparition_pot_rouge_95: 2611426276870503476
+      disparition_pot_rouge_96: -5688848814402129161
+      disparition_pot_rouge_97: 7620316500985236478
+      disparition_pot_rouge_98: -9159751776189155490
+      disparition_pot_rouge_99: 7998022306530492857
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
