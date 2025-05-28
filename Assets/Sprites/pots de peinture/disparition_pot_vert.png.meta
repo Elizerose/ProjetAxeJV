@@ -1,0 +1,2967 @@
+fileFormatVersion: 2
+guid: 0fc16addc1abba9469fada939a2b2b2b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -770445166068014293
+    second: disparition_pot_vert_0
+  - first:
+      213: 9010958285479670752
+    second: disparition_pot_vert_1
+  - first:
+      213: -7871683720915224719
+    second: disparition_pot_vert_2
+  - first:
+      213: 2832461389955340242
+    second: disparition_pot_vert_3
+  - first:
+      213: 8253114759463817707
+    second: disparition_pot_vert_4
+  - first:
+      213: 647902548503527082
+    second: disparition_pot_vert_5
+  - first:
+      213: -7955084366267081375
+    second: disparition_pot_vert_6
+  - first:
+      213: 8998515355480671255
+    second: disparition_pot_vert_7
+  - first:
+      213: -8609997115805595181
+    second: disparition_pot_vert_8
+  - first:
+      213: -2711340114810973451
+    second: disparition_pot_vert_9
+  - first:
+      213: 5888726588835375207
+    second: disparition_pot_vert_10
+  - first:
+      213: -7124214649612934663
+    second: disparition_pot_vert_11
+  - first:
+      213: -3482755873285594863
+    second: disparition_pot_vert_12
+  - first:
+      213: 3549636130657412157
+    second: disparition_pot_vert_13
+  - first:
+      213: 307613521294194512
+    second: disparition_pot_vert_14
+  - first:
+      213: -2587881837112378381
+    second: disparition_pot_vert_15
+  - first:
+      213: 2576497181340818228
+    second: disparition_pot_vert_16
+  - first:
+      213: -294548309081006166
+    second: disparition_pot_vert_17
+  - first:
+      213: 7889827573895768211
+    second: disparition_pot_vert_18
+  - first:
+      213: 7862503446123417272
+    second: disparition_pot_vert_19
+  - first:
+      213: -3793608214352799753
+    second: disparition_pot_vert_20
+  - first:
+      213: 5798900517532578712
+    second: disparition_pot_vert_21
+  - first:
+      213: -6156894538342248062
+    second: disparition_pot_vert_22
+  - first:
+      213: 1414589133179354853
+    second: disparition_pot_vert_23
+  - first:
+      213: -1522031375279656239
+    second: disparition_pot_vert_24
+  - first:
+      213: -2268481322193021393
+    second: disparition_pot_vert_25
+  - first:
+      213: -8236948007846293952
+    second: disparition_pot_vert_26
+  - first:
+      213: 6991018616285458945
+    second: disparition_pot_vert_27
+  - first:
+      213: 8307994717262564075
+    second: disparition_pot_vert_28
+  - first:
+      213: 5930438979268461844
+    second: disparition_pot_vert_29
+  - first:
+      213: -847606701516103714
+    second: disparition_pot_vert_30
+  - first:
+      213: -633993000516571639
+    second: disparition_pot_vert_31
+  - first:
+      213: 3088376698675182567
+    second: disparition_pot_vert_32
+  - first:
+      213: -4269283571331577642
+    second: disparition_pot_vert_33
+  - first:
+      213: -5240034184552415112
+    second: disparition_pot_vert_34
+  - first:
+      213: 348948322289745224
+    second: disparition_pot_vert_35
+  - first:
+      213: 9098265508546275569
+    second: disparition_pot_vert_36
+  - first:
+      213: 6850227556578110653
+    second: disparition_pot_vert_37
+  - first:
+      213: 6059845141473117936
+    second: disparition_pot_vert_38
+  - first:
+      213: 9198811365271834222
+    second: disparition_pot_vert_39
+  - first:
+      213: 6925084643670951638
+    second: disparition_pot_vert_40
+  - first:
+      213: 5477608868518700241
+    second: disparition_pot_vert_41
+  - first:
+      213: 7798671764783750021
+    second: disparition_pot_vert_42
+  - first:
+      213: -8970515068051686288
+    second: disparition_pot_vert_43
+  - first:
+      213: -5388506654440946115
+    second: disparition_pot_vert_44
+  - first:
+      213: 7501886424454923201
+    second: disparition_pot_vert_45
+  - first:
+      213: -1721202211118115364
+    second: disparition_pot_vert_46
+  - first:
+      213: 7072231362811111975
+    second: disparition_pot_vert_47
+  - first:
+      213: 4460011623717701765
+    second: disparition_pot_vert_48
+  - first:
+      213: -390572538195760033
+    second: disparition_pot_vert_49
+  - first:
+      213: 5638576273103822462
+    second: disparition_pot_vert_50
+  - first:
+      213: -3134834893426557744
+    second: disparition_pot_vert_51
+  - first:
+      213: 2766594175475947692
+    second: disparition_pot_vert_52
+  - first:
+      213: -2286820799100018795
+    second: disparition_pot_vert_53
+  - first:
+      213: -5157421575699152940
+    second: disparition_pot_vert_54
+  - first:
+      213: -4136322517583508429
+    second: disparition_pot_vert_55
+  - first:
+      213: -7743973038355205137
+    second: disparition_pot_vert_56
+  - first:
+      213: -1823035194465841066
+    second: disparition_pot_vert_57
+  - first:
+      213: 2111057155599828477
+    second: disparition_pot_vert_58
+  - first:
+      213: 1371283700595694979
+    second: disparition_pot_vert_59
+  - first:
+      213: -4903672745564357635
+    second: disparition_pot_vert_60
+  - first:
+      213: 2904808558977292362
+    second: disparition_pot_vert_61
+  - first:
+      213: 6273740827948453665
+    second: disparition_pot_vert_62
+  - first:
+      213: 4064357177216980700
+    second: disparition_pot_vert_63
+  - first:
+      213: -6002021162375292954
+    second: disparition_pot_vert_64
+  - first:
+      213: -8663759748211317262
+    second: disparition_pot_vert_65
+  - first:
+      213: -5584134467151739014
+    second: disparition_pot_vert_66
+  - first:
+      213: 5239163038860231100
+    second: disparition_pot_vert_67
+  - first:
+      213: -6172593097647060187
+    second: disparition_pot_vert_68
+  - first:
+      213: -7768419356415509354
+    second: disparition_pot_vert_69
+  - first:
+      213: 8302538629596660794
+    second: disparition_pot_vert_70
+  - first:
+      213: 2936503618799144386
+    second: disparition_pot_vert_71
+  - first:
+      213: 7443044429220160207
+    second: disparition_pot_vert_72
+  - first:
+      213: 7122606954153037895
+    second: disparition_pot_vert_73
+  - first:
+      213: -3104139794009560715
+    second: disparition_pot_vert_74
+  - first:
+      213: -6313100498148937241
+    second: disparition_pot_vert_75
+  - first:
+      213: 6603690500877082012
+    second: disparition_pot_vert_76
+  - first:
+      213: -5905987600040878248
+    second: disparition_pot_vert_77
+  - first:
+      213: -5408340625367226960
+    second: disparition_pot_vert_78
+  - first:
+      213: -5206471231279657560
+    second: disparition_pot_vert_79
+  - first:
+      213: -7321338808408187946
+    second: disparition_pot_vert_80
+  - first:
+      213: 7898718257815190127
+    second: disparition_pot_vert_81
+  - first:
+      213: -2688167919578799606
+    second: disparition_pot_vert_82
+  - first:
+      213: -4361493661187270766
+    second: disparition_pot_vert_83
+  - first:
+      213: 730317677223352698
+    second: disparition_pot_vert_84
+  - first:
+      213: 3825000133535325872
+    second: disparition_pot_vert_85
+  - first:
+      213: -9048122603969285396
+    second: disparition_pot_vert_86
+  - first:
+      213: 2908976943256288658
+    second: disparition_pot_vert_87
+  - first:
+      213: -1804283967006516124
+    second: disparition_pot_vert_88
+  - first:
+      213: -1445131298897532412
+    second: disparition_pot_vert_89
+  - first:
+      213: -1079957501120171440
+    second: disparition_pot_vert_90
+  - first:
+      213: -5197176655245542021
+    second: disparition_pot_vert_91
+  - first:
+      213: 1359501267483375228
+    second: disparition_pot_vert_92
+  - first:
+      213: -6749023665338025949
+    second: disparition_pot_vert_93
+  - first:
+      213: -4140618523152465254
+    second: disparition_pot_vert_94
+  - first:
+      213: 439827498853253379
+    second: disparition_pot_vert_95
+  - first:
+      213: 8154840550343344226
+    second: disparition_pot_vert_96
+  - first:
+      213: -6547334970213914983
+    second: disparition_pot_vert_97
+  - first:
+      213: -839677878263878654
+    second: disparition_pot_vert_98
+  - first:
+      213: -6888958897696708811
+    second: disparition_pot_vert_99
+  - first:
+      213: -3171083708988964810
+    second: disparition_pot_vert_100
+  - first:
+      213: 4182602610649526656
+    second: disparition_pot_vert_101
+  - first:
+      213: 7774736901640115672
+    second: disparition_pot_vert_102
+  - first:
+      213: 1027163932787443648
+    second: disparition_pot_vert_103
+  - first:
+      213: 5874227927332458433
+    second: disparition_pot_vert_104
+  - first:
+      213: 2531677310164085414
+    second: disparition_pot_vert_105
+  - first:
+      213: -9109805156668962093
+    second: disparition_pot_vert_106
+  - first:
+      213: 7991703892752732556
+    second: disparition_pot_vert_107
+  - first:
+      213: 3257418986709890938
+    second: disparition_pot_vert_108
+  - first:
+      213: 5607307672747575615
+    second: disparition_pot_vert_109
+  - first:
+      213: -1785082267377011168
+    second: disparition_pot_vert_110
+  - first:
+      213: -7305459045479469440
+    second: disparition_pot_vert_111
+  - first:
+      213: -1994061254675979508
+    second: disparition_pot_vert_112
+  - first:
+      213: 8196383407192325767
+    second: disparition_pot_vert_113
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: disparition_pot_vert_0
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 729
+        width: 224
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2369951434de45f0800000000000000
+      internalID: -770445166068014293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_1
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 785
+        width: 141
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3f0eb81da5d0d70800000000000000
+      internalID: 9010958285479670752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_2
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 956
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1777f9e9c5922c290800000000000000
+      internalID: -7871683720915224719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_3
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 951
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d71c4c80acee4720800000000000000
+      internalID: 2832461389955340242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_4
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 944
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be1df589524f88270800000000000000
+      internalID: 8253114759463817707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_5
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 939
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aae7f946fefcdf800800000000000000
+      internalID: 647902548503527082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_6
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 925
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d136eaaecd99190800000000000000
+      internalID: -7955084366267081375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_7
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 943
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 714c2552a0621ec70800000000000000
+      internalID: 8998515355480671255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_8
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 823
+        width: 85
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d9054bad35238880800000000000000
+      internalID: -8609997115805595181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_9
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 899
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f2dc67e7826f5ad0800000000000000
+      internalID: -2711340114810973451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_10
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 920
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7682eeaf1a5f8b150800000000000000
+      internalID: 5888726588835375207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_11
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 909
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f1ef2a9584b12d90800000000000000
+      internalID: -7124214649612934663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_12
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 929
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11128655cf3caafc0800000000000000
+      internalID: -3482755873285594863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_13
+      rect:
+        serializedVersion: 2
+        x: 1711
+        y: 917
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d342ab90147d24130800000000000000
+      internalID: 3549636130657412157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_14
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 929
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 057f8d82edcd44400800000000000000
+      internalID: 307613521294194512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_15
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 892
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb3b3a2e2ff51cd0800000000000000
+      internalID: -2587881837112378381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_16
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 913
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43b5d9a198e81c320800000000000000
+      internalID: 2576497181340818228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_17
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 906
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aafd80c9fdd89ebf0800000000000000
+      internalID: -294548309081006166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_18
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 896
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 398a329506c4e7d60800000000000000
+      internalID: 7889827573895768211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_19
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 904
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8be88771a393d1d60800000000000000
+      internalID: 7862503446123417272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_20
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 880
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f75f7ead656a5bc0800000000000000
+      internalID: -3793608214352799753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_21
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 885
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 893bb5bfb45d97050800000000000000
+      internalID: 5798900517532578712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_22
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 887
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281519ab9015e8aa0800000000000000
+      internalID: -6156894538342248062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_23
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 895
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ee78426251a1a310800000000000000
+      internalID: 1414589133179354853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_24
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 881
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d2f47b3788a0eae0800000000000000
+      internalID: -1522031375279656239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_25
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 894
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f269313a14cb480e0800000000000000
+      internalID: -2268481322193021393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_26
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 891
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04ec5f69d6b70bd80800000000000000
+      internalID: -8236948007846293952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_27
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 886
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10276d93466150160800000000000000
+      internalID: 6991018616285458945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_28
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 865
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beac14e7d2deb4370800000000000000
+      internalID: 8307994717262564075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_29
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 878
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4154d61b4d62d4250800000000000000
+      internalID: 5930438979268461844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_30
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 877
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edf54ee1232bc34f0800000000000000
+      internalID: -847606701516103714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_31
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 848
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90e202e99ba9337f0800000000000000
+      internalID: -633993000516571639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_32
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 876
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ebb0299e3e1cda20800000000000000
+      internalID: 3088376698675182567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_33
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 844
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d8ce55263570c4c0800000000000000
+      internalID: -4269283571331577642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_34
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 839
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87089da0ca8a747b0800000000000000
+      internalID: -5240034184552415112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_35
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 832
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d7c0b76a6b7d400800000000000000
+      internalID: 348948322289745224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_36
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 852
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f8e61d7648834e70800000000000000
+      internalID: 9098265508546275569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_37
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 848
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbc2e6c2ba5e01f50800000000000000
+      internalID: 6850227556578110653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_38
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 848
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f6c16bbc05e81450800000000000000
+      internalID: 6059845141473117936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_39
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 854
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6e8ad6033eb8af70800000000000000
+      internalID: 9198811365271834222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_40
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 853
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d60581fac7da1060800000000000000
+      internalID: 6925084643670951638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_41
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 820
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d4269a8e30640c40800000000000000
+      internalID: 5477608868518700241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_42
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 817
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58bddc3a6a27a3c60800000000000000
+      internalID: 7798671764783750021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_43
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 826
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07c7d7cc214528380800000000000000
+      internalID: -8970515068051686288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_44
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 821
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3608305fbd2835b0800000000000000
+      internalID: -5388506654440946115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_45
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 818
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c306f2d4fd0c1860800000000000000
+      internalID: 7501886424454923201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_46
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 826
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd510b355bf0d18e0800000000000000
+      internalID: -1721202211118115364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_47
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 823
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72aabb544fc952260800000000000000
+      internalID: 7072231362811111975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_48
+      rect:
+        serializedVersion: 2
+        x: 1833
+        y: 826
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5888ecd01f425ed30800000000000000
+      internalID: 4460011623717701765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_49
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 804
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5ca1d98858649af0800000000000000
+      internalID: -390572538195760033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_50
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 793
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e9c45fe3f304e40800000000000000
+      internalID: 5638576273103822462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_51
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 803
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dc7fc30644de74d0800000000000000
+      internalID: -3134834893426557744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_52
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 805
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca898ea9ebae46620800000000000000
+      internalID: 2766594175475947692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_53
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 801
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59f1bac69949340e0800000000000000
+      internalID: -2286820799100018795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_54
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 797
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4df348fe6682d68b0800000000000000
+      internalID: -5157421575699152940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_55
+      rect:
+        serializedVersion: 2
+        x: 1762
+        y: 786
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c4cfed594d896c0800000000000000
+      internalID: -4136322517583508429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_56
+      rect:
+        serializedVersion: 2
+        x: 1797
+        y: 802
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe3b2aa0d81e78490800000000000000
+      internalID: -7743973038355205137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_57
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 779
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65014d4462743b6e0800000000000000
+      internalID: -1823035194465841066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_58
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 771
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df503145c4bfb4d10800000000000000
+      internalID: 2111057155599828477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_59
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 771
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d1a44a247c70310800000000000000
+      internalID: 1371283700595694979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_60
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 764
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb3fd16e97a2fbb0800000000000000
+      internalID: -4903672745564357635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_61
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 770
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a481b5a7ef3ff4820800000000000000
+      internalID: 2904808558977292362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_62
+      rect:
+        serializedVersion: 2
+        x: 1522
+        y: 767
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12f8bb61b0ec01750800000000000000
+      internalID: 6273740827948453665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_63
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 743
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd6d35c915f776830800000000000000
+      internalID: 4064357177216980700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_64
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 737
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e75e3a8d8984bca0800000000000000
+      internalID: -6002021162375292954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_65
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 755
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f5698c596424c780800000000000000
+      internalID: -8663759748211317262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_66
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 737
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a77c763c94b2182b0800000000000000
+      internalID: -5584134467151739014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_67
+      rect:
+        serializedVersion: 2
+        x: 1783
+        y: 753
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1ce9b860f35b840800000000000000
+      internalID: 5239163038860231100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_68
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 727
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52b08bf084b865aa0800000000000000
+      internalID: -6172593097647060187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_69
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 528
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69cb59211c7013490800000000000000
+      internalID: -7768419356415509354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_70
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 511
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a34411715ea883370800000000000000
+      internalID: 8302538629596660794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_71
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 466
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cd0c28ab7e80c820800000000000000
+      internalID: 2936503618799144386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_72
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 477
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc22e1339710b4760800000000000000
+      internalID: 7443044429220160207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_73
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 459
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 740d401a94598d260800000000000000
+      internalID: 7122606954153037895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_74
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 457
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579e7e4cd41ebe4d0800000000000000
+      internalID: -3104139794009560715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_75
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 450
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e1bd709b8c5368a0800000000000000
+      internalID: -6313100498148937241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_76
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 384
+        width: 42
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d566fc58505ab50800000000000000
+      internalID: 6603690500877082012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_77
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 444
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f93bba197b90ea0800000000000000
+      internalID: -5905987600040878248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_78
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 429
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b52ca81bd6b1f4b0800000000000000
+      internalID: -5408340625367226960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_79
+      rect:
+        serializedVersion: 2
+        x: 1669
+        y: 417
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad094e0006eeb7b0800000000000000
+      internalID: -5206471231279657560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_80
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 393
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6db5c84d421656a90800000000000000
+      internalID: -7321338808408187946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_81
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 365
+        width: 96
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a77f10862ed9d60800000000000000
+      internalID: 7898718257815190127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_82
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 398
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a02a7e80585b1bad0800000000000000
+      internalID: -2688167919578799606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_83
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 341
+        width: 110
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29790d29f9cd873c0800000000000000
+      internalID: -4361493661187270766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_84
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 397
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a79161cde0c922a00800000000000000
+      internalID: 730317677223352698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_85
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 353
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bed1311b51251530800000000000000
+      internalID: 3825000133535325872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_86
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 367
+        width: 48
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce27a324e6c9e6280800000000000000
+      internalID: -9048122603969285396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_87
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 338
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29db7921e13ce5820800000000000000
+      internalID: 2908976943256288658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_88
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 370
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46cd4a0aa45e5f6e0800000000000000
+      internalID: -1804283967006516124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_89
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 350
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40ae9638dbcd1fbe0800000000000000
+      internalID: -1445131298897532412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_90
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 306
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 052b635ef583301f0800000000000000
+      internalID: -1079957501120171440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_91
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 327
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7df22d2e5befd7b0800000000000000
+      internalID: -5197176655245542021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_92
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 324
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c763a08233bedd210800000000000000
+      internalID: 1359501267483375228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_93
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 329
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32872d6fbb6a652a0800000000000000
+      internalID: -6749023665338025949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_94
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 290
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a92481124619986c0800000000000000
+      internalID: -4140618523152465254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_95
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 273
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 301c897a7c49a1600800000000000000
+      internalID: 439827498853253379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_96
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 281
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2608a2b3640db2170800000000000000
+      internalID: 8154840550343344226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_97
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 291
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99628eaa8813325a0800000000000000
+      internalID: -6547334970213914983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_98
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 288
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20ce3542b6dd854f0800000000000000
+      internalID: -839677878263878654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_99
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 287
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 537658eb1608560a0800000000000000
+      internalID: -6888958897696708811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_100
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 246
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6304fa4fa2c0ef3d0800000000000000
+      internalID: -3171083708988964810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_101
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 254
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 081f26cf9e69b0a30800000000000000
+      internalID: 4182602610649526656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_102
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 213
+        width: 68
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d5516c050a65eb60800000000000000
+      internalID: 7774736901640115672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_103
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 257
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c783eb9728314e00800000000000000
+      internalID: 1027163932787443648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_104
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cf845a4d23758150800000000000000
+      internalID: 5874227927332458433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_105
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 259
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aa2f36a913522320800000000000000
+      internalID: 2531677310164085414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_106
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 244
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3da89bfc978739180800000000000000
+      internalID: -9109805156668962093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_107
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 191
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8112ad395c38ee60800000000000000
+      internalID: 7991703892752732556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_108
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 207
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a77b4735f4da43d20800000000000000
+      internalID: 3257418986709890938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_109
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 214
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f39017c9e9821dd40800000000000000
+      internalID: 5607307672747575615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_110
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 181
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026f426b22d1a37e0800000000000000
+      internalID: -1785082267377011168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_111
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 173
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08e280144bbcd9a90800000000000000
+      internalID: -7305459045479469440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_112
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 159
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c032ba69adba354e0800000000000000
+      internalID: -1994061254675979508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparition_pot_vert_113
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 131
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78eba9458476fb170800000000000000
+      internalID: 8196383407192325767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
