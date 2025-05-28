@@ -10,7 +10,7 @@ public class Water : MonoBehaviour
     private Rigidbody2D rb;
     private bool CanSwim = true;
     public bool InWater = false;
-    private float ImpulseSpeed = 3f;
+    private float ImpulseSpeed = 5f;
     private float WaterGrav = 0.1f;
     private float NormalGrav;
     private bool CanImpulse = true;
@@ -74,7 +74,7 @@ public class Water : MonoBehaviour
                     GameManager.Instance.Death(DeathCauses.Water);
                     HUDManager.Instance.OxygeneTimerGO.SetActive(false);
                     _WaterTimerText.fontSize = _startFontSize;
-                    _WaterTimerText.color = Color.black;
+                    _WaterTimerText.color = Color.white;
                     OxygeneTimer = 25f;
                 }
                 
@@ -85,7 +85,8 @@ public class Water : MonoBehaviour
                 OxygeneTimer = 25f;
                 //HUDManager.Instance.OxygeneTimerGO.SetActive(false);
                 HUDManager.Instance.OxygeneTimerGO.GetComponent<Image>().enabled = true;
-
+                _WaterTimerText.fontSize = _startFontSize;
+                _WaterTimerText.color = Color.white;
             }
             
                 
@@ -94,6 +95,8 @@ public class Water : MonoBehaviour
         {
             HUDManager.Instance.OxygeneTimerGO.SetActive(false);
             OxygeneTimer = 25f;
+            _WaterTimerText.fontSize = _startFontSize;
+            _WaterTimerText.color = Color.white;
         }
     }
 
@@ -101,6 +104,7 @@ public class Water : MonoBehaviour
     {
         if (CanImpulse)
         {
+            GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().linearVelocity.x));
             CanImpulse = false;
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
@@ -127,6 +131,7 @@ public class Water : MonoBehaviour
     public void EnterWater()
     {
         WaterEnter.Play();
+        GetComponent<Animator>().SetBool("swim", true);
         if (CanSwim)
         {
             InWater = true;
@@ -139,11 +144,13 @@ public class Water : MonoBehaviour
 
     public void ExitWater()
     {
+        GetComponent<Animator>().SetBool("swim", false);
         if (CanSwim)
         {
             BubbleEffect.gameObject.SetActive(false);
             InWater = false;
             rb.gravityScale = NormalGrav;
+            
         }
     }
 }

@@ -7669,8 +7669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -583.9999, y: -98.26198}
-  m_SizeDelta: {x: 189.581, y: 66.911}
+  m_AnchoredPosition: {x: 459, y: -304}
+  m_SizeDelta: {x: 100.7604, y: 43.8834}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &324975991
 MonoBehaviour:
@@ -7718,8 +7718,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 90614063}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ReStart
-        m_Mode: 1
+        m_MethodName: Pause
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13524,8 +13524,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -584, y: 90}
-  m_SizeDelta: {x: 189.581, y: 56.392}
+  m_AnchoredPosition: {x: -567.08295, y: -316.41}
+  m_SizeDelta: {x: 223.4151, y: 68.6954}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &993082838
 MonoBehaviour:
@@ -15163,7 +15163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &1159885733
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15172,7 +15172,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159885732}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0

@@ -15651,6 +15651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 832394246}
+  - component: {fileID: 832394248}
   - component: {fileID: 832394247}
   m_Layer: 0
   m_Name: Trigger_fin
@@ -15668,7 +15669,7 @@ Transform:
   m_GameObject: {fileID: 832394245}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.47, y: 0.6, z: 0}
+  m_LocalPosition: {x: 74.85, y: 0.6, z: 0}
   m_LocalScale: {x: 11.55, y: 1.29, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15720,6 +15721,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &832394248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832394245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219393e9d6b704c4991178908a04a7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneIndex: 3
 --- !u!1 &832492365
 GameObject:
   m_ObjectHideFlags: 0
@@ -55876,10 +55890,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1195978850}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ReStart
-        m_Mode: 1
+      - m_Target: {fileID: 2129817699}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -55888,10 +55902,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2129817699}
-        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 3
+      - m_Target: {fileID: 1195978850}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
