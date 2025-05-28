@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.Rendering.Universal;
+using static ColorPowerController;
 
 public class GreenBehavior : PlateformBehavior
 {
@@ -15,25 +17,47 @@ public class GreenBehavior : PlateformBehavior
         Down
     }
 
+    private float rotation = 0;
+
     private GrowDir _dir;
 
     private bool _isGrowing = false;
     private bool enableGround = false;
 
+
+    private Transform _preview;
     private bool _powerActive = false;
 
+    private void Start()
+    {
+        ConstraintSource source = new ConstraintSource();
+        source.sourceTransform = GameManager.Instance.Camera.transform;
+        source.weight = 1f; // 1 = influence maximale
+
+        RotationConstraint[] constraints = GetComponentsInChildren<RotationConstraint>();
+
+        foreach (RotationConstraint c in constraints)
+        {
+            c.AddSource(source);
+            c.constraintActive = true;
+        }
+
+    }
 
     public override void Init(PlateformesData data)
     {
         base.Init(data);
         _canPlace = false;
+        _preview = transform.Find("Preview");
+        _dir = GrowDir.None;
+
+        
     }
 
     public override void Update()
     {
         base.Update();
-        if (_powerActive)
-            SetDirection();
+        SetDirection();
     }
 
     public override void OnTriggerStay2D(Collider2D collision)
@@ -61,12 +85,19 @@ public class GreenBehavior : PlateformBehavior
     // Pouvoir vert
     private void SetDirection()
     {
+        
 
         if (_dir != GrowDir.None)
         {
-            if (!_isGrowing)
+            if (!_isGrowing && _powerActive)
+            {
+                _preview.gameObject.SetActive(false);
                 StartCoroutine(Grow());
-            return;
+                return;
+            }
+            else if (_isGrowing && _powerActive)
+                return;
+                
         }
 
         // On vérifie d'abord si c'est contre un mur : dans ce cas, on fait pousser a l'horizontal. Sinon a la vertical.
@@ -76,11 +107,13 @@ public class GreenBehavior : PlateformBehavior
         Debug.DrawRay(transform.position, Vector2.left * 0.8f, Color.red);
         foreach (RaycastHit2D ray in hitLeft)
         {
-            if (ray.collider != null && ray.collider != GetComponent<Collider2D>() && ray.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            if (ray.collider != null && ray.collider.gameObject.name != "GreenPlatform" && ray.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
                 _dir = GrowDir.Right;
                 enableGround = true;
-                return;
+                rotation = -90;
+                if (_powerActive)
+                    return;
             }
         }
 
@@ -90,11 +123,13 @@ public class GreenBehavior : PlateformBehavior
         foreach (RaycastHit2D ray in hitRight)
         {
 
-            if (ray.collider != null && ray.collider != GetComponent<Collider2D>() && ray.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            if (ray.collider != null && ray.collider.gameObject.name != "GreenPlatform" && ray.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
                 _dir = GrowDir.Left;
                 enableGround = true;
-                return;
+                rotation = 90;
+                if (_powerActive)
+                    return;
             }
         }
 
@@ -104,10 +139,13 @@ public class GreenBehavior : PlateformBehavior
         Debug.DrawRay(transform.position, Vector2.up * 0.8f, Color.red);
         foreach (RaycastHit2D ray in hitUp)
         {
-            if (ray.collider != null && ray.collider != GetComponent<Collider2D>() && ray.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            if (ray.collider != null && ray.collider.gameObject.name != "GreenPlatform" && ray.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
                 _dir = GrowDir.Down;
-                return;
+                rotation = 180;
+                enableGround = false;
+                if (_powerActive)
+                    return;
             }
         }
 
@@ -117,18 +155,33 @@ public class GreenBehavior : PlateformBehavior
         Debug.DrawRay(transform.position, Vector2.down * 0.8f, Color.red);
         foreach (RaycastHit2D ray in hitDown)
         {
-            if (ray.collider != null && ray.collider != GetComponent<Collider2D>() && ray.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            if (ray.collider != null && ray.collider.gameObject.name != "GreenPlatform" && ray.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
                 _dir = GrowDir.Up;
-                return;
+                rotation = 0;
+                enableGround = false;
+                if (_powerActive)
+                    return;
+            }
+        }
+
+        if (_dir != GrowDir.None && !_powerActive)
+        {
+            if (_preview != null)
+            {
+                transform.localRotation = Quaternion.Euler(0, 0, rotation);
+                //_preview.localRotation = Quaternion.Euler(0, 0, rotation);
             }
         }
     }
 
     private IEnumerator Grow()
     {
+        
         _isGrowing = true;
         Transform previousBlock = transform;
+
+        
 
         if (enableGround)
         {
@@ -136,45 +189,46 @@ public class GreenBehavior : PlateformBehavior
             previousBlock.gameObject.layer = LayerMask.NameToLayer("Ground");
         }
 
+
         for (int i = 0; i < 4; i++)
         {
+            yield return new WaitForSeconds(1);
             Vector3 Position = BlockPosition(previousBlock);
 
             // on instancie un block dans la direction.
-            GameObject block = Instantiate(_ivyPrefab, Position, Quaternion.identity, transform);
+            GameObject block = Instantiate(_ivyPrefab, Position, transform.rotation, transform);
             if (enableGround)
             {
                 block.GetComponent<BoxCollider2D>().isTrigger = false;
                 block.layer = LayerMask.NameToLayer("Ground");
             }
             previousBlock = block.transform;
+            //block.transform.localRotation = Quaternion.Euler(0, 0, rotation);
 
-            yield return new WaitForSeconds(1);
+            
         }
     }
 
     private Vector3 BlockPosition(Transform previousBlock)
     {
         Vector3 blockPos = new Vector3(previousBlock.position.x, previousBlock.position.y, previousBlock.position.z);
-
         switch (_dir)
         {
             case GrowDir.Up:
-                blockPos.y += previousBlock.localScale.y;
+                blockPos.y += transform.localScale.y;
                 break;
             case GrowDir.Down:
-                blockPos.y -= previousBlock.localScale.y;
+                blockPos.y -= transform.localScale.y;
                 break;
             case GrowDir.Left:
-                blockPos.x -= previousBlock.localScale.x;
+                blockPos.x -= transform.localScale.x;
                 break;
             case GrowDir.Right:
-                blockPos.x += previousBlock.localScale.x;
+                blockPos.x += transform.localScale.x;
                 break;
             default:
                 break;
         }
-
         return blockPos;
     }
 }

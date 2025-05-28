@@ -28,8 +28,9 @@ public class Player_Shoot : MonoBehaviour
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 shootDirection = (mousePos - (Vector2)ShootPoint.transform.position).normalized;
+        float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
 
-        GameObject Nv_Peinture = Instantiate(PeinturePrefab, ShootPoint.transform.position, Quaternion.identity);
+        GameObject Nv_Peinture = Instantiate(PeinturePrefab, ShootPoint.transform.position, Quaternion.Euler(0,0,angle - 90));
         Nv_Peinture.GetComponent<Rigidbody2D>().AddForce(shootDirection * Peinture_Vitesse, ForceMode2D.Impulse);
     }
 }

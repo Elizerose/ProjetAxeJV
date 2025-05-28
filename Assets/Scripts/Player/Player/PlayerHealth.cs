@@ -27,9 +27,10 @@ public class PlayerHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {  
     {
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Projectile"))
+        if ((other.gameObject.CompareTag("Enemy") && other.GetComponent<Collider2D>() != null )|| other.gameObject.CompareTag("Projectile"))
         {
-           if (CanTakeDamage)
+          Debug.Log(other.gameObject.name);
+          if (CanTakeDamage)
           {
               Destroy(other);
               CanTakeDamage = false;

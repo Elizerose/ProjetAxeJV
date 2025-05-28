@@ -93,6 +93,7 @@ public class PlateformPlacement : MonoBehaviour
                 Destroy(_currentPlatform);
 
             HUDManager.Instance.PowerTimer.SetActive(false);
+            HUDManager.Instance.PaletteInfos.GetComponent<Animator>().SetBool("open", false);
             return;
         }
 
@@ -161,11 +162,30 @@ public class PlateformPlacement : MonoBehaviour
             if (_canPlace)
             {
                 _currentPlatform.GetComponent<SpriteRenderer>().color = new Color32(173, 216, 230, 128);
+                if (_currentData.color == ColorAbilities.Green)
+                {
+                    Transform Preview = _currentPlatform.transform.Find("Preview");
+                    if (Preview != null)
+                    {
+                        foreach (Transform t in Preview.transform)
+                            t.GetComponent<SpriteRenderer>().color = new Color32(173, 216, 230, 128);
+                    }
+                }
+
             }
             // Sinon elle est en rouge
             else
             {
                 _currentPlatform.GetComponent<SpriteRenderer>().color = new Color32(255, 0, 0, 128);
+                if (_currentData.color == ColorAbilities.Green)
+                {
+                    Transform Preview = _currentPlatform.transform.Find("Preview");
+                    if (Preview != null)
+                    {
+                        foreach (Transform t in Preview.transform)
+                            t.GetComponent<SpriteRenderer>().color = new Color32(255, 0, 0, 128);
+                    }
+                }
             }
 
             if (Input.GetMouseButtonDown(0) && _canPlace)
@@ -196,13 +216,13 @@ public class PlateformPlacement : MonoBehaviour
 
     private void ActivePlateforme()
     {
-        HUDManager.Instance.PaletteInfos.SetActive(false);
+        HUDManager.Instance.PaletteInfos.GetComponent<Animator>().SetBool("open", false);
         _currentData.number -= 1;
 
         if (!_currentData.Istrigger)
             _currentPlatform.GetComponent<Collider2D>().isTrigger = false;
 
-        _currentPlatform.GetComponent<SpriteRenderer>().color = _currentData.PowerColor;
+        _currentPlatform.GetComponent<SpriteRenderer>().color = Color.white;
 
         _currentPlatform.transform.SetParent(null);
         _placed = true;

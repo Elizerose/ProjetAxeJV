@@ -94,6 +94,6 @@ public class PlateformBehavior : MonoBehaviour
 
     public virtual void ActivePower()
     {
-        //_feedbackPlacement.Play();
+        _feedbackPlacement.Play();
     }
 }

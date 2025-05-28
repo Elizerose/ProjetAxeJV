@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SC_Level_Cedric/SC_Level_Design_Grotte.unity
     guid: 8c06084b9f90efb4b8b0907599aa2570
   - enabled: 1
+    path: Assets/Scenes/SC_Level_Cedric/SC_Level_Design_Lac.unity
+    guid: 71fbb0a4f28f27340a6b016d3947fe89
+  - enabled: 0
     path: Assets/Scenes/SC_Level_Elise.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:

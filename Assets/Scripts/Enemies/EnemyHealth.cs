@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -20,7 +21,15 @@ public class EnemyHealth : MonoBehaviour
         {
             Destroy(collision.gameObject);
             HP-=1;
+            StartCoroutine(EnemyDmg());
         }
         
+    }
+
+    IEnumerator EnemyDmg()
+    {
+        GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

@@ -54,6 +54,8 @@ public class HUDManager : MonoBehaviour
     private Vector3 _endCollectedPanelPos;
     [SerializeField] private GameObject CollectedFeedbackCount;
 
+    [Header("MENU")]
+    public GameObject MenuPanel;
 
 
     // Dictionnaire pour associer chaque ColorAbility à un GameObject color
@@ -66,8 +68,6 @@ public class HUDManager : MonoBehaviour
             _instance = this;
         else
             Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -143,4 +143,13 @@ public class HUDManager : MonoBehaviour
 
         CollectedFeedbackCount.GetComponent<Animator>().SetTrigger("Anim");
     }
+
+    public void DislayMenuInGame(bool display)
+    {
+        if (display)
+            MenuPanel.GetComponent<Animator>().SetTrigger("FadeIn");
+        else
+            MenuPanel.GetComponent<Animator>().SetTrigger("FadeOut");
+    }
+
 }

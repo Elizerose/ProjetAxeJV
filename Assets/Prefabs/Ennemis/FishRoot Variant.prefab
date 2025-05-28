@@ -136,7 +136,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishRoot Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7368384342603763502, guid: ef56304e260dc94419ae5a102adbc5c9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

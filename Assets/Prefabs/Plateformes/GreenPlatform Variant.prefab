@@ -68,12 +68,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8240305502028231016, guid: c8f0164fd68d61b48bcef9416d9bf0cd, type: 3}
+      propertyPath: _ivyPrefab
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2578171330945372283, guid: c8f0164fd68d61b48bcef9416d9bf0cd, type: 3}
     - {fileID: 8010135522851136709, guid: c8f0164fd68d61b48bcef9416d9bf0cd, type: 3}
     - {fileID: -8188613315976885145, guid: c8f0164fd68d61b48bcef9416d9bf0cd, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5387587932091598305, guid: c8f0164fd68d61b48bcef9416d9bf0cd, type: 3}
+    - {fileID: 6724978183231321546, guid: c8f0164fd68d61b48bcef9416d9bf0cd, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f0164fd68d61b48bcef9416d9bf0cd, type: 3}

@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BlueBehavior : PlateformBehavior
 {
     public override void Init(PlateformesData data)
     {
         base.Init(data);
+        
     }
 
 
@@ -48,6 +50,7 @@ public class BlueBehavior : PlateformBehavior
     public override void ActivePower()
     {
         base.ActivePower();
+        GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255 / 2);
     }
 
 
