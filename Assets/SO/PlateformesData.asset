@@ -22,7 +22,7 @@ MonoBehaviour:
     Istrigger: 1
     PowerColor: {r: 1, g: 0.84313726, b: 0, a: 1}
     number: 11
-    ItemSprite: {fileID: 0}
+    ItemSprite: {fileID: 5123274491794436468, guid: 815033ce93b6e3440b932240d6ba9162, type: 3}
     AnimationController: {fileID: 0}
   - color: 2
     Titre: Pouvoir Rouge
@@ -32,9 +32,9 @@ MonoBehaviour:
     AutoDestroyTimer: 10
     Istrigger: 0
     PowerColor: {r: 1, g: 0, b: 0, a: 1}
-    number: 14
-    ItemSprite: {fileID: 0}
-    AnimationController: {fileID: 0}
+    number: 10
+    ItemSprite: {fileID: 6012500182002432342, guid: 2c663ba8178ffea45a38c3b53b46b15b, type: 3}
+    AnimationController: {fileID: 9100000, guid: 789f63e1a4ac41741ae159cac8c9947f, type: 2}
   - color: 1
     Titre: Pouvoir Bleu
     description: "Pose une bulle d'oxyg\xE8ne, sous l'eau uniquement. <br>Reset le
@@ -44,7 +44,7 @@ MonoBehaviour:
     AutoDestroyTimer: 20
     Istrigger: 1
     PowerColor: {r: 0, g: 0.5647059, b: 1, a: 1}
-    number: 7
+    number: 9
     ItemSprite: {fileID: 8272083094148466413, guid: 29f51dc34ab4d7c448d2917d8a3a8449, type: 3}
     AnimationController: {fileID: 9100000, guid: 7c672034a42c0cd41a81d7e04cc7d695, type: 2}
   - color: 3
