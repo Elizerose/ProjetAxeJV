@@ -46,4 +46,5 @@ public class PlateformesData
     [Header("Item pot de peinture")]
     public float number;
     public Sprite ItemSprite;
+    public RuntimeAnimatorController AnimationController;
 }

@@ -169,6 +169,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -176,10 +189,10 @@ TextureImporter:
       name: toile_sauvegarde_0
       rect:
         serializedVersion: 2
-        x: 133
-        y: 906
-        width: 72
-        height: 50
+        x: 1090
+        y: 752
+        width: 232
+        height: 279
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +211,10 @@ TextureImporter:
       name: toile_sauvegarde_1
       rect:
         serializedVersion: 2
-        x: 219
+        x: 758
         y: 752
-        width: 144
-        height: 238
+        width: 232
+        height: 279
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,10 +233,10 @@ TextureImporter:
       name: toile_sauvegarde_2
       rect:
         serializedVersion: 2
-        x: 284
-        y: 953
-        width: 14
-        height: 19
+        x: 460
+        y: 752
+        width: 232
+        height: 279
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +255,10 @@ TextureImporter:
       name: toile_sauvegarde_3
       rect:
         serializedVersion: 2
-        x: 291
-        y: 949
-        width: 15
-        height: 12
+        x: 133
+        y: 752
+        width: 232
+        height: 279
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,138 +274,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toile_sauvegarde_4
-      rect:
-        serializedVersion: 2
-        x: 461
-        y: 752
-        width: 230
-        height: 204
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 72c7e9268d20145d0800000000000000
-      internalID: -3080177541753963481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_5
-      rect:
-        serializedVersion: 2
-        x: 547
-        y: 953
-        width: 66
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 846a01eb2341453c0800000000000000
-      internalID: -4371847130100226488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_6
-      rect:
-        serializedVersion: 2
-        x: 612
-        y: 953
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6639552ae5ad86d60800000000000000
-      internalID: 7883791247697351526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_7
-      rect:
-        serializedVersion: 2
-        x: 622
-        y: 950
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0ab9a010dd9ec8dc0800000000000000
-      internalID: -3635273663780316256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_8
-      rect:
-        serializedVersion: 2
-        x: 757
-        y: 752
-        width: 230
-        height: 279
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3638146cfd3935ed0800000000000000
-      internalID: -2426433184909393053
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_9
-      rect:
-        serializedVersion: 2
-        x: 1093
-        y: 752
-        width: 232
-        height: 279
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bd3fb8b5b859722b0800000000000000
-      internalID: -5609350385097772069
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: toile_sauvegarde_10
       rect:
         serializedVersion: 2
@@ -401,7 +282,7 @@ TextureImporter:
         width: 232
         height: 279
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -414,231 +295,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_11
-      rect:
-        serializedVersion: 2
-        x: 293
-        y: 938
-        width: 19
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 46388c88efe2ca280800000000000000
-      internalID: -9030791482033274012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_12
-      rect:
-        serializedVersion: 2
-        x: 299
-        y: 910
-        width: 24
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 471c9298b2cab2840800000000000000
-      internalID: 5200439497714155892
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_13
-      rect:
-        serializedVersion: 2
-        x: 626
-        y: 940
-        width: 14
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a898975c22c819150800000000000000
-      internalID: 5877633069665061258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_14
-      rect:
-        serializedVersion: 2
-        x: 634
-        y: 935
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 46734600ae71821f0800000000000000
-      internalID: -1069578617704138908
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_15
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 870
-        width: 10
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7e1912fea876157d0800000000000000
-      internalID: -2931448036026379801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_16
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 903
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 10008f1c6fe38b020800000000000000
-      internalID: 2357703634465587201
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_17
-      rect:
-        serializedVersion: 2
-        x: 205
-        y: 904
-        width: 11
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b6e882173d4367b30800000000000000
-      internalID: 4284670178230832747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_18
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 752
-        width: 93
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 732cd4326b4336c40800000000000000
-      internalID: 5504301126457868855
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_19
-      rect:
-        serializedVersion: 2
-        x: 249
-        y: 835
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 52c56f6e34e529b80800000000000000
-      internalID: -8389539510107087835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toile_sauvegarde_20
-      rect:
-        serializedVersion: 2
-        x: 230
-        y: 765
-        width: 21
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4e90fef8aa6b74740800000000000000
-      internalID: 5136274743714843108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6e6f6c005623d3341ac060ecb9294882
     internalID: 0
     vertices: []
     indices: 
