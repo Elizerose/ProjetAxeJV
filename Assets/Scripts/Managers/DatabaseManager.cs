@@ -20,8 +20,6 @@ public class DatabaseManager : MonoBehaviour
             _instance = this;
         else
             Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 
     public EnemyData GetData(Type type)  => _enemyDatabase.GetData(type);

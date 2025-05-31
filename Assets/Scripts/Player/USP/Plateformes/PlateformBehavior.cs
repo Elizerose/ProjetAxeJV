@@ -9,7 +9,7 @@ public class PlateformBehavior : MonoBehaviour
 
     private ParticleSystem _feedbackPlacement;
 
-    protected bool _canPlace = false;
+    protected bool _canPlace = true;
 
     private float _duration = 1f;
     private float _time = 0f;

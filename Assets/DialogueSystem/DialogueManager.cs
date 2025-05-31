@@ -27,7 +27,6 @@ public class DialogueManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
     }
 
     public void ShowDialogue(DialogueLine line)

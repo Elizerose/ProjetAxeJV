@@ -59,7 +59,7 @@ public class Movements : BaseController
         }
     }
 
-    bool CheckIfGround()
+    public bool CheckIfGround()
     {
         Vector2 rayOrigin = transform.position + Vector3.down * 0.5f; 
         RaycastHit2D ray = Physics2D.Raycast(rayOrigin, Vector2.down, 1f, LayerMask.GetMask("Ground"));

@@ -43,18 +43,25 @@ public class Vines : MonoBehaviour
 
     private void MoveY()
     {
+        
         float vertical = Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal");
         rb.gravityScale = 0;
         
 
         rb.linearVelocity = new Vector2(horizontal * ClimbSpeed, vertical * ClimbSpeed);
+
+
+        if (!GetComponent<Movements>().CheckIfGround())
+            HUDManager.Instance.DisplayClimbCmd(false);
+
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Vine"))
         {
+            HUDManager.Instance.DisplayClimbCmd(true);
             isTouchingVine = true;
             currentVine = other.transform; 
         }
@@ -64,6 +71,7 @@ public class Vines : MonoBehaviour
     {
         if (other.CompareTag("Vine"))
         {
+            HUDManager.Instance.DisplayClimbCmd(false);
             isTouchingVine = false;
             IsClimbing = false;
             rb.gravityScale = 1; 

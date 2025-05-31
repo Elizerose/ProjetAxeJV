@@ -48,6 +48,8 @@ public class HUDManager : MonoBehaviour
     [Header("INFOS")]
     public GameObject TextInfos;
     private bool _isDisplaying;
+    [SerializeField] private GameObject SavePanel;
+    [SerializeField] private GameObject _climbCMD;
 
     [Header("ITEM")]
     private Vector3 _startCollectedPanelPos;
@@ -152,4 +154,16 @@ public class HUDManager : MonoBehaviour
             MenuPanel.GetComponent<Animator>().SetTrigger("FadeOut");
     }
 
+
+    public IEnumerator DisplaySave()
+    {
+        SavePanel.GetComponent<Animator>().SetTrigger("FadeIn");
+        yield return new WaitForSeconds(2);
+        SavePanel.GetComponent<Animator>().SetTrigger("FadeOut");
+    }
+
+    public void DisplayClimbCmd(bool display)
+    {
+        _climbCMD.SetActive(display);
+    }
 }
