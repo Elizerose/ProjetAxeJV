@@ -138,7 +138,10 @@ public class HUDManager : MonoBehaviour
         PlateformesData _data = DatabaseManager.Instance.GetPlateformesData(color);
         CollectedFeedbackCount.GetComponentInChildren<TextMeshProUGUI>().text = "+ 1 (" + _data.number.ToString() + ")";
         CollectedFeedbackCount.GetComponentInChildren<TextMeshProUGUI>().color = _data.PowerColor;
-        CollectedFeedbackCount.GetComponentInChildren<Image>().sprite = _data.ItemSprite;
+
+        Transform IMG = CollectedFeedbackCount.transform.GetChild(0);
+        if (IMG != null)
+            IMG.GetComponent<Image>().sprite = _data.ItemSprite;
 
         CollectedFeedbackCount.SetActive(true);
         CollectedFeedbackCount.GetComponent<CanvasGroup>().alpha = 1;

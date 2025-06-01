@@ -21,9 +21,9 @@ MonoBehaviour:
     AutoDestroyTimer: 10
     Istrigger: 1
     PowerColor: {r: 1, g: 0.84313726, b: 0, a: 1}
-    number: 11
+    number: 12
     ItemSprite: {fileID: 5123274491794436468, guid: 815033ce93b6e3440b932240d6ba9162, type: 3}
-    AnimationController: {fileID: 0}
+    AnimationController: {fileID: 9100000, guid: 1f96242f5537468419df3748e76da64f, type: 2}
   - color: 2
     Titre: Pouvoir Rouge
     description: "Pose une plateforme rebondissante. <br>se d\xE9truit apres 5s."
@@ -32,9 +32,9 @@ MonoBehaviour:
     AutoDestroyTimer: 10
     Istrigger: 0
     PowerColor: {r: 1, g: 0, b: 0, a: 1}
-    number: 10
+    number: 12
     ItemSprite: {fileID: 6012500182002432342, guid: 2c663ba8178ffea45a38c3b53b46b15b, type: 3}
-    AnimationController: {fileID: 9100000, guid: 789f63e1a4ac41741ae159cac8c9947f, type: 2}
+    AnimationController: {fileID: 9100000, guid: 308321580d81e544084bc8d76cfb40c4, type: 2}
   - color: 1
     Titre: Pouvoir Bleu
     description: "Pose une bulle d'oxyg\xE8ne, sous l'eau uniquement. <br>Reset le
@@ -44,9 +44,9 @@ MonoBehaviour:
     AutoDestroyTimer: 20
     Istrigger: 1
     PowerColor: {r: 0, g: 0.5647059, b: 1, a: 1}
-    number: 9
+    number: 11
     ItemSprite: {fileID: 8272083094148466413, guid: 29f51dc34ab4d7c448d2917d8a3a8449, type: 3}
-    AnimationController: {fileID: 9100000, guid: 7c672034a42c0cd41a81d7e04cc7d695, type: 2}
+    AnimationController: {fileID: 9100000, guid: e9c4efc79080b9b499d0d7d79fa11f26, type: 2}
   - color: 3
     Titre: Pouvoir vert
     description: "fait pousser du lierre de 5 blocs. <br>Si le bloc est pos\xE9 au
@@ -57,6 +57,6 @@ MonoBehaviour:
     AutoDestroyTimer: 20
     Istrigger: 1
     PowerColor: {r: 0, g: 0.72156864, b: 0.06666667, a: 1}
-    number: 47
-    ItemSprite: {fileID: 0}
-    AnimationController: {fileID: 0}
+    number: 48
+    ItemSprite: {fileID: -8344537250366749008, guid: 128b7d73fc8228d458e0792c97fedde4, type: 3}
+    AnimationController: {fileID: 9100000, guid: cae5154461404594989ecaf569540368, type: 2}

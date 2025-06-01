@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rond_son_0: 5050215177315589763
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

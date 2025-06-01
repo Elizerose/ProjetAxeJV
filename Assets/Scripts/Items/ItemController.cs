@@ -20,7 +20,7 @@ public class ItemController : MonoBehaviour
         _data = DatabaseManager.Instance.GetPlateformesData(itemColor);
         if (_data.ItemSprite != null) 
             GetComponent<SpriteRenderer>().sprite = _data.ItemSprite;
-        GetComponent<SpriteRenderer>().color = _data.PowerColor;
+        //GetComponent<SpriteRenderer>().color = _data.PowerColor;
         GetComponent<Animator>().runtimeAnimatorController = _data.AnimationController;
 
         GetComponentInChildren<ParticleSystem>().startColor = _data.PowerColor;

@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 29f51dc34ab4d7c448d2917d8a3a8449
+guid: 128b7d73fc8228d458e0792c97fedde4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8272083094148466413
-    second: idle_pot_bleu_0
+      213: -8344537250366749008
+    second: ilde_pot_vert_0
   - first:
-      213: -7811656291739203498
-    second: idle_pot_bleu_1
+      213: 4457441522703816187
+    second: ilde_pot_vert_1
   - first:
-      213: 6099683788466271463
-    second: idle_pot_bleu_2
+      213: 2013616673508575959
+    second: ilde_pot_vert_2
   - first:
-      213: -8135933483437191718
-    second: idle_pot_bleu_3
+      213: -1563902911984924634
+    second: ilde_pot_vert_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -62,7 +62,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -118,30 +118,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_pot_bleu_0
+      name: ilde_pot_vert_0
       rect:
         serializedVersion: 2
         x: 96
         y: 628
         width: 224
-        height: 384
+        height: 388
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,74 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de6cb3b2fb75cc270800000000000000
-      internalID: 8272083094148466413
+      spriteID: 0b600e0059f323c80800000000000000
+      internalID: -8344537250366749008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_pot_bleu_1
+      name: ilde_pot_vert_1
       rect:
         serializedVersion: 2
-        x: 352
+        x: 351
         y: 628
         width: 224
-        height: 384
+        height: 388
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 65880779dfb679390800000000000000
-      internalID: -7811656291739203498
+      spriteID: be9f62bb30b772f4ba61ad1f90bfcca5
+      internalID: 664935266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_pot_bleu_2
+      name: ilde_pot_vert_2
       rect:
         serializedVersion: 2
-        x: 598
+        x: 596
         y: 628
         width: 224
-        height: 384
+        height: 388
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7e4bdbd861e66a450800000000000000
-      internalID: 6099683788466271463
+      spriteID: 8d6a9296b51894b409197d56b75a6e8a
+      internalID: -952754288
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_pot_bleu_3
+      name: ilde_pot_vert_3
       rect:
         serializedVersion: 2
-        x: 841
+        x: 839
         y: 628
         width: 224
-        height: 384
+        height: 388
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: add05835a9b571f80800000000000000
-      internalID: -8135933483437191718
+      spriteID: 1dd58135b211bda40929c7d694d4036a
+      internalID: 2099891487
       vertices: []
       indices: 
       edges: []
@@ -226,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3b416605078419b418aa7e46e210d2f5
+    spriteID: c3f729d78169c6e45bb08a0d838387a0
     internalID: 0
     vertices: []
     indices: 
@@ -236,10 +223,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      idle_pot_bleu_0: 8272083094148466413
-      idle_pot_bleu_1: -7811656291739203498
-      idle_pot_bleu_2: 6099683788466271463
-      idle_pot_bleu_3: -8135933483437191718
+      ilde_pot_vert_1: 664935266
+      ilde_pot_vert_2: -952754288
+      ilde_pot_vert_3: 2099891487
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
