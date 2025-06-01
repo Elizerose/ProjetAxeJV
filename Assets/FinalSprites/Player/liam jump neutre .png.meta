@@ -1,22 +1,31 @@
 fileFormatVersion: 2
-guid: f1d142470aa9da54ea2758f7bf6e3e5e
+guid: cc65060173faf6f40b115729952002a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1179922826121430801
-    second: algues_0
+      213: -3052265098122178299
+    second: liam jump neutre _0
   - first:
-      213: 2340347327307080133
-    second: algues_1
+      213: 8267114854894708471
+    second: liam jump neutre _1
   - first:
-      213: 2755202230554697988
-    second: algues_2
+      213: -8795558709933248515
+    second: liam jump neutre _2
   - first:
-      213: -6037930449997264660
-    second: algues_3
+      213: 4337166405054891219
+    second: liam jump neutre _3
   - first:
-      213: 6618299062832641955
-    second: algues_4
+      213: 3966682963655271018
+    second: liam jump neutre _4
+  - first:
+      213: -9037440490621781576
+    second: liam jump neutre _5
+  - first:
+      213: -6387623812175992845
+    second: liam jump neutre _6
+  - first:
+      213: -2428326692313541007
+    second: liam jump neutre _7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 150
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,118 +117,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: algues_0
+      name: liam jump neutre _0
       rect:
         serializedVersion: 2
-        x: 93
-        y: 376
-        width: 437
-        height: 421
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 117c7511f8def5010800000000000000
-      internalID: 1179922826121430801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: algues_1
-      rect:
-        serializedVersion: 2
-        x: 634
-        y: 390
-        width: 375
-        height: 339
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5c16c279e759a7020800000000000000
-      internalID: 2340347327307080133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: algues_2
-      rect:
-        serializedVersion: 2
-        x: 1143
-        y: 368
-        width: 419
-        height: 408
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 401a39cb4d17c3620800000000000000
-      internalID: 2755202230554697988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: algues_3
-      rect:
-        serializedVersion: 2
-        x: 1613
-        y: 330
-        width: 170
-        height: 328
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ce8066dfe36f43ca0800000000000000
-      internalID: -6037930449997264660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: algues_4
-      rect:
-        serializedVersion: 2
-        x: 1682
-        y: 186
+        x: 39
+        y: 1888
         width: 16
-        height: 17
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +136,162 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a7b071beebe8db50800000000000000
-      internalID: 6618299062832641955
+      spriteID: 501da1a901d24a5d0800000000000000
+      internalID: -3052265098122178299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: liam jump neutre _1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1163
+        width: 391
+        height: 885
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f6aa53d821bab270800000000000000
+      internalID: 8267114854894708471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: liam jump neutre _2
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 1148
+        width: 589
+        height: 786
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dffe55544f5efe580800000000000000
+      internalID: -8795558709933248515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: liam jump neutre _3
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 1111
+        width: 623
+        height: 865
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d40e09bdd5b03c30800000000000000
+      internalID: 4337166405054891219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: liam jump neutre _4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1861
+        width: 35
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a622449932d7c0730800000000000000
+      internalID: 3966682963655271018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: liam jump neutre _5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 205
+        width: 515
+        height: 824
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b9b1c591cf849280800000000000000
+      internalID: -9037440490621781576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: liam jump neutre _6
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 603
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f76c646cf99a57a0800000000000000
+      internalID: -6387623812175992845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: liam jump neutre _7
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 205
+        width: 448
+        height: 782
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1765d0a3db9dc4ed0800000000000000
+      internalID: -2428326692313541007
       vertices: []
       indices: 
       edges: []
@@ -247,12 +309,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      algues_0: 1179922826121430801
-      algues_1: 2340347327307080133
-      algues_2: 2755202230554697988
-      algues_3: -6037930449997264660
-      algues_4: 6618299062832641955
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

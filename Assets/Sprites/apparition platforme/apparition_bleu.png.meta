@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: f1d142470aa9da54ea2758f7bf6e3e5e
+guid: 411bf8647e264ca479b2741eea1edc1f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1179922826121430801
-    second: algues_0
+      213: 3552444295713435719
+    second: apparition_bleu_0
   - first:
-      213: 2340347327307080133
-    second: algues_1
+      213: 644903624011755704
+    second: apparition_bleu_1
   - first:
-      213: 2755202230554697988
-    second: algues_2
+      213: 8783183324594151564
+    second: apparition_bleu_2
   - first:
-      213: -6037930449997264660
-    second: algues_3
+      213: 7108766927635061957
+    second: apparition_bleu_3
   - first:
-      213: 6618299062832641955
-    second: algues_4
+      213: 4049844483241193570
+    second: apparition_bleu_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 150
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,30 +108,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: algues_0
+      name: apparition_bleu_0
       rect:
         serializedVersion: 2
-        x: 93
-        y: 376
-        width: 437
-        height: 421
+        x: 82
+        y: 647
+        width: 205
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 117c7511f8def5010800000000000000
-      internalID: 1179922826121430801
+      spriteID: 740bc5ae341dc4130800000000000000
+      internalID: 3552444295713435719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_1
+      name: apparition_bleu_1
       rect:
         serializedVersion: 2
-        x: 634
-        y: 390
-        width: 375
-        height: 339
+        x: 360
+        y: 709
+        width: 31
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c16c279e759a7020800000000000000
-      internalID: 2340347327307080133
+      spriteID: 8b0359fdd6823f800800000000000000
+      internalID: 644903624011755704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_2
+      name: apparition_bleu_2
       rect:
         serializedVersion: 2
-        x: 1143
-        y: 368
-        width: 419
-        height: 408
+        x: 436
+        y: 581
+        width: 333
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 401a39cb4d17c3620800000000000000
-      internalID: 2755202230554697988
+      spriteID: c80a19bc2b224e970800000000000000
+      internalID: 8783183324594151564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_3
+      name: apparition_bleu_3
       rect:
         serializedVersion: 2
-        x: 1613
-        y: 330
-        width: 170
-        height: 328
+        x: 909
+        y: 581
+        width: 404
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce8066dfe36f43ca0800000000000000
-      internalID: -6037930449997264660
+      spriteID: 5cc9bb85bd967a260800000000000000
+      internalID: 7108766927635061957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_4
+      name: apparition_bleu_4
       rect:
         serializedVersion: 2
-        x: 1682
-        y: 186
-        width: 16
-        height: 17
+        x: 1402
+        y: 581
+        width: 436
+        height: 361
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a7b071beebe8db50800000000000000
-      internalID: 6618299062832641955
+      spriteID: 260ba2bb910f33830800000000000000
+      internalID: 4049844483241193570
       vertices: []
       indices: 
       edges: []
@@ -247,12 +234,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      algues_0: 1179922826121430801
-      algues_1: 2340347327307080133
-      algues_2: 2755202230554697988
-      algues_3: -6037930449997264660
-      algues_4: 6618299062832641955
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

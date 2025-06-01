@@ -1,22 +1,31 @@
 fileFormatVersion: 2
-guid: f1d142470aa9da54ea2758f7bf6e3e5e
+guid: 668bdeba0f1f7884392bf9485ef1903e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1179922826121430801
-    second: algues_0
+      213: 9039866058161303783
+    second: boss charge_0
   - first:
-      213: 2340347327307080133
-    second: algues_1
+      213: 305595835342233954
+    second: boss charge_1
   - first:
-      213: 2755202230554697988
-    second: algues_2
+      213: 3452639611417481574
+    second: boss charge_2
   - first:
-      213: -6037930449997264660
-    second: algues_3
+      213: 6793618204303094245
+    second: boss charge_3
   - first:
-      213: 6618299062832641955
-    second: algues_4
+      213: 2898355043390858572
+    second: boss charge_4
+  - first:
+      213: 3130427155486414629
+    second: boss charge_5
+  - first:
+      213: -7144673770753729846
+    second: boss charge_6
+  - first:
+      213: -5963243042997355687
+    second: boss charge_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 150
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,30 +117,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: algues_0
+      name: boss charge_0
       rect:
         serializedVersion: 2
-        x: 93
-        y: 376
-        width: 437
-        height: 421
+        x: 39
+        y: 1156
+        width: 701
+        height: 736
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 117c7511f8def5010800000000000000
-      internalID: 1179922826121430801
+      spriteID: 7e0b0ddd84e047d70800000000000000
+      internalID: 9039866058161303783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_1
+      name: boss charge_1
       rect:
         serializedVersion: 2
-        x: 634
-        y: 390
-        width: 375
-        height: 339
+        x: 770
+        y: 1156
+        width: 666
+        height: 763
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c16c279e759a7020800000000000000
-      internalID: 2340347327307080133
+      spriteID: 261a96a0bc1bd3400800000000000000
+      internalID: 305595835342233954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_2
+      name: boss charge_2
       rect:
         serializedVersion: 2
-        x: 1143
-        y: 368
-        width: 419
-        height: 408
+        x: 1580
+        y: 1156
+        width: 545
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 401a39cb4d17c3620800000000000000
-      internalID: 2755202230554697988
+      spriteID: 6615bf70f6d3aef20800000000000000
+      internalID: 3452639611417481574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_3
+      name: boss charge_3
       rect:
         serializedVersion: 2
-        x: 1613
-        y: 330
-        width: 170
-        height: 328
+        x: 2192
+        y: 1156
+        width: 760
+        height: 766
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce8066dfe36f43ca0800000000000000
-      internalID: -6037930449997264660
+      spriteID: 5e1fc1f33c7c74e50800000000000000
+      internalID: 6793618204303094245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_4
+      name: boss charge_4
       rect:
         serializedVersion: 2
-        x: 1682
-        y: 186
-        width: 16
-        height: 17
+        x: 0
+        y: 245
+        width: 696
+        height: 696
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +224,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a7b071beebe8db50800000000000000
-      internalID: 6618299062832641955
+      spriteID: c45264a4e86093820800000000000000
+      internalID: 2898355043390858572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss charge_5
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 245
+        width: 869
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 527110689e2817b20800000000000000
+      internalID: 3130427155486414629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss charge_6
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 245
+        width: 697
+        height: 696
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca5c224f0509dc90800000000000000
+      internalID: -7144673770753729846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss charge_7
+      rect:
+        serializedVersion: 2
+        x: 2289
+        y: 225
+        width: 701
+        height: 736
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95bb2d80c0e4e3da0800000000000000
+      internalID: -5963243042997355687
       vertices: []
       indices: 
       edges: []
@@ -247,12 +309,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      algues_0: 1179922826121430801
-      algues_1: 2340347327307080133
-      algues_2: 2755202230554697988
-      algues_3: -6037930449997264660
-      algues_4: 6618299062832641955
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
