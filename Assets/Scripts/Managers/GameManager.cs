@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 /// <summary>
 /// Gère l'état du jeu : Mort / ...
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
     public Camera Camera;
 
     private bool _canWin = true;
+    public VideoPlayer videoPlayer;
+    public GameObject MenuBtn;
 
     // causes de mort pour gerer les differentes animations
     public enum DeathCauses 
@@ -70,9 +73,19 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
-        HUDManager.Instance.VictoryPanel.GetComponent<Animator>().SetTrigger("FadeIn");
-        
+        //HUDManager.Instance.VictoryPanel.GetComponent<Animator>().SetTrigger("FadeIn");
+        Pause(true);
+        Player.gameObject.SetActive(false);
+
+        videoPlayer.loopPointReached += OnVideoFinished;
+        videoPlayer.Play();
+
         _victory = true;
+    }
+
+    public void OnVideoFinished(VideoPlayer vp)
+    {
+        MenuBtn.SetActive(true);
     }
 
     // Mort du joueur
