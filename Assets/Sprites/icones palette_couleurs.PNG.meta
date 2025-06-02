@@ -192,6 +192,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -934,7 +947,40 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      icones palette_couleurs_0: 7661473977522095340
+      icones palette_couleurs_1: -5708563427013402882
+      icones palette_couleurs_10: 6061338581884415734
+      icones palette_couleurs_11: 5518417438222244504
+      icones palette_couleurs_12: 4919503516554147844
+      icones palette_couleurs_13: 6598699588216587664
+      icones palette_couleurs_14: -5656562497646896022
+      icones palette_couleurs_15: 7757124266565715667
+      icones palette_couleurs_16: 2807133343189672266
+      icones palette_couleurs_17: -9125039270573592948
+      icones palette_couleurs_18: 9116975111512759415
+      icones palette_couleurs_19: 6410177986985675170
+      icones palette_couleurs_2: -1649619268120493912
+      icones palette_couleurs_20: -7628844184912107472
+      icones palette_couleurs_21: 2665251379213069091
+      icones palette_couleurs_22: -3563458954949678578
+      icones palette_couleurs_23: -1173166560798790940
+      icones palette_couleurs_24: -8601021946333722983
+      icones palette_couleurs_25: -7273768152928293834
+      icones palette_couleurs_26: 2282794714643996908
+      icones palette_couleurs_27: 8747960104864730141
+      icones palette_couleurs_28: 4193831388167062761
+      icones palette_couleurs_29: -4975736538351102156
+      icones palette_couleurs_3: -5073820741727503909
+      icones palette_couleurs_30: -2655698245566140700
+      icones palette_couleurs_31: 7035184308835515869
+      icones palette_couleurs_32: 8463239332806455010
+      icones palette_couleurs_4: -468469965062305147
+      icones palette_couleurs_5: -8825392873130196797
+      icones palette_couleurs_6: 7967534276824256472
+      icones palette_couleurs_7: -5434661492007685117
+      icones palette_couleurs_8: -1360333083791720325
+      icones palette_couleurs_9: -8261979089159297102
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

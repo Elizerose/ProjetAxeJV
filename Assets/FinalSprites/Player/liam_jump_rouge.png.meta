@@ -114,6 +114,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -284,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      liam_jump_rouge_0: -8458146884035810158
+      liam_jump_rouge_1: 1901501828981724530
+      liam_jump_rouge_2: 6558867030934302350
+      liam_jump_rouge_3: -5321633398546199263
+      liam_jump_rouge_4: -7649442512304287771
+      liam_jump_rouge_5: 2524409539158849036
+      liam_jump_rouge_6: -5713677555359417903
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

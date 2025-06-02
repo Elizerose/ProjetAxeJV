@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: EnemyType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4466011972662761706, guid: ef56304e260dc94419ae5a102adbc5c9, type: 3}
+      propertyPath: _feedbackImage
+      value: 
+      objectReference: {fileID: 5242764699777147409}
     - target: {fileID: 6004755054006754971, guid: ef56304e260dc94419ae5a102adbc5c9, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -153,3 +157,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef56304e260dc94419ae5a102adbc5c9, type: 3}
+--- !u!1 &5242764699777147409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5641633357407622549, guid: ef56304e260dc94419ae5a102adbc5c9, type: 3}
+  m_PrefabInstance: {fileID: 470926406359594884}
+  m_PrefabAsset: {fileID: 0}
