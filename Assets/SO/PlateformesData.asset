@@ -21,7 +21,7 @@ MonoBehaviour:
     AutoDestroyTimer: 10
     Istrigger: 1
     PowerColor: {r: 1, g: 0.84313726, b: 0, a: 1}
-    number: 5
+    number: 3
     ItemSprite: {fileID: 5123274491794436468, guid: 815033ce93b6e3440b932240d6ba9162, type: 3}
     AnimationController: {fileID: 9100000, guid: 1f96242f5537468419df3748e76da64f, type: 2}
   - color: 2
@@ -57,6 +57,6 @@ MonoBehaviour:
     AutoDestroyTimer: 20
     Istrigger: 1
     PowerColor: {r: 0, g: 0.72156864, b: 0.06666667, a: 1}
-    number: 3
+    number: 0
     ItemSprite: {fileID: -8344537250366749008, guid: 128b7d73fc8228d458e0792c97fedde4, type: 3}
     AnimationController: {fileID: 9100000, guid: cae5154461404594989ecaf569540368, type: 2}
