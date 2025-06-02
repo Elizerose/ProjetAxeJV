@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      algue_nocive_0: -828308804459226793
+      algue_nocive_1: -1498513010440381130
+      algue_nocive_2: -8288785034000395574
+      algue_nocive_3: 3578328115740569068
+      algue_nocive_4: 1624214045397887297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

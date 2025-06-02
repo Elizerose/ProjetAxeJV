@@ -1,28 +1,43 @@
 fileFormatVersion: 2
-guid: a48b3e85c0a3496498f9c25e9742cde6
+guid: 9ce0d248bc3ac03419773dcf650a5a43
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1693068760933997432
-    second: algues_anim_0
+      213: 106265074933336197
+    second: idle pnj 5_0
   - first:
-      213: -1831957474262300267
-    second: algues_anim_1
+      213: -5627792269324353183
+    second: idle pnj 5_1
   - first:
-      213: -4592385040213359010
-    second: algues_anim_2
+      213: 8889746128717119605
+    second: idle pnj 5_2
   - first:
-      213: 7814199465371553723
-    second: algues_anim_3
+      213: 885015365831907777
+    second: idle pnj 5_3
   - first:
-      213: -4865831538633413694
-    second: algues_anim_4
+      213: 5129733629309672635
+    second: idle pnj 5_4
   - first:
-      213: 6476445561559322707
-    second: algues_anim_5
+      213: -8288416930179264521
+    second: idle pnj 5_5
   - first:
-      213: -4002326059561462259
-    second: algues_anim_6
+      213: 3163256929590059416
+    second: idle pnj 5_6
+  - first:
+      213: 7851160392852691985
+    second: idle pnj 5_7
+  - first:
+      213: 2038596239051785698
+    second: idle pnj 5_8
+  - first:
+      213: -8812694053655193414
+    second: idle pnj 5_9
+  - first:
+      213: 2685361605884697076
+    second: idle pnj 5_10
+  - first:
+      213: 2830139877486820003
+    second: idle pnj 5_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -114,30 +129,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: algues_anim_0
+      name: idle pnj 5_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 443
-        width: 344
-        height: 581
+        x: 82
+        y: 387
+        width: 299
+        height: 661
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87b18cb511dfe7710800000000000000
-      internalID: 1693068760933997432
+      spriteID: 5888e6bc587897100800000000000000
+      internalID: 106265074933336197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_anim_1
+      name: idle pnj 5_1
       rect:
         serializedVersion: 2
-        x: 284
-        y: 460
-        width: 310
-        height: 525
+        x: 227
+        y: 1046
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,20 +170,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59949fe12649396e0800000000000000
-      internalID: -1831957474262300267
+      spriteID: 1618b359fb016e1b0800000000000000
+      internalID: -5627792269324353183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_anim_2
+      name: idle pnj 5_2
       rect:
         serializedVersion: 2
-        x: 595
-        y: 437
-        width: 298
-        height: 327
+        x: 389
+        y: 390
+        width: 288
+        height: 658
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e56c34e23229440c0800000000000000
-      internalID: -4592385040213359010
+      spriteID: 57086911109be5b70800000000000000
+      internalID: 8889746128717119605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_anim_3
+      name: idle pnj 5_3
       rect:
         serializedVersion: 2
-        x: 756
-        y: 439
-        width: 222
-        height: 572
+        x: 527
+        y: 1046
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,20 +214,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bbfc489230d917c60800000000000000
-      internalID: 7814199465371553723
+      spriteID: 1c95c2549c4384c00800000000000000
+      internalID: 885015365831907777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_anim_4
+      name: idle pnj 5_4
       rect:
         serializedVersion: 2
-        x: 935
-        y: 454
-        width: 345
-        height: 514
+        x: 683
+        y: 392
+        width: 296
+        height: 656
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2cbecd2fef7197cb0800000000000000
-      internalID: -4865831538633413694
+      spriteID: bbcd06fae89703740800000000000000
+      internalID: 5129733629309672635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_anim_5
+      name: idle pnj 5_5
       rect:
         serializedVersion: 2
-        x: 1316
-        y: 438
-        width: 290
-        height: 566
+        x: 826
+        y: 1046
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 35016eface4f0e950800000000000000
-      internalID: 6476445561559322707
+      spriteID: 7ffc45647b0a9fc80800000000000000
+      internalID: -8288416930179264521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: algues_anim_6
+      name: idle pnj 5_6
       rect:
         serializedVersion: 2
-        x: 1573
-        y: 455
-        width: 316
-        height: 507
+        x: 682
+        y: 641
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,8 +280,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d06dc8077a1e478c0800000000000000
-      internalID: -4002326059561462259
+      spriteID: 8912285fa6526eb20800000000000000
+      internalID: 3163256929590059416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle pnj 5_7
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 647
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11cd992b7cce4fc60800000000000000
+      internalID: 7851160392852691985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle pnj 5_8
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 638
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e5012d7a7c8a4c10800000000000000
+      internalID: 2038596239051785698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle pnj 5_9
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 627
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab85fa9237503b580800000000000000
+      internalID: -8812694053655193414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle pnj 5_10
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 631
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f9da342722544520800000000000000
+      internalID: 2685361605884697076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle pnj 5_11
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 622
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aaf44e493da64720800000000000000
+      internalID: 2830139877486820003
       vertices: []
       indices: 
       edges: []
@@ -297,14 +409,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      algues_anim_0: 1693068760933997432
-      algues_anim_1: -1831957474262300267
-      algues_anim_2: -4592385040213359010
-      algues_anim_3: 7814199465371553723
-      algues_anim_4: -4865831538633413694
-      algues_anim_5: 6476445561559322707
-      algues_anim_6: -4002326059561462259
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
