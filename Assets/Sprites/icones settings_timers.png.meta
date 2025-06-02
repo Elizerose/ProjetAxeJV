@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      icones settings_timers_0: -23630321920379808
+      icones settings_timers_1: -3124373722853658775
+      icones settings_timers_2: -3306318873744731826
+      icones settings_timers_3: 4399253830418916650
+      icones settings_timers_4: 2669001353715756825
+      icones settings_timers_5: 5749507884998889450
+      icones settings_timers_6: -3068978230333879888
+      icones settings_timers_7: -2018172307992598363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

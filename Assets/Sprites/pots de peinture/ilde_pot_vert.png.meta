@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ilde_pot_vert_0: -8344537250366749008
+      ilde_pot_vert_1: 4457441522703816187
+      ilde_pot_vert_2: 2013616673508575959
+      ilde_pot_vert_3: -1563902911984924634
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

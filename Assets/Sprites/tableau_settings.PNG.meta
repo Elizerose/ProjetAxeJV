@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tableau_settings_0: -1475822631123357441
+      tableau_settings_1: -6564548846953718750
+      tableau_settings_2: -5267008325689826267
+      tableau_settings_3: -3613941518714306453
+      tableau_settings_4: -3977858429998558681
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      liam nage_0: -5543083799219849433
+      liam nage_1: 8227216214890294319
+      liam nage_2: -226684479935561357
+      liam nage_3: -5883993171566773650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

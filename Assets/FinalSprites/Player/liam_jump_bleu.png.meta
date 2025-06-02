@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      liam_jump_bleu_0: -7992000506186700403
+      liam_jump_bleu_1: 7725664715206650466
+      liam_jump_bleu_2: 606136425881468797
+      liam_jump_bleu_3: -6201562392649617843
+      liam_jump_bleu_4: -3118556433042058225
+      liam_jump_bleu_5: 8749242957680362312
+      liam_jump_bleu_6: 1812629344136018671
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

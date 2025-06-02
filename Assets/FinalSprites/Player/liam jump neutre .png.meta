@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      liam jump neutre _0: -3052265098122178299
+      liam jump neutre _1: 8267114854894708471
+      liam jump neutre _2: -8795558709933248515
+      liam jump neutre _3: 4337166405054891219
+      liam jump neutre _4: 3966682963655271018
+      liam jump neutre _5: -9037440490621781576
+      liam jump neutre _6: -6387623812175992845
+      liam jump neutre _7: -2428326692313541007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

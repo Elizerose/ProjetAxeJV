@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      marche pnj2_0: -5657624138546668201
+      marche pnj2_1: 915906812398860142
+      marche pnj2_2: 1017883405938018482
+      marche pnj2_3: 8906780934319011144
+      marche pnj2_4: 741933642930419061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      apparition_bleu_0: 3552444295713435719
+      apparition_bleu_1: 644903624011755704
+      apparition_bleu_2: 8783183324594151564
+      apparition_bleu_3: 7108766927635061957
+      apparition_bleu_4: 4049844483241193570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

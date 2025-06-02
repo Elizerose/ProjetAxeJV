@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rempart _droite_village_0: 6874755018412723183
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

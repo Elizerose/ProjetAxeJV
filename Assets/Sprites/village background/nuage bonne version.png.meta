@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nuage bonne version_0: 2363740348388063675
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

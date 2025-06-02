@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      apparition_rouge_0: -4333960170244599061
+      apparition_rouge_1: 3429442167168304893
+      apparition_rouge_2: -850621691113054330
+      apparition_rouge_3: -7781570089572912916
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

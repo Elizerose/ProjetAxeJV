@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      liam tourne_0: -2347466603494027649
+      liam tourne_1: 7703465609855125939
+      liam tourne_2: -5931954948219118899
+      liam tourne_3: -4318791818709463723
+      liam tourne_4: -6727196956238983006
+      liam tourne_5: 7144773046820729694
+      liam tourne_6: 4521099099607815758
+      liam tourne_7: 484935184654787798
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

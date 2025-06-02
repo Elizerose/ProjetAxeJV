@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tile set grotte_0: -1252200459415918185
+      tile set grotte_1: 2294866361013056929
+      tile set grotte_2: -3446207833731862296
+      tile set grotte_3: 5907242653304789662
+      tile set grotte_4: -1092277090178540316
+      tile set grotte_5: -3425454672625399432
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

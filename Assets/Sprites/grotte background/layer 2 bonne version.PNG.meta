@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      layer 2 bonne version_0: 8212125656980334343
+      layer 2 bonne version_1: -280664876569158378
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

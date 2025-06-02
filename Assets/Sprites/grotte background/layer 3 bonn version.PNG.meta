@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      layer 3 bonn version_0: 3814250866313998554
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

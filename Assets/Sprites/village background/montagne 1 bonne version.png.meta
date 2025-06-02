@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      montagne 1 bonne version_0: 3796775483583993044
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

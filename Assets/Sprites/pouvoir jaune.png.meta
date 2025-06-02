@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pouvoir jaune_0: -7296529812911585684
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

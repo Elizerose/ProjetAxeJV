@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      apparition_jaune_0: -1787569117836616889
+      apparition_jaune_1: -4895310883114650341
+      apparition_jaune_2: -5127132870625026179
+      apparition_jaune_3: 4569483990126850778
+      apparition_jaune_4: -1285091561724379255
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
