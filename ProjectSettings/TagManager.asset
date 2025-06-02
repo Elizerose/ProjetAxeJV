@@ -2,17 +2,26 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Ivy
+  - Slope
+  - Vine
+  - BVine
+  - Enemy
+  - Projectile
+  - Enemy
+  - Peinture
+  - PlayerWaterCheck
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
+  - Wall
+  - Ombre
   - 
   - 
   - 
@@ -38,6 +47,29 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 4263542249
+    locked: 0
+  - name: other
+    uniqueID: 1321173113
+    locked: 0
+  - name: water
+    uniqueID: 3862187171
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Rock
+    uniqueID: 4017162087
+    locked: 0
+  - name: enemy
+    uniqueID: 650732577
+    locked: 0
+  - name: plateformes
+    uniqueID: 91014563
+    locked: 0
+  - name: player
+    uniqueID: 94501177
+    locked: 0
+  m_RenderingLayers:
+  - Default

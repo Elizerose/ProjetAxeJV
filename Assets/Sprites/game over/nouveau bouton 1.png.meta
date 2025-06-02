@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: b77ee075ee7785348b4df118b225f728
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6913097877381034607
+    second: nouveau bouton 1_0
+  - first:
+      213: 1977394907229851427
+    second: nouveau bouton 1_1
+  - first:
+      213: 5149922758064295670
+    second: nouveau bouton 1_2
+  - first:
+      213: 2246425350421022375
+    second: nouveau bouton 1_3
+  - first:
+      213: 2383296223959953016
+    second: nouveau bouton 1_4
+  - first:
+      213: 6202132484573406854
+    second: nouveau bouton 1_5
+  - first:
+      213: -8228778734714862157
+    second: nouveau bouton 1_6
+  - first:
+      213: 8944308218338591408
+    second: nouveau bouton 1_7
+  - first:
+      213: -2159299279175150753
+    second: nouveau bouton 1_8
+  - first:
+      213: -3057082750534278979
+    second: nouveau bouton 1_9
+  - first:
+      213: 2918726281952963718
+    second: nouveau bouton 1_10
+  - first:
+      213: 256071304389064629
+    second: nouveau bouton 1_11
+  - first:
+      213: 6708893773892628936
+    second: nouveau bouton 1_12
+  - first:
+      213: -621139530617874285
+    second: nouveau bouton 1_13
+  - first:
+      213: 4162156728404570036
+    second: nouveau bouton 1_14
+  - first:
+      213: 8250741872275369596
+    second: nouveau bouton 1_15
+  - first:
+      213: 5394946938952946938
+    second: nouveau bouton 1_16
+  - first:
+      213: 1632937544905353040
+    second: nouveau bouton 1_17
+  - first:
+      213: 8484341059829268366
+    second: nouveau bouton 1_18
+  - first:
+      213: -8138053288745719662
+    second: nouveau bouton 1_19
+  - first:
+      213: 4885311653210333355
+    second: nouveau bouton 1_20
+  - first:
+      213: 2229900012451135278
+    second: nouveau bouton 1_21
+  - first:
+      213: -9126117347153303915
+    second: nouveau bouton 1_22
+  - first:
+      213: -8761493208246388391
+    second: nouveau bouton 1_23
+  - first:
+      213: -1623102154986507764
+    second: nouveau bouton 1_24
+  - first:
+      213: -4089795376850156941
+    second: nouveau bouton 1_25
+  - first:
+      213: 2246801731434684452
+    second: nouveau bouton 1_26
+  - first:
+      213: 1750210887908625572
+    second: nouveau bouton 1_27
+  - first:
+      213: -6546383937836154132
+    second: nouveau bouton 1_28
+  - first:
+      213: -8936093733818210003
+    second: nouveau bouton 1_29
+  - first:
+      213: -4784380487203262269
+    second: nouveau bouton 1_30
+  - first:
+      213: -5842724763224855079
+    second: nouveau bouton 1_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nouveau bouton 1_0
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 209
+        width: 36
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f62bdce64e140ff50800000000000000
+      internalID: 6913097877381034607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_1
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 210
+        width: 29
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32f0a12013e117b10800000000000000
+      internalID: 1977394907229851427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_2
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 210
+        width: 30
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe4f178673387740800000000000000
+      internalID: 5149922758064295670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_3
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 209
+        width: 36
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a6074244f7ec2f10800000000000000
+      internalID: 2246425350421022375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_4
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 210
+        width: 29
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87ea9a7d94b231120800000000000000
+      internalID: 2383296223959953016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 210
+        width: 29
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 686a8e862a6621650800000000000000
+      internalID: 6202132484573406854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_6
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 210
+        width: 30
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b54806b6518dcd80800000000000000
+      internalID: -8228778734714862157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_7
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 209
+        width: 36
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b2cda38fe0902c70800000000000000
+      internalID: 8944308218338591408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_8
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 210
+        width: 29
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f53120dfeb0a802e0800000000000000
+      internalID: -2159299279175150753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_9
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 210
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db02e6d7f6f0395d0800000000000000
+      internalID: -3057082750534278979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_10
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 209
+        width: 31
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68c2760e616618820800000000000000
+      internalID: 2918726281952963718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_11
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 210
+        width: 30
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b7f74f9e7fbd8300800000000000000
+      internalID: 256071304389064629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_12
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 210
+        width: 28
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c133b49757ca1d50800000000000000
+      internalID: 6708893773892628936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_13
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 209
+        width: 36
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 398919943e44167f0800000000000000
+      internalID: -621139530617874285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_14
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 210
+        width: 29
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bf6e001e73f2c930800000000000000
+      internalID: 4162156728404570036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_15
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 209
+        width: 80
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7e2a6eb406808270800000000000000
+      internalID: 8250741872275369596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_16
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 119
+        width: 30
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af41f5648a3beda40800000000000000
+      internalID: 5394946938952946938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_17
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 119
+        width: 27
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0576b70ab0c59a610800000000000000
+      internalID: 1632937544905353040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_18
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 119
+        width: 19
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8f7260fd3f6eb570800000000000000
+      internalID: 8484341059829268366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_19
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 119
+        width: 29
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 298ac11b6a3df0f80800000000000000
+      internalID: -8138053288745719662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_20
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 119
+        width: 31
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba0adaaa01d1cc340800000000000000
+      internalID: 4885311653210333355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_21
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 119
+        width: 30
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2ff9ce2f3232fe10800000000000000
+      internalID: 2229900012451135278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_22
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 119
+        width: 29
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 596a56000a4895180800000000000000
+      internalID: -9126117347153303915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_23
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 119
+        width: 27
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 959f974f85ce86680800000000000000
+      internalID: -8761493208246388391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_24
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 119
+        width: 30
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c02bbd980359979e0800000000000000
+      internalID: -1623102154986507764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_25
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 119
+        width: 30
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 372cfcef5c02e37c0800000000000000
+      internalID: -4089795376850156941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_26
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 119
+        width: 54
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 420a5ea454e3e2f10800000000000000
+      internalID: 2246801731434684452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_27
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 119
+        width: 30
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac80df878ff94810800000000000000
+      internalID: 1750210887908625572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_28
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 119
+        width: 29
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce204f52e729625a0800000000000000
+      internalID: -6546383937836154132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_29
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 119
+        width: 35
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d29eb24381e9cf380800000000000000
+      internalID: -8936093733818210003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_30
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 119
+        width: 31
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c070fdab477a9db0800000000000000
+      internalID: -4784380487203262269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nouveau bouton 1_31
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 119
+        width: 29
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ddaa9fa8c87aeea0800000000000000
+      internalID: -5842724763224855079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 39218661b546a52449260fefd9a4b431
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - PeinturePrefab: {fileID: 731532619377250646, guid: e1b81b3d0b3e9534cb813e60191897a6, type: 3}
+  - ShootPoint: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
