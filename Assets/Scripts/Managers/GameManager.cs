@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
@@ -19,6 +21,8 @@ public class GameManager : MonoBehaviour
     private bool _canWin = true;
     public VideoPlayer videoPlayer;
     public GameObject MenuBtn;
+
+    [HideInInspector] public List<GameObject> ItemList; // liste d'item entre les checkpoints
 
     // causes de mort pour gerer les differentes animations
     public enum DeathCauses 
@@ -52,6 +56,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        ItemList = new List<GameObject>();
+
         if (_ennemiWin == null)
             _canWin = false;
 
@@ -105,9 +111,16 @@ public class GameManager : MonoBehaviour
     {
        
         HUDManager.Instance.DeathPanel.GetComponent<Animator>().SetTrigger("FadeOut");
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        foreach ( GameObject item in ItemList )
+        {
+            item.SetActive(true);
+            // on retire la couleur
+            PlateformesData data = DatabaseManager.Instance.GetPlateformesData(item.GetComponent<ItemController>().itemColor);
+            data.number = Mathf.Max(0, data.number - 1);
+        }
         Pause(false);
-        //Player.GetComponent<PlayerHealth>().ResetPlayer();
+        Player.GetComponent<PlayerHealth>().ResetPlayer();
     }
 
 

@@ -31,6 +31,7 @@ public class ItemController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            GameManager.Instance.ItemList.Add(gameObject);
             GetComponent<Animator>().SetTrigger("Collected");
             HUDManager.Instance.DisplayCollectedFeedback(itemColor);
             _data.number += 1;

@@ -9,9 +9,13 @@ public class CheckPointsTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            GameManager.Instance.ItemList.Clear();// On clear la liste car on passe le checkpoint
+
             GetComponentInChildren<Animator>(true).enabled = true; // Animation de la peinture
             StartCoroutine(HUDManager.Instance.DisplaySave());
             AudioManager.Instance.PlaySFX(_checpointSound);
+
+            GameManager.Instance.Player.GetComponent<PlayerHealth>().Lastcheckpoint = transform;
         }
     }
 }
