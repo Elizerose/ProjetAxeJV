@@ -10,6 +10,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private Slider SliderSFXVol;
 
     [SerializeField] private AudioMixer audioMixer;
+    private AudioSource SFXSource;
+    public static AudioManager Instance { get; set; }
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -22,7 +30,8 @@ public class AudioManager : MonoBehaviour
         SliderMusicVol.value = PlayerPrefs.GetFloat("MusicVol", 0.5f);
         SliderSFXVol.value = PlayerPrefs.GetFloat("SFXVol", 0.5f);
 
-
+        // audiosource
+        TryGetComponent(out SFXSource);
     }
 
     public void SetMasterVolume(float volume)
@@ -42,5 +51,11 @@ public class AudioManager : MonoBehaviour
         audioMixer.SetFloat("SFXVol", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("SFXVol", volume);
         PlayerPrefs.Save();
+    }
+
+
+    public void PlaySFX(AudioClip audioClip)
+    {
+        SFXSource.PlayOneShot(audioClip);
     }
 }

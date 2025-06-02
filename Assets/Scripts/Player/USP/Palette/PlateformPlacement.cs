@@ -26,6 +26,8 @@ public class PlateformPlacement : MonoBehaviour
     private float _powerDelay = 20f; // Temps de pose de pouvoir
     private bool _placed = false; // Est-ce que la plateforme est posée ?
 
+    [SerializeField] private AudioClip _activePowerSound;
+
 
     [Header("Pouvoir Rouge")]
     [HideInInspector] public bool HasBounce = false;
@@ -67,6 +69,11 @@ public class PlateformPlacement : MonoBehaviour
         HUDManager.Instance.PalettePanel.SetActive(false);
     }
 
+    public void ResetPlateforme()
+    {
+        _currentData = null;
+    }
+
 
 
     public void Update()
@@ -76,7 +83,11 @@ public class PlateformPlacement : MonoBehaviour
         {
             UpdatePlacementTimer();
             InvokePlatform(); 
-        }            
+        }
+        else
+        {
+            HUDManager.Instance.PowerTimer.SetActive(false);
+        }
 
     }
 
@@ -231,6 +242,7 @@ public class PlateformPlacement : MonoBehaviour
         PlateformBehavior plateformBehavior = _currentPlatform.GetComponent<PlateformBehavior>();
 
         // On active son pouvoir
+        AudioManager.Instance.PlaySFX(_activePowerSound);
         plateformBehavior.ActivePower();
 
         // La plateforme est placé, on appelle son auto destroy

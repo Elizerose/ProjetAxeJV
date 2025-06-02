@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe7d8a59fa4caa45a763359d3c61ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _checpointSound: {fileID: 8300000, guid: 672fb359a3023f040b664426aff285af, type: 3}
 --- !u!212 &8112074170694720243
 SpriteRenderer:
   m_ObjectHideFlags: 0

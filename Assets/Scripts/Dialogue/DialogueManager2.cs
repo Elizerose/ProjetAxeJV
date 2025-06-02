@@ -51,7 +51,12 @@ public class DialogueManager2 : MonoBehaviour
         isInDialogue = true;
         nameText.text = dialogue.name;
         Image image = NPCImage.GetComponent<Image>();
-        image.sprite = dialogue.sprite;
+        if (dialogue.sprite != null)
+        {
+            NPCImage.gameObject.SetActive(true);
+            image.sprite = dialogue.sprite;
+        }
+        
         dialogueText.text = "";
 
 

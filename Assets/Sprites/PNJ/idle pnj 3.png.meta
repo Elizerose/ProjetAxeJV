@@ -1,22 +1,28 @@
 fileFormatVersion: 2
-guid: 5ebd2300013958445955e218db056620
+guid: 454e2d09d7d802948ba5ea536b5bcbcd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5657624138546668201
-    second: marche pnj2_0
+      213: -946385309443454096
+    second: idle pnj 3_0
   - first:
-      213: 915906812398860142
-    second: marche pnj2_1
+      213: -430730826198236455
+    second: idle pnj 3_1
   - first:
-      213: 1017883405938018482
-    second: marche pnj2_2
+      213: 8118875109138550048
+    second: idle pnj 3_2
   - first:
-      213: 8906780934319011144
-    second: marche pnj2_3
+      213: 1051104553544390745
+    second: idle pnj 3_3
   - first:
-      213: 741933642930419061
-    second: marche pnj2_4
+      213: 3993269154341688681
+    second: idle pnj 3_4
+  - first:
+      213: 3920501533237841495
+    second: idle pnj 3_5
+  - first:
+      213: -2484745749254591202
+    second: idle pnj 3_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: marche pnj2_0
+      name: idle pnj 3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 344
-        width: 291
-        height: 680
+        x: 119
+        y: 379
+        width: 222
+        height: 632
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75d104542d41c71b0800000000000000
-      internalID: -5657624138546668201
+      spriteID: 07b89f14393cdd2f0800000000000000
+      internalID: -946385309443454096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marche pnj2_1
+      name: idle pnj 3_1
       rect:
         serializedVersion: 2
-        x: 303
-        y: 344
-        width: 298
-        height: 680
+        x: 205
+        y: 1001
+        width: 11
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e67f468a464f5bc00800000000000000
-      internalID: 915906812398860142
+      spriteID: 9d2c4ae789cb50af0800000000000000
+      internalID: -430730826198236455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marche pnj2_2
+      name: idle pnj 3_2
       rect:
         serializedVersion: 2
-        x: 640
-        y: 342
-        width: 322
-        height: 682
+        x: 340
+        y: 381
+        width: 216
+        height: 630
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b843b1909f302e00800000000000000
-      internalID: 1017883405938018482
+      spriteID: 02dc6f765e90ca070800000000000000
+      internalID: 8118875109138550048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marche pnj2_3
+      name: idle pnj 3_3
       rect:
         serializedVersion: 2
-        x: 994
-        y: 376
-        width: 312
-        height: 648
+        x: 424
+        y: 1001
+        width: 12
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +212,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8457e42d11e3b9b70800000000000000
-      internalID: 8906780934319011144
+      spriteID: 9581fcfb506469e00800000000000000
+      internalID: 1051104553544390745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marche pnj2_4
+      name: idle pnj 3_4
       rect:
         serializedVersion: 2
-        x: 1319
-        y: 380
-        width: 340
-        height: 644
+        x: 556
+        y: 381
+        width: 223
+        height: 630
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +234,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 57577c1a7b0eb4a00800000000000000
-      internalID: 741933642930419061
+      spriteID: 9659f0d7321fa6730800000000000000
+      internalID: 3993269154341688681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle pnj 3_5
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 1002
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75e040e6f5b686630800000000000000
+      internalID: 3920501533237841495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle pnj 3_6
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 648
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1da482e7e8648dd0800000000000000
+      internalID: -2484745749254591202
       vertices: []
       indices: 
       edges: []
@@ -247,12 +297,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      marche pnj2_0: -5657624138546668201
-      marche pnj2_1: 915906812398860142
-      marche pnj2_2: 1017883405938018482
-      marche pnj2_3: 8906780934319011144
-      marche pnj2_4: 741933642930419061
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

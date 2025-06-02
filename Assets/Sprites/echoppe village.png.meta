@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 5ebd2300013958445955e218db056620
+guid: 04959506e28ea7f47ab3bb956bbfffed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5657624138546668201
-    second: marche pnj2_0
+      213: 1826610454382768817
+    second: echoppe village_0
   - first:
-      213: 915906812398860142
-    second: marche pnj2_1
+      213: 4721226953741772845
+    second: echoppe village_1
   - first:
-      213: 1017883405938018482
-    second: marche pnj2_2
-  - first:
-      213: 8906780934319011144
-    second: marche pnj2_3
-  - first:
-      213: 741933642930419061
-    second: marche pnj2_4
+      213: 575560077996616790
+    second: echoppe village_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: marche pnj2_0
+      name: echoppe village_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 344
-        width: 291
-        height: 680
+        y: 17
+        width: 263
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75d104542d41c71b0800000000000000
-      internalID: -5657624138546668201
+      spriteID: 1b2ff7cc78c695910800000000000000
+      internalID: 1826610454382768817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marche pnj2_1
+      name: echoppe village_1
       rect:
         serializedVersion: 2
-        x: 303
-        y: 344
-        width: 298
-        height: 680
+        x: 34
+        y: 18
+        width: 40
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e67f468a464f5bc00800000000000000
-      internalID: 915906812398860142
+      spriteID: d2827c976ea258140800000000000000
+      internalID: 4721226953741772845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marche pnj2_2
+      name: echoppe village_2
       rect:
         serializedVersion: 2
-        x: 640
-        y: 342
-        width: 322
-        height: 682
+        x: 208
+        y: 20
+        width: 12
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,52 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b843b1909f302e00800000000000000
-      internalID: 1017883405938018482
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: marche pnj2_3
-      rect:
-        serializedVersion: 2
-        x: 994
-        y: 376
-        width: 312
-        height: 648
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8457e42d11e3b9b70800000000000000
-      internalID: 8906780934319011144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: marche pnj2_4
-      rect:
-        serializedVersion: 2
-        x: 1319
-        y: 380
-        width: 340
-        height: 644
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 57577c1a7b0eb4a00800000000000000
-      internalID: 741933642930419061
+      spriteID: 65c62eb67dcccf700800000000000000
+      internalID: 575560077996616790
       vertices: []
       indices: 
       edges: []
@@ -247,12 +197,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      marche pnj2_0: -5657624138546668201
-      marche pnj2_1: 915906812398860142
-      marche pnj2_2: 1017883405938018482
-      marche pnj2_3: 8906780934319011144
-      marche pnj2_4: 741933642930419061
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

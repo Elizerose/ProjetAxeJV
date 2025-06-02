@@ -18,7 +18,7 @@ public class BrokenLightAnim : MonoBehaviour
         float ratio = _time / _duration;
         float t = EaseOutElastic(ratio);
 
-        _light2D.intensity = Mathf.Lerp(0, 1, t);
+        _light2D.intensity = Mathf.Lerp(0, 1.5f, t);
 
         _time += Time.unscaledDeltaTime;
 

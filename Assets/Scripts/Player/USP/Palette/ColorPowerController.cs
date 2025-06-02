@@ -44,6 +44,10 @@ public class ColorPowerController : MonoBehaviour
     public bool CanInvokePaletteUnderWater = false;
     private List<Text> Compteurs = new List<Text>();
 
+    [Header("AudioClips")]
+    [SerializeField] private AudioClip _palette_Activate;
+    [SerializeField] private AudioClip _selectionPower;
+
 
     public enum ColorAbilities
     {
@@ -71,6 +75,7 @@ public class ColorPowerController : MonoBehaviour
         // Si on appuie sur E
         if (Input.GetKeyDown(KeyCode.E))
         {
+            
             UpdateDescription();
 
             // Si on était en choix, c'est qu'on a validé la couleur : on passe en mode placement
@@ -89,6 +94,7 @@ public class ColorPowerController : MonoBehaviour
                         PlateformPlacement.Instance.SetAbility(DatabaseManager.Instance.GetPlateformesData((ColorAbilities)_currentIndexColor));
                         Compteurs[_currentIndexColor - 1].transform.parent.GetComponentInChildren<ParticleSystem>().Play();
                         _state = STATE_POWER.INPLACEMENT;
+                        AudioManager.Instance.PlaySFX(_selectionPower);
                         Time.timeScale = 1f;
                     }
                     // Sinon on ne peux pas invoquer le pouvoir
@@ -102,24 +108,36 @@ public class ColorPowerController : MonoBehaviour
                     if (PlateformPlacement.Instance._currentPlatform != null)
                     {
                         Destroy(PlateformPlacement.Instance._currentPlatform);
+                        PlateformPlacement.Instance.ResetPlateforme();
                     }
                     Time.timeScale = 1f;
                     HUDManager.Instance.PaletteInfos.GetComponent<Animator>().SetBool("open", false);
                     HUDManager.Instance.PalettePanel.SetActive(false);
+                    HUDManager.Instance.PowerTimer.SetActive(false);
                     _state = STATE_POWER.NONE;
+                    AudioManager.Instance.PlaySFX(_palette_Activate);
                 }
             }
             // Sinon, on passe en mode choix de couleur
             else
             {
+                HUDManager.Instance.PowerTimer.SetActive(false);
                 // si on est dans l'eau on ne peut pas invoquer la palette
                 if (GameManager.Instance.Player.GetComponent<Water>().InWater && !CanInvokePaletteUnderWater)
                 {
                     HUDManager.Instance.DisplayError("Vous ne pouvez pas invoquer la palette de couleurs dans l'eau ...");
                     return;
                 }
-                else
-                    _state = STATE_POWER.INCHOICE;
+                else 
+                {
+                    if (Time.timeScale == 1)
+                    {
+                        
+                        AudioManager.Instance.PlaySFX(_palette_Activate);
+                        _state = STATE_POWER.INCHOICE;
+
+                    }
+                }
             }   
 
         }

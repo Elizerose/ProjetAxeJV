@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 5ebd2300013958445955e218db056620
+guid: da038f42abcf8174fbedb210a63e86d1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5657624138546668201
-    second: marche pnj2_0
+      213: -160871143020725858
+    second: idle pnj 4_0
   - first:
-      213: 915906812398860142
-    second: marche pnj2_1
+      213: 9161258433528855087
+    second: idle pnj 4_1
   - first:
-      213: 1017883405938018482
-    second: marche pnj2_2
-  - first:
-      213: 8906780934319011144
-    second: marche pnj2_3
-  - first:
-      213: 741933642930419061
-    second: marche pnj2_4
+      213: -372578208888916741
+    second: idle pnj 4_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: marche pnj2_0
+      name: idle pnj 4_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 344
-        width: 291
-        height: 680
+        x: 130
+        y: 249
+        width: 237
+        height: 776
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75d104542d41c71b0800000000000000
-      internalID: -5657624138546668201
+      spriteID: e9973a93c8874cdf0800000000000000
+      internalID: -160871143020725858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marche pnj2_1
+      name: idle pnj 4_1
       rect:
         serializedVersion: 2
-        x: 303
-        y: 344
-        width: 298
-        height: 680
+        x: 365
+        y: 255
+        width: 236
+        height: 770
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e67f468a464f5bc00800000000000000
-      internalID: 915906812398860142
+      spriteID: f2af902c104532f70800000000000000
+      internalID: 9161258433528855087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marche pnj2_2
+      name: idle pnj 4_2
       rect:
         serializedVersion: 2
-        x: 640
-        y: 342
-        width: 322
-        height: 682
+        x: 599
+        y: 256
+        width: 235
+        height: 769
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,52 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b843b1909f302e00800000000000000
-      internalID: 1017883405938018482
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: marche pnj2_3
-      rect:
-        serializedVersion: 2
-        x: 994
-        y: 376
-        width: 312
-        height: 648
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8457e42d11e3b9b70800000000000000
-      internalID: 8906780934319011144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: marche pnj2_4
-      rect:
-        serializedVersion: 2
-        x: 1319
-        y: 380
-        width: 340
-        height: 644
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 57577c1a7b0eb4a00800000000000000
-      internalID: 741933642930419061
+      spriteID: bf4ff10d71654daf0800000000000000
+      internalID: -372578208888916741
       vertices: []
       indices: 
       edges: []
@@ -247,12 +197,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      marche pnj2_0: -5657624138546668201
-      marche pnj2_1: 915906812398860142
-      marche pnj2_2: 1017883405938018482
-      marche pnj2_3: 8906780934319011144
-      marche pnj2_4: 741933642930419061
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
