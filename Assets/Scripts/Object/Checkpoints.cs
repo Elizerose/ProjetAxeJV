@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class ChackpointCheck : MonoBehaviour
 {
-    public GameObject player;
     private float Detectradius = 2f;
     public GameObject CPText;
     public ParticleSystem CPEffect;
@@ -18,14 +17,14 @@ public class ChackpointCheck : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                player.GetComponent<PlayerHealth>().Lastcheckpoint = nearestCP;
+                GameManager.Instance.Player.GetComponent<PlayerHealth>().Lastcheckpoint = nearestCP;
 
                 ParticleSystem newCPEffect = Instantiate(CPEffect, nearestCP.position, Quaternion.identity);
 
                 newCPEffect.Emit(15);
                 Destroy(newCPEffect, 1);
             }
-        }
+    }
         else
         {
             CPText.SetActive(false);
@@ -39,7 +38,7 @@ public class ChackpointCheck : MonoBehaviour
 
         foreach (Transform CP in gameObject.transform)
         {
-            float dist = Vector2.Distance(CP.position, player.transform.position);
+            float dist = Vector2.Distance(CP.position, GameManager.Instance.Player.transform.position);
             if (dist < Detectradius && dist < closestDistance)
             {
                 closestDistance = dist;

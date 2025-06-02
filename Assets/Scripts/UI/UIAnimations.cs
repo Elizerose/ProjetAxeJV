@@ -17,11 +17,16 @@ public class UIAnimations : MonoBehaviour
     [SerializeField] private Vector3 _startSize;
     [SerializeField] private Vector3 _endSize;
 
+    [Header("Animation de la couleur")]
+    [SerializeField] private Color _startColor;
+    [SerializeField] private Color _endColor;
+
     public enum Anim
     {
         none,
         size,
-        fontsize
+        fontsize,
+        color
     }
 
 
@@ -41,6 +46,10 @@ public class UIAnimations : MonoBehaviour
             {
                 GetComponent<TextMeshProUGUI>().fontSize = Mathf.Lerp(_startFontSize, _endFontSize, t);
             }
+            else if ( _animationType == Anim.color)
+            {
+                GetComponent<Image>().color = Color.Lerp(_startColor, _endColor, t);
+            }
 
 
             _time += Time.unscaledDeltaTime;
@@ -52,6 +61,8 @@ public class UIAnimations : MonoBehaviour
 
 
     }
+
+    
 
 
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca2813bee48a555449aa2de97702c02f
+guid: 128b7d73fc8228d458e0792c97fedde4
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -105,6 +105,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -115,9 +128,9 @@ TextureImporter:
         x: 96
         y: 628
         width: 224
-        height: 307
+        height: 388
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -134,20 +147,20 @@ TextureImporter:
       name: ilde_pot_vert_1
       rect:
         serializedVersion: 2
-        x: 350
-        y: 666
+        x: 351
+        y: 628
         width: 224
-        height: 307
+        height: 388
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bf556d7c2730cdd30800000000000000
-      internalID: 4457441522703816187
+      spriteID: be9f62bb30b772f4ba61ad1f90bfcca5
+      internalID: 664935266
       vertices: []
       indices: 
       edges: []
@@ -157,19 +170,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 596
-        y: 704
+        y: 628
         width: 224
-        height: 307
+        height: 388
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7da484a22bdc1fb10800000000000000
-      internalID: 2013616673508575959
+      spriteID: 8d6a9296b51894b409197d56b75a6e8a
+      internalID: -952754288
       vertices: []
       indices: 
       edges: []
@@ -178,20 +191,20 @@ TextureImporter:
       name: ilde_pot_vert_3
       rect:
         serializedVersion: 2
-        x: 840
-        y: 666
+        x: 839
+        y: 628
         width: 224
-        height: 307
+        height: 388
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 62880f36696eb4ae0800000000000000
-      internalID: -1563902911984924634
+      spriteID: 1dd58135b211bda40929c7d694d4036a
+      internalID: 2099891487
       vertices: []
       indices: 
       edges: []
@@ -200,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c3f729d78169c6e45bb08a0d838387a0
     internalID: 0
     vertices: []
     indices: 
@@ -209,7 +222,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ilde_pot_vert_1: 664935266
+      ilde_pot_vert_2: -952754288
+      ilde_pot_vert_3: 2099891487
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

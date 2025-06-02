@@ -62,7 +62,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -160,7 +160,7 @@ TextureImporter:
       name: idle_pot_bleu_1
       rect:
         serializedVersion: 2
-        x: 344
+        x: 352
         y: 628
         width: 224
         height: 384
@@ -182,7 +182,7 @@ TextureImporter:
       name: idle_pot_bleu_2
       rect:
         serializedVersion: 2
-        x: 590
+        x: 598
         y: 628
         width: 224
         height: 384

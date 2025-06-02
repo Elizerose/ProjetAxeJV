@@ -7,7 +7,9 @@ public class CheckPointsTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GetComponentInChildren<Animator>(true).enabled = true;
+            GetComponentInChildren<Animator>(true).enabled = true; // Animation de la peinture
+            StartCoroutine(HUDManager.Instance.DisplaySave());
+
         }
     }
 }
