@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22205ece5ddbe35428464638a49da153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageSound: {fileID: 0}
   HP: 3
   MaxHP: 3
 --- !u!1 &5641633357407622549
@@ -531,6 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22205ece5ddbe35428464638a49da153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageSound: {fileID: 8300000, guid: 271408f5f2f88ab49b5667394e28b6db, type: 3}
   HP: 3
   MaxHP: 3
 --- !u!61 &7368384342603763502

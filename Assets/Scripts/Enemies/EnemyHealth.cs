@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public AudioClip DamageSound;
     public float HP = 3f; 
     public float MaxHP = 3f;
 
@@ -21,6 +22,7 @@ public class EnemyHealth : MonoBehaviour
         {
             Destroy(collision.gameObject);
             HP-=1;
+            AudioManager.Instance.PlaySFX(DamageSound);
             StartCoroutine(EnemyDmg());
         }
         

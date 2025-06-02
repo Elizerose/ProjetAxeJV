@@ -132,6 +132,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.02
       objectReference: {fileID: 0}
+    - target: {fileID: 8457916559681005415, guid: ef56304e260dc94419ae5a102adbc5c9, type: 3}
+      propertyPath: DamageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 271408f5f2f88ab49b5667394e28b6db, type: 3}
     - target: {fileID: 9047230363951509037, guid: ef56304e260dc94419ae5a102adbc5c9, type: 3}
       propertyPath: m_Name
       value: FishRoot Variant

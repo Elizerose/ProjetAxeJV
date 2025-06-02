@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8b106bf27f934bb4eb540c8e42e8a6d4
+guid: 48779473b5b61254b94cdc44ea579be8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6163569956481827284
-    second: pouvoir violet_0
+      213: -4009388264695290920
+    second: herbre_pied_maisons_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 800
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pouvoir violet_0
+      name: herbre_pied_maisons_0
       rect:
         serializedVersion: 2
-        x: 166
-        y: 0
-        width: 756
-        height: 1009
+        x: 0
+        y: 93
+        width: 1920
+        height: 139
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c2e71a3d7c9967aa0800000000000000
-      internalID: -6163569956481827284
+      spriteID: 8d3a73cad9acb58c0800000000000000
+      internalID: -4009388264695290920
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      pouvoir violet_0: -6163569956481827284
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

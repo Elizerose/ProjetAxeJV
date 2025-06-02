@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     public Camera Camera;
 
     private bool _canWin = true;
-    private bool escape = true;
 
     // causes de mort pour gerer les differentes animations
     public enum DeathCauses 
@@ -63,9 +62,9 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Pause(escape);
-            HUDManager.Instance.DislayMenuInGame(escape);
-            escape = !escape;
+            bool OpenMenu = Time.timeScale == 1 ? true : false;
+            Pause(OpenMenu);
+            HUDManager.Instance.DislayMenuInGame(OpenMenu);
         }
     }
 

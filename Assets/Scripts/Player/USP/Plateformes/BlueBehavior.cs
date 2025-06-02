@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public class BlueBehavior : PlateformBehavior
 {
+    private bool _isActive = false;
 
     [SerializeField] private AudioClip _breatheSound;
     public override void Init(PlateformesData data)
     {
         base.Init(data);
-        
     }
 
 
@@ -24,7 +24,7 @@ public class BlueBehavior : PlateformBehavior
         if (collision.gameObject.layer == LayerMask.NameToLayer("Water"))
             _canPlace = true;
 
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && _isActive)
         {
             AudioManager.Instance.PlaySFX(_breatheSound);
         }
@@ -33,7 +33,7 @@ public class BlueBehavior : PlateformBehavior
     public override void OnTriggerStay2D(Collider2D collision)
     {
         // Si le joueur va dans la bulle, peut respirer, enleve le timer oxygene
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && _isActive)
         {
             ColorPowerController.Instance.CanInvokePaletteUnderWater = true;
             GameManager.Instance.Player.GetComponent<Water>().CanBreatheUnderWater = true;
@@ -57,6 +57,7 @@ public class BlueBehavior : PlateformBehavior
     public override void ActivePower()
     {
         base.ActivePower();
+        _isActive = true;
         GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255 / 2);
     }
 

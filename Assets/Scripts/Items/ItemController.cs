@@ -9,6 +9,7 @@ public class ItemController : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private PlateformesData _data;
     public ColorAbilities itemColor;
+    [SerializeField] private AudioClip _collectedSound;
     
 
     private void Awake()
@@ -40,6 +41,7 @@ public class ItemController : MonoBehaviour
 
     IEnumerator WaitForParticules()
     {
+        AudioManager.Instance.PlaySFX(_collectedSound);
         yield return new WaitForSeconds(0.2f);
         gameObject.SetActive(false);
     }

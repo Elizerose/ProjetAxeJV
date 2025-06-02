@@ -58,6 +58,7 @@ public class HUDManager : MonoBehaviour
 
     [Header("MENU")]
     public GameObject MenuPanel;
+    [SerializeField] private AudioClip _panelSound;
 
 
     // Dictionnaire pour associer chaque ColorAbility à un GameObject color
@@ -151,6 +152,7 @@ public class HUDManager : MonoBehaviour
 
     public void DislayMenuInGame(bool display)
     {
+        AudioManager.Instance.PlaySFX(_panelSound);
         if (display)
             MenuPanel.GetComponent<Animator>().SetTrigger("FadeIn");
         else

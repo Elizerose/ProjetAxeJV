@@ -6,18 +6,22 @@ public class ProjectilePeintureBehavior : MonoBehaviour
     private Vector3 StartingPos;
     private float MaxDistance = 8;
 
+    [SerializeField] private AudioClip _launchSound;
+    [SerializeField] private AudioClip _destroySound;
+
     [SerializeField] private ParticleSystem _explodeParticule;
 
     private void Start()
     {
         StartingPos = transform.position;
+        AudioManager.Instance.PlaySFX(_launchSound);
     }
 
     private void Update()
     {
         float distance = Vector3.Distance(StartingPos, transform.position);
         if (distance > MaxDistance)
-            Destroy(gameObject);
+            StartCoroutine(WaitForParticleToEnd());
     }
 
 
@@ -26,18 +30,17 @@ public class ProjectilePeintureBehavior : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            _explodeParticule.Play();
+            AudioManager.Instance.PlaySFX(_destroySound);
             StartCoroutine(WaitForParticleToEnd());
         }
     }
 
     private IEnumerator WaitForParticleToEnd()
     {
-        // Attend que le système de particules soit terminé
-        while (_explodeParticule.isPlaying)
-        {
-            yield return null;
-        }
+        
+        _explodeParticule.Play();
+
+        yield return new WaitForSeconds(0.2f);
 
         Destroy(gameObject);
     }

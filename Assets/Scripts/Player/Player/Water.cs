@@ -30,6 +30,8 @@ public class Water : MonoBehaviour
     public ParticleSystem WaterEnter;
     private Vector3 PlayerScale;
 
+    [SerializeField] private AudioClip _waterEnterSound;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -131,6 +133,7 @@ public class Water : MonoBehaviour
     public void EnterWater()
     {
         WaterEnter.Play();
+        AudioManager.Instance.PlaySFX(_waterEnterSound);
         GetComponent<Animator>().SetBool("swim", true);
         if (CanSwim)
         {
