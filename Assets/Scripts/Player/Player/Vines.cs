@@ -6,7 +6,10 @@ public class Vines : MonoBehaviour
     public float ClimbSpeed = 3f;
     private Rigidbody2D rb;
     private bool isTouchingVine = false; 
-    private Transform currentVine; 
+    private Transform currentVine;
+
+    [SerializeField] private AudioClip _climbSound;
+    private bool _isSoundPlay = false;
 
     void Start()
     {
@@ -20,8 +23,15 @@ public class Vines : MonoBehaviour
             if (Input.GetButton("Vertical") || Input.GetButton("Horizontal"))
                 MoveY();
             else
+            {
                 rb.linearVelocity = Vector2.zero;
+
+                GetComponent<AudioSource>().loop = false;
+                GetComponent<AudioSource>().Stop();
+                _isSoundPlay = false;
+            }
         }
+        
 
         //    if (isTouchingVine) //&& Input.GetKeyDown(KeyCode.Space))
         //    {
@@ -43,7 +53,14 @@ public class Vines : MonoBehaviour
 
     private void MoveY()
     {
+        if (!_isSoundPlay)
+        {
+            _isSoundPlay = true;
+            GetComponent<AudioSource>().loop = true;
+            GetComponent<AudioSource>().PlayOneShot(_climbSound);
+        }
         
+
         float vertical = Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal");
         rb.gravityScale = 0;
@@ -74,7 +91,10 @@ public class Vines : MonoBehaviour
             HUDManager.Instance.DisplayClimbCmd(false);
             isTouchingVine = false;
             IsClimbing = false;
-            rb.gravityScale = 1; 
+            rb.gravityScale = 1;
+            GetComponent<AudioSource>().loop = false;
+            GetComponent<AudioSource>().Stop();
+            _isSoundPlay = false;
         }
     }
 }

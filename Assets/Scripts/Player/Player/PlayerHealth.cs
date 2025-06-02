@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     public GameObject Spawners_parent;
     public GameObject EnemiesHolder;
 
+    [SerializeField] private AudioClip _damageSound;
+
     void Start()
     {
        // SpawnEnemies();
@@ -20,7 +22,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (CheckForHP())
         {
-            ResetPlayer();
+            GameManager.Instance.Death(GameManager.DeathCauses.Enemy);
+            //ResetPlayer();
         }
     }
 
@@ -35,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
               Destroy(other);
               CanTakeDamage = false;
               HP -= 1;
+            GetComponent<AudioSource>().PlayOneShot(_damageSound);
               gameObject.GetComponent<SpriteRenderer>().color = Color.red;
              StartCoroutine(ResetDamageCooldown());
           }    
@@ -58,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
         return HP <= 0;
     }
 
-    private void ResetPlayer()
+    public void ResetPlayer()
     {
         HP = MaxHP;
         gameObject.transform.position = Lastcheckpoint.transform.position;

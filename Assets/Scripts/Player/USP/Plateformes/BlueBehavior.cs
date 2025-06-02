@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class BlueBehavior : PlateformBehavior
 {
+
+    [SerializeField] private AudioClip _breatheSound;
     public override void Init(PlateformesData data)
     {
         base.Init(data);
@@ -21,6 +23,11 @@ public class BlueBehavior : PlateformBehavior
         // Si la plateforme va dans l'eau : plaçable
         if (collision.gameObject.layer == LayerMask.NameToLayer("Water"))
             _canPlace = true;
+
+        if (collision.CompareTag("Player"))
+        {
+            AudioManager.Instance.PlaySFX(_breatheSound);
+        }
     }
 
     public override void OnTriggerStay2D(Collider2D collision)

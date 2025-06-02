@@ -3,6 +3,7 @@ using UnityEngine.Rendering.Universal;
 
 public class YellowBehavior : PlateformBehavior
 {
+    [SerializeField] private AudioClip _activeLight;
     public override void Init(PlateformesData data)
     {
         base.Init(data);
@@ -28,6 +29,7 @@ public class YellowBehavior : PlateformBehavior
     public override void ActivePower()
     {
         base.ActivePower();
+        AudioManager.Instance.PlaySFX(_activeLight);
         GetComponent<Light2D>().enabled = true;
     }
 }

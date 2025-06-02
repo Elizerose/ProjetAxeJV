@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public Camera Camera;
 
     private bool _canWin = true;
+    private bool escape = true;
 
     // causes de mort pour gerer les differentes animations
     public enum DeathCauses 
@@ -51,12 +52,21 @@ public class GameManager : MonoBehaviour
     {
         if (_ennemiWin == null)
             _canWin = false;
+
+        Time.timeScale = 1;
     }
 
     private void Update()
     {
         if (_ennemiWin == null && !_victory && _canWin)
             Win();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause(escape);
+            HUDManager.Instance.DislayMenuInGame(escape);
+            escape = !escape;
+        }
     }
 
     public void Win()
@@ -81,9 +91,11 @@ public class GameManager : MonoBehaviour
     // recommencer le niveau / la scene
     public void ReStart()
     {
-        Pause(false);
+       
         HUDManager.Instance.DeathPanel.GetComponent<Animator>().SetTrigger("FadeOut");
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        Pause(false);
+        //Player.GetComponent<PlayerHealth>().ResetPlayer();
     }
 
 
